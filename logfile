@@ -1,0 +1,1151 @@
+2024-11-19 23:24:04.144 UTC [11623] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-19 23:24:04.144 UTC [11623] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-19 23:24:04.144 UTC [11623] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-19 23:24:04.145 UTC [11623] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-19 23:24:04.147 UTC [11626] LOG:  database system was shut down at 2024-11-19 23:24:03 UTC
+2024-11-19 23:24:04.149 UTC [11623] LOG:  database system is ready to accept connections
+2024-11-19 23:24:23.715 UTC [11623] LOG:  received fast shutdown request
+2024-11-19 23:24:23.719 UTC [11623] LOG:  aborting any active transactions
+2024-11-19 23:24:23.723 UTC [11623] LOG:  background worker "logical replication launcher" (PID 11629) exited with exit code 1
+2024-11-19 23:24:23.723 UTC [11624] LOG:  shutting down
+2024-11-19 23:24:23.725 UTC [11624] LOG:  checkpoint starting: shutdown immediate
+2024-11-19 23:24:23.736 UTC [11624] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.001 s, total=0.013 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/14E7168, redo lsn=0/14E7168
+2024-11-19 23:24:23.740 UTC [11623] LOG:  database system is shut down
+2024-11-20 00:31:23.561 UTC [75157] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-20 00:31:23.562 UTC [75157] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-20 00:31:23.563 UTC [75157] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-20 00:31:23.565 UTC [75157] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-20 00:31:23.568 UTC [75160] LOG:  database system was shut down at 2024-11-19 23:24:23 UTC
+2024-11-20 00:31:23.573 UTC [75157] LOG:  database system is ready to accept connections
+2024-11-20 00:32:34.300 UTC [75241] ERROR:  syntax error at or near "table2" at character 31
+2024-11-20 00:32:34.300 UTC [75241] STATEMENT:  SELECT *
+	FROM table1
+	HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-20 00:36:23.626 UTC [75158] LOG:  checkpoint starting: time
+2024-11-20 00:36:27.945 UTC [75158] LOG:  checkpoint complete: wrote 44 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.302 s, sync=0.011 s, total=4.319 s; sync files=11, longest=0.004 s, average=0.001 s; distance=260 kB, estimate=260 kB; lsn=0/1528518, redo lsn=0/15284E0
+2024-11-20 00:38:50.173 UTC [75157] LOG:  received fast shutdown request
+2024-11-20 00:38:50.174 UTC [75157] LOG:  aborting any active transactions
+2024-11-20 00:38:50.179 UTC [75157] LOG:  background worker "logical replication launcher" (PID 75163) exited with exit code 1
+2024-11-20 00:38:50.179 UTC [75158] LOG:  shutting down
+2024-11-20 00:38:50.180 UTC [75158] LOG:  checkpoint starting: shutdown immediate
+2024-11-20 00:38:50.191 UTC [75158] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.013 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=234 kB; lsn=0/15285C8, redo lsn=0/15285C8
+2024-11-20 00:38:50.200 UTC [75157] LOG:  database system is shut down
+2024-11-20 00:40:06.634 UTC [93589] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-20 00:40:06.634 UTC [93589] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-20 00:40:06.634 UTC [93589] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-20 00:40:06.636 UTC [93589] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-20 00:40:06.640 UTC [93592] LOG:  database system was shut down at 2024-11-20 00:38:50 UTC
+2024-11-20 00:40:06.643 UTC [93589] LOG:  database system is ready to accept connections
+2024-11-20 00:40:40.393 UTC [93764] ERROR:  syntax error at or near "[" at character 1
+2024-11-20 00:40:40.393 UTC [93764] STATEMENT:  [200~SELECT *
+	FROM table1
+	HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-20 00:40:47.440 UTC [93764] ERROR:  syntax error at or near "~" at character 1
+2024-11-20 00:40:47.440 UTC [93764] STATEMENT:  ~
+	SELECT *
+	FROM table1
+	HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-20 00:40:50.858 UTC [93764] ERROR:  syntax error at or near "~" at character 1
+2024-11-20 00:40:50.858 UTC [93764] STATEMENT:  ~
+	SELECT *
+	FROM table1
+	HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-20 00:40:57.903 UTC [93764] ERROR:  syntax error at or near "table2" at character 31
+2024-11-20 00:40:57.903 UTC [93764] STATEMENT:  SELECT *
+	FROM table1
+	HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-20 00:41:33.494 UTC [93764] ERROR:  syntax error at or near "table2" at character 31
+2024-11-20 00:41:33.494 UTC [93764] STATEMENT:  select * from table1 HLL_JOIN table2 on table1.id = table2.id
+	select * from table1 HLL_JOIN table2 on table1.id = table2.id;
+2024-11-20 00:41:46.692 UTC [93764] ERROR:  syntax error at or near "table2" at character 31
+2024-11-20 00:41:46.692 UTC [93764] STATEMENT:  select * from table1 HLL_JOIN table2;
+2024-11-20 00:41:50.565 UTC [93764] ERROR:  relation "table1" does not exist at character 15
+2024-11-20 00:41:50.565 UTC [93764] STATEMENT:  select * from table1 HLL_JOIN;
+2024-11-20 00:42:28.669 UTC [93764] ERROR:  syntax error at or near "table2" at character 31
+2024-11-20 00:42:28.669 UTC [93764] STATEMENT:  select * from table1 HLL_JOIN table2;
+2024-11-20 00:42:54.438 UTC [93764] ERROR:  syntax error at or near "table2" at character 31
+2024-11-20 00:42:54.438 UTC [93764] STATEMENT:  select * from table1 HLL_JOIN table2 on table1.id = table2.id;
+2024-11-20 00:43:01.973 UTC [93764] ERROR:  syntax error at or near "table2" at character 31
+2024-11-20 00:43:01.973 UTC [93764] STATEMENT:  select * from table1 HLL_JOIN table2 on table1.id = table2.id;
+2024-11-20 00:44:28.802 UTC [93764] ERROR:  syntax error at or near "table2" at character 30
+2024-11-20 00:44:28.802 UTC [93764] STATEMENT:  select * from table1 HLLJOIN table2 on table1.id = table2.id;
+2024-11-20 00:44:35.153 UTC [93764] ERROR:  syntax error at or near "table2" at character 31
+2024-11-20 00:44:35.153 UTC [93764] STATEMENT:  select * from table1 HLL_JOIN table2 on table1.id = table2.id;
+2024-11-20 00:45:06.747 UTC [93590] LOG:  checkpoint starting: time
+2024-11-20 00:45:13.140 UTC [93590] LOG:  checkpoint complete: wrote 65 buffers (0.4%); 0 WAL file(s) added, 0 removed, 0 recycled; write=6.371 s, sync=0.014 s, total=6.395 s; sync files=48, longest=0.002 s, average=0.001 s; distance=196 kB, estimate=196 kB; lsn=0/15597E8, redo lsn=0/15597B0
+2024-11-20 00:46:01.747 UTC [93764] ERROR:  syntax error at or near "table2" at character 31
+2024-11-20 00:46:01.747 UTC [93764] STATEMENT:  select * from table1 HLL_JOIN table2 on table1.id = table2.id;
+2024-11-20 00:46:17.805 UTC [93764] ERROR:  syntax error at or near "table2" at character 31
+2024-11-20 00:46:17.805 UTC [93764] STATEMENT:  select * from table1 HLL_JOIN table2 on table1.id = table2.id;
+2024-11-20 00:47:02.692 UTC [93764] ERROR:  syntax error at or near "table2" at character 31
+2024-11-20 00:47:02.692 UTC [93764] STATEMENT:  select * from table1 HLL_JOIN table2 on table1.id = table2.id;
+2024-11-20 00:48:03.875 UTC [93764] ERROR:  syntax error at or near "table2" at character 31
+2024-11-20 00:48:03.875 UTC [93764] STATEMENT:  select * from table1 HLL_JOIN table2 on table1.id = table2.id;
+2024-11-20 00:48:41.483 UTC [93764] ERROR:  syntax error at or near "table2" at character 31
+2024-11-20 00:48:41.483 UTC [93764] STATEMENT:  select * from table1 HLL_JOIN table2 on table1.id = table2.id;
+2024-11-20 00:48:55.708 UTC [93764] ERROR:  syntax error at or near "table2" at character 31
+2024-11-20 00:48:55.708 UTC [93764] STATEMENT:  select * from table1 HLL_JOIN table2 on table1.id = table2.id;
+2024-11-20 00:49:05.872 UTC [93764] ERROR:  syntax error at or near "table2" at character 31
+2024-11-20 00:49:05.872 UTC [93764] STATEMENT:  select * from table1 HLL_JOIN table2 on table1.id = table2.id;
+2024-11-20 00:49:12.929 UTC [93764] ERROR:  syntax error at or near "table2" at character 28
+2024-11-20 00:49:12.929 UTC [93764] STATEMENT:  select * from table1 HJOIN table2 on table1.id = table2.id;
+2024-11-20 00:52:59.286 UTC [93764] ERROR:  syntax error at or near "table2" at character 31
+2024-11-20 00:52:59.286 UTC [93764] STATEMENT:  select * from table1 HLL_JOIN table2 on table1.id = table2.id;
+2024-11-20 00:53:48.290 UTC [93764] ERROR:  syntax error at or near "table2" at character 31
+2024-11-20 00:53:48.290 UTC [93764] STATEMENT:  select * from table1 HLL_JOIN table2 on table1.id = table2.id;
+2024-11-20 00:57:28.807 UTC [93764] ERROR:  syntax error at or near "table2" at character 31
+2024-11-20 00:57:28.807 UTC [93764] STATEMENT:  select * from table1 HLL_JOIN table2 on table1.id = table2.id;
+2024-11-20 00:58:12.602 UTC [93764] ERROR:  syntax error at or near "table2" at character 31
+2024-11-20 00:58:12.602 UTC [93764] STATEMENT:  select * from table1 HLL_JOIN table2 on table1.id = table2.id;
+2024-11-20 00:59:49.367 UTC [93764] ERROR:  syntax error at or near "table2" at character 31
+2024-11-20 00:59:49.367 UTC [93764] STATEMENT:  select * from table1 HLL_JOIN table2 on table1.id = table2.id;
+2024-11-20 01:21:57.836 UTC [93764] ERROR:  syntax error at or near "table2" at character 31
+2024-11-20 01:21:57.836 UTC [93764] STATEMENT:  select * from table1 HLL_JOIN table2 on table1.id = table2.id;
+2024-11-21 04:31:18.174 UTC [35636] FATAL:  lock file "postmaster.pid" already exists
+2024-11-21 04:31:18.174 UTC [35636] HINT:  Is another postmaster (PID 93589) running in data directory "/home/csci550user/databases"?
+2024-11-21 04:31:27.821 UTC [93589] LOG:  received fast shutdown request
+2024-11-21 04:31:27.823 UTC [93589] LOG:  aborting any active transactions
+2024-11-21 04:31:27.824 UTC [93764] FATAL:  terminating connection due to administrator command
+2024-11-21 04:31:27.826 UTC [93589] LOG:  background worker "logical replication launcher" (PID 93595) exited with exit code 1
+2024-11-21 04:31:27.831 UTC [93590] LOG:  shutting down
+2024-11-21 04:31:27.832 UTC [93590] LOG:  checkpoint starting: shutdown immediate
+2024-11-21 04:31:27.845 UTC [93590] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.008 s, sync=0.001 s, total=0.014 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=176 kB; lsn=0/1559898, redo lsn=0/1559898
+2024-11-21 04:31:27.849 UTC [93589] LOG:  database system is shut down
+2024-11-21 04:31:30.505 UTC [35752] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-21 04:31:30.506 UTC [35752] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-21 04:31:30.506 UTC [35752] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-21 04:31:30.507 UTC [35752] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-21 04:31:30.511 UTC [35755] LOG:  database system was shut down at 2024-11-21 04:31:27 UTC
+2024-11-21 04:31:30.516 UTC [35752] LOG:  database system is ready to accept connections
+2024-11-21 04:31:35.305 UTC [35752] LOG:  received fast shutdown request
+2024-11-21 04:31:35.331 UTC [35752] LOG:  aborting any active transactions
+2024-11-21 04:31:35.333 UTC [35752] LOG:  background worker "logical replication launcher" (PID 35758) exited with exit code 1
+2024-11-21 04:31:35.333 UTC [35753] LOG:  shutting down
+2024-11-21 04:31:35.334 UTC [35753] LOG:  checkpoint starting: shutdown immediate
+2024-11-21 04:31:35.339 UTC [35753] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.006 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1559910, redo lsn=0/1559910
+2024-11-21 04:31:35.341 UTC [35752] LOG:  database system is shut down
+2024-11-21 04:32:59.990 UTC [42185] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-21 04:32:59.991 UTC [42185] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-21 04:32:59.991 UTC [42185] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-21 04:32:59.992 UTC [42185] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-21 04:32:59.995 UTC [42188] LOG:  database system was shut down at 2024-11-21 04:31:35 UTC
+2024-11-21 04:32:59.998 UTC [42185] LOG:  database system is ready to accept connections
+2024-11-21 04:33:07.344 UTC [42245] FATAL:  database "9802493024_Abhishek" does not exist
+2024-11-21 04:34:02.831 UTC [42356] ERROR:  syntax error at or near "JOIN" at character 1
+2024-11-21 04:34:02.831 UTC [42356] STATEMENT:  JOIN
+	SELECT *
+	FROM table1 HLL_JOIN table2
+	ON table1.id = table2.id;
+2024-11-21 04:35:30.696 UTC [42185] LOG:  received fast shutdown request
+2024-11-21 04:35:30.700 UTC [42185] LOG:  aborting any active transactions
+2024-11-21 04:35:30.704 UTC [42185] LOG:  background worker "logical replication launcher" (PID 42191) exited with exit code 1
+2024-11-21 04:35:30.704 UTC [42186] LOG:  shutting down
+2024-11-21 04:35:30.706 UTC [42186] LOG:  checkpoint starting: shutdown immediate
+2024-11-21 04:35:30.720 UTC [42186] LOG:  checkpoint complete: wrote 5 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.007 s, sync=0.003 s, total=0.016 s; sync files=3, longest=0.002 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15599C0, redo lsn=0/15599C0
+2024-11-21 04:35:30.723 UTC [42185] LOG:  database system is shut down
+2024-11-21 04:39:47.968 UTC [51251] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-21 04:39:47.969 UTC [51251] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-21 04:39:47.969 UTC [51251] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-21 04:39:47.970 UTC [51251] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-21 04:39:47.973 UTC [51254] LOG:  database system was shut down at 2024-11-21 04:35:30 UTC
+2024-11-21 04:39:47.976 UTC [51251] LOG:  database system is ready to accept connections
+2024-11-21 04:40:03.468 UTC [51290] ERROR:  syntax error at or near "table2" at character 31
+2024-11-21 04:40:03.468 UTC [51290] STATEMENT:  SELECT *
+	FROM table1 HLL_JOIN table2
+	ON table1.id = table2.id;
+2024-11-21 04:40:41.568 UTC [51290] ERROR:  syntax error at or near "HLL_JOIN" at character 1
+2024-11-21 04:40:41.568 UTC [51290] STATEMENT:  HLL_JOIN
+	-- Create the first table
+	CREATE TABLE table1 (
+	    id INT PRIMARY KEY,
+	    name VARCHAR(50),
+	    value NUMERIC
+	);
+2024-11-21 04:40:41.580 UTC [51290] ERROR:  relation "table2" already exists
+2024-11-21 04:40:41.580 UTC [51290] STATEMENT:  CREATE TABLE table2 (
+	    id INT PRIMARY KEY,
+	    description TEXT,
+	    amount NUMERIC
+	);
+2024-11-21 04:40:41.584 UTC [51290] ERROR:  column "name" of relation "table1" does not exist at character 25
+2024-11-21 04:40:41.584 UTC [51290] STATEMENT:  INSERT INTO table1 (id, name, value) VALUES
+	(1, 'First', 100.50),
+	(2, 'Second', 200.75),
+	(3, 'Third', 300.25);
+2024-11-21 04:40:41.584 UTC [51290] ERROR:  column "description" of relation "table2" does not exist at character 25
+2024-11-21 04:40:41.584 UTC [51290] STATEMENT:  INSERT INTO table2 (id, description, amount) VALUES
+	(1, 'Description One', 50.25),
+	(2, 'Description Two', 75.50),
+	(3, 'Description Three', 125.75);
+2024-11-21 04:40:50.383 UTC [51290] ERROR:  relation "table1" already exists
+2024-11-21 04:40:50.383 UTC [51290] STATEMENT:  CREATE TABLE table1 (
+	    id INT PRIMARY KEY,
+	    name VARCHAR(50),
+	    value NUMERIC
+	);
+2024-11-21 04:40:54.826 UTC [51290] ERROR:  relation "table2" already exists
+2024-11-21 04:40:54.826 UTC [51290] STATEMENT:  CREATE TABLE table2 (
+	    id INT PRIMARY KEY,
+	    description TEXT,
+	    amount NUMERIC
+	);
+2024-11-21 04:40:59.136 UTC [51290] ERROR:  column "name" of relation "table1" does not exist at character 25
+2024-11-21 04:40:59.136 UTC [51290] STATEMENT:  INSERT INTO table1 (id, name, value) VALUES
+	(1, 'First', 100.50),
+	(2, 'Second', 200.75),
+	(3, 'Third', 300.25);
+2024-11-21 04:41:04.855 UTC [51290] ERROR:  column "name" of relation "table1" does not exist at character 25
+2024-11-21 04:41:04.855 UTC [51290] STATEMENT:  INSERT INTO table1 (id, name, value) VALUES
+	(1, 'First', 100.50),
+	(2, 'Second', 200.75),
+	(3, 'Third', 300.25);
+2024-11-21 04:42:35.440 UTC [51290] ERROR:  syntax error at or near "table2" at character 31
+2024-11-21 04:42:35.440 UTC [51290] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2;
+2024-11-21 04:43:00.124 UTC [51290] ERROR:  syntax error at or near "table2" at character 31
+2024-11-21 04:43:00.124 UTC [51290] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 on table1.id = table2.id;
+2024-11-21 04:43:55.380 UTC [51290] ERROR:  syntax error at or near "ZOOM_JOIN" at character 1
+2024-11-21 04:43:55.380 UTC [51290] STATEMENT:  ZOOM_JOIN
+	ZOOMJOIN;
+2024-11-21 04:43:58.494 UTC [51290] ERROR:  syntax error at or near "JOIN" at character 1
+2024-11-21 04:43:58.494 UTC [51290] STATEMENT:  JOIN;
+2024-11-21 04:44:48.026 UTC [51252] LOG:  checkpoint starting: time
+2024-11-21 04:44:52.710 UTC [51252] LOG:  checkpoint complete: wrote 48 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.658 s, sync=0.016 s, total=4.685 s; sync files=36, longest=0.003 s, average=0.001 s; distance=221 kB, estimate=221 kB; lsn=0/1590E00, redo lsn=0/1590DC8
+2024-11-21 04:49:10.548 UTC [51251] LOG:  received fast shutdown request
+2024-11-21 04:49:10.552 UTC [51251] LOG:  aborting any active transactions
+2024-11-21 04:49:10.556 UTC [51251] LOG:  background worker "logical replication launcher" (PID 51257) exited with exit code 1
+2024-11-21 04:49:10.556 UTC [51252] LOG:  shutting down
+2024-11-21 04:49:10.558 UTC [51252] LOG:  checkpoint starting: shutdown immediate
+2024-11-21 04:49:10.567 UTC [51252] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.011 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=198 kB; lsn=0/1590EB0, redo lsn=0/1590EB0
+2024-11-21 04:49:10.569 UTC [51251] LOG:  database system is shut down
+2024-11-21 04:50:28.726 UTC [62212] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-21 04:50:28.727 UTC [62212] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-21 04:50:28.727 UTC [62212] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-21 04:50:28.728 UTC [62212] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-21 04:50:28.731 UTC [62215] LOG:  database system was shut down at 2024-11-21 04:49:10 UTC
+2024-11-21 04:50:28.735 UTC [62212] LOG:  database system is ready to accept connections
+2024-11-21 04:50:37.442 UTC [62253] ERROR:  syntax error at or near "table2" at character 31
+2024-11-21 04:50:37.442 UTC [62253] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 on table1.id = table2.id;
+2024-11-21 04:51:19.786 UTC [62253] ERROR:  syntax error at or near "table2" at character 31
+2024-11-21 04:51:19.786 UTC [62253] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 on table1.id = table2.id;
+2024-11-21 04:51:45.965 UTC [62253] ERROR:  syntax error at or near "table2" at character 31
+2024-11-21 04:51:45.965 UTC [62253] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 on table1.id = table2.id;
+2024-11-21 04:52:30.184 UTC [62253] ERROR:  syntax error at or near "table2" at character 31
+2024-11-21 04:52:30.184 UTC [62253] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-21 04:53:50.965 UTC [62212] LOG:  received fast shutdown request
+2024-11-21 04:53:50.967 UTC [62212] LOG:  aborting any active transactions
+2024-11-21 04:53:50.970 UTC [62212] LOG:  background worker "logical replication launcher" (PID 62218) exited with exit code 1
+2024-11-21 04:53:50.971 UTC [62213] LOG:  shutting down
+2024-11-21 04:53:50.972 UTC [62213] LOG:  checkpoint starting: shutdown immediate
+2024-11-21 04:53:50.984 UTC [62213] LOG:  checkpoint complete: wrote 6 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.006 s, sync=0.002 s, total=0.013 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5 kB, estimate=5 kB; lsn=0/1592698, redo lsn=0/1592698
+2024-11-21 04:53:50.987 UTC [62212] LOG:  database system is shut down
+2024-11-21 04:55:06.427 UTC [70217] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-21 04:55:06.428 UTC [70217] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-21 04:55:06.428 UTC [70217] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-21 04:55:06.429 UTC [70217] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-21 04:55:06.431 UTC [70220] LOG:  database system was shut down at 2024-11-21 04:53:50 UTC
+2024-11-21 04:55:06.434 UTC [70217] LOG:  database system is ready to accept connections
+2024-11-21 04:55:12.789 UTC [70239] ERROR:  invalid reference to FROM-clause entry for table "table1" at character 46
+2024-11-21 04:55:12.789 UTC [70239] HINT:  Perhaps you meant to reference the table alias "hll_join".
+2024-11-21 04:55:12.789 UTC [70239] STATEMENT:  SELECT * FROM table1 HLL_JOIN JOIN table2 ON table1.id = table2.id;
+2024-11-21 04:56:34.632 UTC [70217] LOG:  received fast shutdown request
+2024-11-21 04:56:34.636 UTC [70217] LOG:  aborting any active transactions
+2024-11-21 04:56:34.640 UTC [70217] LOG:  background worker "logical replication launcher" (PID 70223) exited with exit code 1
+2024-11-21 04:56:34.640 UTC [70218] LOG:  shutting down
+2024-11-21 04:56:34.642 UTC [70218] LOG:  checkpoint starting: shutdown immediate
+2024-11-21 04:56:34.651 UTC [70218] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.006 s, sync=0.002 s, total=0.012 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1592748, redo lsn=0/1592748
+2024-11-21 04:56:34.655 UTC [70217] LOG:  database system is shut down
+2024-11-21 04:57:09.097 UTC [71581] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-21 04:57:09.099 UTC [71581] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-21 04:57:09.099 UTC [71581] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-21 04:57:09.102 UTC [71581] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-21 04:57:09.106 UTC [71584] LOG:  database system was shut down at 2024-11-21 04:56:34 UTC
+2024-11-21 04:57:09.110 UTC [71581] LOG:  database system is ready to accept connections
+2024-11-21 04:57:17.024 UTC [71606] ERROR:  invalid reference to FROM-clause entry for table "table1" at character 46
+2024-11-21 04:57:17.024 UTC [71606] HINT:  Perhaps you meant to reference the table alias "hll_join".
+2024-11-21 04:57:17.024 UTC [71606] STATEMENT:  SELECT * FROM table1 HLL_JOIN JOIN table2 ON table1.id = table2.id;
+2024-11-21 04:57:46.851 UTC [71581] LOG:  received fast shutdown request
+2024-11-21 04:57:46.853 UTC [71581] LOG:  aborting any active transactions
+2024-11-21 04:57:46.855 UTC [71581] LOG:  background worker "logical replication launcher" (PID 71587) exited with exit code 1
+2024-11-21 04:57:46.855 UTC [71582] LOG:  shutting down
+2024-11-21 04:57:46.857 UTC [71582] LOG:  checkpoint starting: shutdown immediate
+2024-11-21 04:57:46.867 UTC [71582] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.012 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15927F8, redo lsn=0/15927F8
+2024-11-21 04:57:46.870 UTC [71581] LOG:  database system is shut down
+2024-11-21 04:58:19.277 UTC [72520] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-21 04:58:19.277 UTC [72520] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-21 04:58:19.277 UTC [72520] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-21 04:58:19.279 UTC [72520] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-21 04:58:19.282 UTC [72523] LOG:  database system was shut down at 2024-11-21 04:57:46 UTC
+2024-11-21 04:58:19.285 UTC [72520] LOG:  database system is ready to accept connections
+2024-11-21 04:58:33.106 UTC [72552] ERROR:  syntax error at or near "table2" at character 31
+2024-11-21 04:58:33.106 UTC [72552] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-21 05:02:50.173 UTC [72520] LOG:  received fast shutdown request
+2024-11-21 05:02:50.176 UTC [72520] LOG:  aborting any active transactions
+2024-11-21 05:02:50.178 UTC [72520] LOG:  background worker "logical replication launcher" (PID 72526) exited with exit code 1
+2024-11-21 05:02:50.180 UTC [72521] LOG:  shutting down
+2024-11-21 05:02:50.181 UTC [72521] LOG:  checkpoint starting: shutdown immediate
+2024-11-21 05:02:50.190 UTC [72521] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.010 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15928A8, redo lsn=0/15928A8
+2024-11-21 05:02:50.194 UTC [72520] LOG:  database system is shut down
+2024-11-21 05:03:15.335 UTC [75309] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-21 05:03:15.335 UTC [75309] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-21 05:03:15.335 UTC [75309] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-21 05:03:15.336 UTC [75309] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-21 05:03:15.339 UTC [75312] LOG:  database system was shut down at 2024-11-21 05:02:50 UTC
+2024-11-21 05:03:15.342 UTC [75309] LOG:  database system is ready to accept connections
+2024-11-21 05:03:23.153 UTC [75334] ERROR:  invalid reference to FROM-clause entry for table "table1" at character 46
+2024-11-21 05:03:23.153 UTC [75334] HINT:  Perhaps you meant to reference the table alias "hll_join".
+2024-11-21 05:03:23.153 UTC [75334] STATEMENT:  SELECT * FROM table1 HLL_JOIN JOIN table2 ON table1.id = table2.id;
+2024-11-21 05:03:37.464 UTC [75334] ERROR:  syntax error at or near "table2" at character 31
+2024-11-21 05:03:37.464 UTC [75334] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-21 05:03:47.669 UTC [75334] ERROR:  syntax error at or near "table2" at character 31
+2024-11-21 05:03:47.669 UTC [75334] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-21 05:03:51.803 UTC [75334] ERROR:  invalid reference to FROM-clause entry for table "table1" at character 46
+2024-11-21 05:03:51.803 UTC [75334] HINT:  Perhaps you meant to reference the table alias "hll_join".
+2024-11-21 05:03:51.803 UTC [75334] STATEMENT:  SELECT * FROM table1 HLL_JOIN JOIN table2 ON table1.id = table2.id;
+2024-11-21 05:05:31.706 UTC [75309] LOG:  received fast shutdown request
+2024-11-21 05:05:31.709 UTC [75309] LOG:  aborting any active transactions
+2024-11-21 05:05:31.712 UTC [75309] LOG:  background worker "logical replication launcher" (PID 75315) exited with exit code 1
+2024-11-21 05:05:31.712 UTC [75310] LOG:  shutting down
+2024-11-21 05:05:31.714 UTC [75310] LOG:  checkpoint starting: shutdown immediate
+2024-11-21 05:05:31.728 UTC [75310] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.007 s, sync=0.002 s, total=0.015 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1592958, redo lsn=0/1592958
+2024-11-21 05:05:31.732 UTC [75309] LOG:  database system is shut down
+2024-11-21 05:07:24.829 UTC [83079] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-21 05:07:24.830 UTC [83079] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-21 05:07:24.830 UTC [83079] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-21 05:07:24.832 UTC [83079] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-21 05:07:24.835 UTC [83082] LOG:  database system was shut down at 2024-11-21 05:05:31 UTC
+2024-11-21 05:07:24.839 UTC [83079] LOG:  database system is ready to accept connections
+2024-11-21 05:07:33.025 UTC [83104] ERROR:  syntax error at or near "table2" at character 31
+2024-11-21 05:07:33.025 UTC [83104] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-21 05:08:39.286 UTC [83104] ERROR:  syntax error at or near "table2" at character 31
+2024-11-21 05:08:39.286 UTC [83104] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2;
+2024-11-21 05:09:59.504 UTC [83079] LOG:  received fast shutdown request
+2024-11-21 05:09:59.506 UTC [83079] LOG:  aborting any active transactions
+2024-11-21 05:09:59.508 UTC [83079] LOG:  background worker "logical replication launcher" (PID 83085) exited with exit code 1
+2024-11-21 05:09:59.509 UTC [83080] LOG:  shutting down
+2024-11-21 05:09:59.510 UTC [83080] LOG:  checkpoint starting: shutdown immediate
+2024-11-21 05:09:59.519 UTC [83080] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.011 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1592A08, redo lsn=0/1592A08
+2024-11-21 05:09:59.522 UTC [83079] LOG:  database system is shut down
+2024-11-21 05:11:18.319 UTC [90715] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-21 05:11:18.319 UTC [90715] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-21 05:11:18.319 UTC [90715] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-21 05:11:18.321 UTC [90715] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-21 05:11:18.323 UTC [90718] LOG:  database system was shut down at 2024-11-21 05:09:59 UTC
+2024-11-21 05:11:18.327 UTC [90715] LOG:  database system is ready to accept connections
+2024-11-21 05:11:23.808 UTC [90740] ERROR:  syntax error at or near "table2" at character 31
+2024-11-21 05:11:23.808 UTC [90740] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2;
+2024-11-21 05:11:28.744 UTC [90740] ERROR:  syntax error at or near "table2" at character 31
+2024-11-21 05:11:28.744 UTC [90740] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-21 05:13:27.704 UTC [90715] LOG:  received fast shutdown request
+2024-11-21 05:13:27.709 UTC [90715] LOG:  aborting any active transactions
+2024-11-21 05:13:27.712 UTC [90715] LOG:  background worker "logical replication launcher" (PID 90721) exited with exit code 1
+2024-11-21 05:13:27.713 UTC [90716] LOG:  shutting down
+2024-11-21 05:13:27.714 UTC [90716] LOG:  checkpoint starting: shutdown immediate
+2024-11-21 05:13:27.727 UTC [90716] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.006 s, sync=0.001 s, total=0.014 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1592AB8, redo lsn=0/1592AB8
+2024-11-21 05:13:27.731 UTC [90715] LOG:  database system is shut down
+2024-11-21 05:13:52.921 UTC [92322] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-21 05:13:52.921 UTC [92322] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-21 05:13:52.921 UTC [92322] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-21 05:13:52.923 UTC [92322] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-21 05:13:52.926 UTC [92325] LOG:  database system was shut down at 2024-11-21 05:13:27 UTC
+2024-11-21 05:13:52.930 UTC [92322] LOG:  database system is ready to accept connections
+2024-11-21 05:14:34.255 UTC [92457] ERROR:  syntax error at or near "table2" at character 31
+2024-11-21 05:14:34.255 UTC [92457] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2;
+2024-11-21 05:14:40.238 UTC [92457] ERROR:  syntax error at or near "table2" at character 31
+2024-11-21 05:14:40.238 UTC [92457] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-21 05:18:52.981 UTC [92323] LOG:  checkpoint starting: time
+2024-11-21 05:18:52.996 UTC [92323] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.017 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1592BA0, redo lsn=0/1592B68
+2024-11-21 05:31:08.671 UTC [92322] LOG:  received fast shutdown request
+2024-11-21 05:31:08.673 UTC [92322] LOG:  aborting any active transactions
+2024-11-21 05:31:08.675 UTC [92322] LOG:  background worker "logical replication launcher" (PID 92328) exited with exit code 1
+2024-11-21 05:31:08.675 UTC [92323] LOG:  shutting down
+2024-11-21 05:31:08.677 UTC [92323] LOG:  checkpoint starting: shutdown immediate
+2024-11-21 05:31:08.683 UTC [92323] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.008 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/1592C50, redo lsn=0/1592C50
+2024-11-21 05:31:08.686 UTC [92322] LOG:  database system is shut down
+2024-11-21 05:32:36.886 UTC [7715] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-21 05:32:36.887 UTC [7715] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-21 05:32:36.887 UTC [7715] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-21 05:32:36.888 UTC [7715] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-21 05:32:36.891 UTC [7718] LOG:  database system was shut down at 2024-11-21 05:31:08 UTC
+2024-11-21 05:32:36.894 UTC [7715] LOG:  database system is ready to accept connections
+2024-11-21 05:32:44.436 UTC [7730] ERROR:  syntax error at or near "table2" at character 31
+2024-11-21 05:32:44.436 UTC [7730] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-21 05:33:41.497 UTC [7715] LOG:  received fast shutdown request
+2024-11-21 05:33:41.499 UTC [7715] LOG:  aborting any active transactions
+2024-11-21 05:33:41.502 UTC [7715] LOG:  background worker "logical replication launcher" (PID 7721) exited with exit code 1
+2024-11-21 05:33:41.503 UTC [7716] LOG:  shutting down
+2024-11-21 05:33:41.504 UTC [7716] LOG:  checkpoint starting: shutdown immediate
+2024-11-21 05:33:41.512 UTC [7716] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.010 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1592D00, redo lsn=0/1592D00
+2024-11-21 05:33:41.515 UTC [7715] LOG:  database system is shut down
+2024-11-21 05:35:53.050 UTC [15114] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-21 05:35:53.052 UTC [15114] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-21 05:35:53.052 UTC [15114] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-21 05:35:53.053 UTC [15114] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-21 05:35:53.057 UTC [15117] LOG:  database system was shut down at 2024-11-21 05:33:41 UTC
+2024-11-21 05:35:53.068 UTC [15114] LOG:  database system is ready to accept connections
+2024-11-21 05:36:07.185 UTC [15174] ERROR:  syntax error at or near ";" at character 42
+2024-11-21 05:36:07.185 UTC [15174] STATEMENT:  SELECT * FROM table1 HLL_JOIN JOIN table2;
+2024-11-21 05:39:11.540 UTC [15114] LOG:  received fast shutdown request
+2024-11-21 05:39:11.544 UTC [15114] LOG:  aborting any active transactions
+2024-11-21 05:39:11.549 UTC [15114] LOG:  background worker "logical replication launcher" (PID 15120) exited with exit code 1
+2024-11-21 05:39:11.549 UTC [15115] LOG:  shutting down
+2024-11-21 05:39:11.552 UTC [15115] LOG:  checkpoint starting: shutdown immediate
+2024-11-21 05:39:11.562 UTC [15115] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.001 s, total=0.012 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1592DB0, redo lsn=0/1592DB0
+2024-11-21 05:39:11.566 UTC [15114] LOG:  database system is shut down
+2024-11-21 05:40:31.539 UTC [23095] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-21 05:40:31.539 UTC [23095] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-21 05:40:31.539 UTC [23095] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-21 05:40:31.541 UTC [23095] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-21 05:40:31.543 UTC [23098] LOG:  database system was shut down at 2024-11-21 05:39:11 UTC
+2024-11-21 05:40:31.547 UTC [23095] LOG:  database system is ready to accept connections
+2024-11-21 05:40:38.012 UTC [23127] ERROR:  syntax error at or near "table2" at character 31
+2024-11-21 05:40:38.012 UTC [23127] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2;
+2024-11-21 05:42:59.208 UTC [23095] LOG:  received fast shutdown request
+2024-11-21 05:42:59.210 UTC [23095] LOG:  aborting any active transactions
+2024-11-21 05:42:59.212 UTC [23095] LOG:  background worker "logical replication launcher" (PID 23101) exited with exit code 1
+2024-11-21 05:42:59.212 UTC [23096] LOG:  shutting down
+2024-11-21 05:42:59.214 UTC [23096] LOG:  checkpoint starting: shutdown immediate
+2024-11-21 05:42:59.223 UTC [23096] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.001 s, total=0.011 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1592E60, redo lsn=0/1592E60
+2024-11-21 05:42:59.226 UTC [23095] LOG:  database system is shut down
+2024-11-21 05:45:41.793 UTC [26195] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-21 05:45:41.794 UTC [26195] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-21 05:45:41.794 UTC [26195] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-21 05:45:41.795 UTC [26195] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-21 05:45:41.797 UTC [26198] LOG:  database system was shut down at 2024-11-21 05:42:59 UTC
+2024-11-21 05:45:41.803 UTC [26195] LOG:  database system is ready to accept connections
+2024-11-21 05:45:47.517 UTC [26220] ERROR:  invalid reference to FROM-clause entry for table "table1" at character 46
+2024-11-21 05:45:47.517 UTC [26220] HINT:  Perhaps you meant to reference the table alias "hll_join".
+2024-11-21 05:45:47.517 UTC [26220] STATEMENT:  SELECT * FROM table1 HLL_JOIN JOIN table2 ON table1.id = table2.id;
+2024-11-21 05:46:06.620 UTC [26195] LOG:  received fast shutdown request
+2024-11-21 05:46:06.621 UTC [26195] LOG:  aborting any active transactions
+2024-11-21 05:46:06.623 UTC [26195] LOG:  background worker "logical replication launcher" (PID 26201) exited with exit code 1
+2024-11-21 05:46:06.623 UTC [26196] LOG:  shutting down
+2024-11-21 05:46:06.624 UTC [26196] LOG:  checkpoint starting: shutdown immediate
+2024-11-21 05:46:06.632 UTC [26196] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.010 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1592F10, redo lsn=0/1592F10
+2024-11-21 05:46:06.634 UTC [26195] LOG:  database system is shut down
+2024-11-21 05:47:18.246 UTC [32727] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-21 05:47:18.246 UTC [32727] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-21 05:47:18.246 UTC [32727] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-21 05:47:18.247 UTC [32727] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-21 05:47:18.250 UTC [32730] LOG:  database system was shut down at 2024-11-21 05:46:06 UTC
+2024-11-21 05:47:18.253 UTC [32727] LOG:  database system is ready to accept connections
+2024-11-21 05:47:24.796 UTC [32752] ERROR:  invalid reference to FROM-clause entry for table "table1" at character 46
+2024-11-21 05:47:24.796 UTC [32752] HINT:  Perhaps you meant to reference the table alias "hll_join".
+2024-11-21 05:47:24.796 UTC [32752] STATEMENT:  SELECT * FROM table1 HLL_JOIN JOIN table2 ON table1.id = table2.id;
+2024-11-21 05:48:24.018 UTC [32727] LOG:  received fast shutdown request
+2024-11-21 05:48:24.020 UTC [32727] LOG:  aborting any active transactions
+2024-11-21 05:48:24.022 UTC [32727] LOG:  background worker "logical replication launcher" (PID 32733) exited with exit code 1
+2024-11-21 05:48:24.023 UTC [32728] LOG:  shutting down
+2024-11-21 05:48:24.024 UTC [32728] LOG:  checkpoint starting: shutdown immediate
+2024-11-21 05:48:24.044 UTC [32728] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.012 s, sync=0.003 s, total=0.022 s; sync files=2, longest=0.002 s, average=0.002 s; distance=0 kB, estimate=0 kB; lsn=0/1592FC0, redo lsn=0/1592FC0
+2024-11-21 05:48:24.049 UTC [32727] LOG:  database system is shut down
+2024-11-21 05:49:45.139 UTC [39886] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-21 05:49:45.140 UTC [39886] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-21 05:49:45.140 UTC [39886] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-21 05:49:45.141 UTC [39886] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-21 05:49:45.143 UTC [39889] LOG:  database system was shut down at 2024-11-21 05:48:24 UTC
+2024-11-21 05:49:45.147 UTC [39886] LOG:  database system is ready to accept connections
+2024-11-21 05:49:50.109 UTC [39908] ERROR:  invalid reference to FROM-clause entry for table "table1" at character 46
+2024-11-21 05:49:50.109 UTC [39908] HINT:  Perhaps you meant to reference the table alias "hll_join".
+2024-11-21 05:49:50.109 UTC [39908] STATEMENT:  SELECT * FROM table1 HLL_JOIN JOIN table2 ON table1.id = table2.id;
+2024-11-21 05:50:19.390 UTC [39908] ERROR:  invalid reference to FROM-clause entry for table "table1" at character 46
+2024-11-21 05:50:19.390 UTC [39908] HINT:  Perhaps you meant to reference the table alias "hll_join".
+2024-11-21 05:50:19.390 UTC [39908] STATEMENT:  SELECT * FROM table1 HLL_JOIN JOIN table2 ON table1.id = table2.id;
+2024-11-21 05:50:23.050 UTC [39908] ERROR:  invalid reference to FROM-clause entry for table "table1" at character 46
+2024-11-21 05:50:23.050 UTC [39908] HINT:  Perhaps you meant to reference the table alias "hll_join".
+2024-11-21 05:50:23.050 UTC [39908] STATEMENT:  SELECT * FROM table1 HLL_JOIN JOIN table2 ON table1.id = table2.id;
+2024-11-21 05:52:40.550 UTC [39886] LOG:  received fast shutdown request
+2024-11-21 05:52:40.553 UTC [39886] LOG:  aborting any active transactions
+2024-11-21 05:52:40.555 UTC [39886] LOG:  background worker "logical replication launcher" (PID 39892) exited with exit code 1
+2024-11-21 05:52:40.555 UTC [39887] LOG:  shutting down
+2024-11-21 05:52:40.556 UTC [39887] LOG:  checkpoint starting: shutdown immediate
+2024-11-21 05:52:40.568 UTC [39887] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.007 s, sync=0.001 s, total=0.014 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1593070, redo lsn=0/1593070
+2024-11-21 05:52:40.572 UTC [39886] LOG:  database system is shut down
+2024-11-21 05:53:57.214 UTC [47715] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-21 05:53:57.215 UTC [47715] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-21 05:53:57.215 UTC [47715] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-21 05:53:57.216 UTC [47715] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-21 05:53:57.218 UTC [47718] LOG:  database system was shut down at 2024-11-21 05:52:40 UTC
+2024-11-21 05:53:57.222 UTC [47715] LOG:  database system is ready to accept connections
+2024-11-21 05:54:02.179 UTC [47737] ERROR:  syntax error at or near "table2" at character 31
+2024-11-21 05:54:02.179 UTC [47737] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-21 05:55:06.379 UTC [47715] LOG:  received fast shutdown request
+2024-11-21 05:55:06.382 UTC [47715] LOG:  aborting any active transactions
+2024-11-21 05:55:06.384 UTC [47715] LOG:  background worker "logical replication launcher" (PID 47721) exited with exit code 1
+2024-11-21 05:55:06.386 UTC [47716] LOG:  shutting down
+2024-11-21 05:55:06.388 UTC [47716] LOG:  checkpoint starting: shutdown immediate
+2024-11-21 05:55:06.398 UTC [47716] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.001 s, total=0.012 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1593120, redo lsn=0/1593120
+2024-11-21 05:55:06.401 UTC [47715] LOG:  database system is shut down
+2024-11-21 05:56:50.031 UTC [54816] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-21 05:56:50.032 UTC [54816] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-21 05:56:50.032 UTC [54816] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-21 05:56:50.033 UTC [54816] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-21 05:56:50.036 UTC [54819] LOG:  database system was shut down at 2024-11-21 05:55:06 UTC
+2024-11-21 05:56:50.048 UTC [54816] LOG:  database system is ready to accept connections
+2024-11-21 05:57:01.708 UTC [54841] ERROR:  invalid reference to FROM-clause entry for table "table1" at character 46
+2024-11-21 05:57:01.708 UTC [54841] HINT:  Perhaps you meant to reference the table alias "hll_join".
+2024-11-21 05:57:01.708 UTC [54841] STATEMENT:  SELECT * FROM table1 HLL_JOIN JOIN table2 ON table1.id = table2.id;
+2024-11-21 05:59:06.228 UTC [54816] LOG:  received fast shutdown request
+2024-11-21 05:59:06.232 UTC [54816] LOG:  aborting any active transactions
+2024-11-21 05:59:06.234 UTC [54816] LOG:  background worker "logical replication launcher" (PID 54822) exited with exit code 1
+2024-11-21 05:59:06.234 UTC [54817] LOG:  shutting down
+2024-11-21 05:59:06.235 UTC [54817] LOG:  checkpoint starting: shutdown immediate
+2024-11-21 05:59:06.242 UTC [54817] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.009 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15931D0, redo lsn=0/15931D0
+2024-11-21 05:59:06.246 UTC [54816] LOG:  database system is shut down
+2024-11-21 05:59:16.830 UTC [56397] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-21 05:59:16.831 UTC [56397] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-21 05:59:16.831 UTC [56397] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-21 05:59:16.832 UTC [56397] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-21 05:59:16.835 UTC [56400] LOG:  database system was shut down at 2024-11-21 05:59:06 UTC
+2024-11-21 05:59:16.838 UTC [56397] LOG:  database system is ready to accept connections
+2024-11-21 05:59:21.744 UTC [56419] ERROR:  invalid reference to FROM-clause entry for table "table1" at character 46
+2024-11-21 05:59:21.744 UTC [56419] HINT:  Perhaps you meant to reference the table alias "hll_join".
+2024-11-21 05:59:21.744 UTC [56419] STATEMENT:  SELECT * FROM table1 HLL_JOIN JOIN table2 ON table1.id = table2.id;
+2024-11-21 05:59:32.723 UTC [56397] LOG:  received fast shutdown request
+2024-11-21 05:59:32.732 UTC [56397] LOG:  aborting any active transactions
+2024-11-21 05:59:32.734 UTC [56397] LOG:  background worker "logical replication launcher" (PID 56403) exited with exit code 1
+2024-11-21 05:59:32.734 UTC [56398] LOG:  shutting down
+2024-11-21 05:59:32.737 UTC [56398] LOG:  checkpoint starting: shutdown immediate
+2024-11-21 05:59:32.741 UTC [56398] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.007 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1593280, redo lsn=0/1593280
+2024-11-21 05:59:32.743 UTC [56397] LOG:  database system is shut down
+2024-11-21 06:00:44.197 UTC [62821] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-21 06:00:44.198 UTC [62821] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-21 06:00:44.198 UTC [62821] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-21 06:00:44.199 UTC [62821] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-21 06:00:44.202 UTC [62824] LOG:  database system was shut down at 2024-11-21 05:59:32 UTC
+2024-11-21 06:00:44.205 UTC [62821] LOG:  database system is ready to accept connections
+2024-11-21 06:00:49.696 UTC [62842] ERROR:  invalid reference to FROM-clause entry for table "table1" at character 46
+2024-11-21 06:00:49.696 UTC [62842] HINT:  Perhaps you meant to reference the table alias "hll_join".
+2024-11-21 06:00:49.696 UTC [62842] STATEMENT:  SELECT * FROM table1 HLL_JOIN JOIN table2 ON table1.id = table2.id;
+2024-11-21 06:01:39.973 UTC [62821] LOG:  received fast shutdown request
+2024-11-21 06:01:39.977 UTC [62821] LOG:  aborting any active transactions
+2024-11-21 06:01:39.980 UTC [62821] LOG:  background worker "logical replication launcher" (PID 62827) exited with exit code 1
+2024-11-21 06:01:39.981 UTC [62822] LOG:  shutting down
+2024-11-21 06:01:39.983 UTC [62822] LOG:  checkpoint starting: shutdown immediate
+2024-11-21 06:01:39.993 UTC [62822] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.001 s, total=0.013 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1593330, redo lsn=0/1593330
+2024-11-21 06:01:39.996 UTC [62821] LOG:  database system is shut down
+2024-11-21 06:02:56.814 UTC [69625] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-21 06:02:56.814 UTC [69625] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-21 06:02:56.814 UTC [69625] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-21 06:02:56.816 UTC [69625] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-21 06:02:56.819 UTC [69628] LOG:  database system was shut down at 2024-11-21 06:01:39 UTC
+2024-11-21 06:02:56.823 UTC [69625] LOG:  database system is ready to accept connections
+2024-11-21 06:03:01.574 UTC [69640] ERROR:  syntax error at or near "table2" at character 31
+2024-11-21 06:03:01.574 UTC [69640] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-21 06:07:56.928 UTC [69626] LOG:  checkpoint starting: time
+2024-11-21 06:07:56.949 UTC [69626] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.008 s, sync=0.002 s, total=0.022 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1593418, redo lsn=0/15933E0
+2024-11-21 06:33:26.008 UTC [69625] LOG:  received fast shutdown request
+2024-11-21 06:33:26.012 UTC [69625] LOG:  aborting any active transactions
+2024-11-21 06:33:26.014 UTC [69625] LOG:  background worker "logical replication launcher" (PID 69631) exited with exit code 1
+2024-11-21 06:33:26.014 UTC [69626] LOG:  shutting down
+2024-11-21 06:33:26.016 UTC [69626] LOG:  checkpoint starting: shutdown immediate
+2024-11-21 06:33:26.025 UTC [69626] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.001 s, total=0.010 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15934C8, redo lsn=0/15934C8
+2024-11-21 06:33:26.028 UTC [69625] LOG:  database system is shut down
+2024-11-21 06:34:45.212 UTC [91019] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-21 06:34:45.212 UTC [91019] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-21 06:34:45.213 UTC [91019] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-21 06:34:45.214 UTC [91019] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-21 06:34:45.218 UTC [91022] LOG:  database system was shut down at 2024-11-21 06:33:26 UTC
+2024-11-21 06:34:45.222 UTC [91019] LOG:  database system is ready to accept connections
+2024-11-21 06:35:09.609 UTC [91051] ERROR:  syntax error at or near "SELECT" at character 45
+2024-11-21 06:35:09.609 UTC [91051] STATEMENT:  SELECT * FROM table1 JOIN table2 USING (id)
+	SELECT * FROM table1 JOIN table2 ON table1.id = table2.id;
+2024-11-21 06:35:49.335 UTC [91051] ERROR:  syntax error at or near "SELECT" at character 59
+2024-11-21 06:35:49.335 UTC [91051] STATEMENT:  SELECT * FROM table1 JOIN table2 ON table1.id = table2.id
+	SELECT * FROM table1 JOIN table2 ON table1.id = table2.id
+	table1;
+2024-11-21 06:35:54.190 UTC [91051] ERROR:  syntax error at or near "SELECT" at character 59
+2024-11-21 06:35:54.190 UTC [91051] STATEMENT:  SELECT * FROM table1 JOIN table2 ON table1.id = table2.id
+	SELECT * FROM table1 JOIN table2 ON table1.id = table2.id
+	table1;
+2024-11-21 06:35:58.133 UTC [91051] ERROR:  syntax error at or near "table1" at character 1
+2024-11-21 06:35:58.133 UTC [91051] STATEMENT:  table1;
+2024-11-21 06:39:45.226 UTC [91020] LOG:  checkpoint starting: time
+2024-11-21 06:39:45.239 UTC [91020] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.001 s, total=0.014 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15935B0, redo lsn=0/1593578
+2024-11-23 00:05:30.444 UTC [91019] LOG:  received fast shutdown request
+2024-11-23 00:05:30.447 UTC [91019] LOG:  aborting any active transactions
+2024-11-23 00:05:30.452 UTC [91019] LOG:  background worker "logical replication launcher" (PID 91025) exited with exit code 1
+2024-11-23 00:05:30.453 UTC [91020] LOG:  shutting down
+2024-11-23 00:05:30.456 UTC [91020] LOG:  checkpoint starting: shutdown immediate
+2024-11-23 00:05:30.473 UTC [91020] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.010 s, sync=0.001 s, total=0.020 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/1593660, redo lsn=0/1593660
+2024-11-23 00:05:30.481 UTC [91019] LOG:  database system is shut down
+2024-11-23 22:21:49.737 UTC [48] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-23 22:21:49.738 UTC [48] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-23 22:21:49.738 UTC [48] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-23 22:21:49.740 UTC [48] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-23 22:21:49.743 UTC [51] LOG:  database system was shut down at 2024-11-23 00:05:30 UTC
+2024-11-23 22:21:49.747 UTC [48] LOG:  database system is ready to accept connections
+2024-11-23 22:26:49.844 UTC [49] LOG:  checkpoint starting: time
+2024-11-23 22:26:49.859 UTC [49] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.002 s, total=0.015 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1593748, redo lsn=0/1593710
+2024-11-23 23:14:14.678 UTC [48] LOG:  received fast shutdown request
+2024-11-23 23:14:14.681 UTC [48] LOG:  aborting any active transactions
+2024-11-23 23:14:14.683 UTC [48] LOG:  background worker "logical replication launcher" (PID 54) exited with exit code 1
+2024-11-23 23:14:14.683 UTC [49] LOG:  shutting down
+2024-11-23 23:14:14.686 UTC [49] LOG:  checkpoint starting: shutdown immediate
+2024-11-23 23:14:14.694 UTC [49] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.011 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15937F8, redo lsn=0/15937F8
+2024-11-23 23:14:14.697 UTC [48] LOG:  database system is shut down
+2024-11-23 23:16:19.195 UTC [38407] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-23 23:16:19.196 UTC [38407] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-23 23:16:19.196 UTC [38407] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-23 23:16:19.198 UTC [38407] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-23 23:16:19.201 UTC [38410] LOG:  database system was shut down at 2024-11-23 23:14:14 UTC
+2024-11-23 23:16:19.206 UTC [38407] LOG:  database system is ready to accept connections
+2024-11-23 23:21:19.308 UTC [38408] LOG:  checkpoint starting: time
+2024-11-23 23:21:19.326 UTC [38408] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.009 s, sync=0.002 s, total=0.019 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15938E0, redo lsn=0/15938A8
+2024-11-23 23:21:40.094 UTC [38643] WARNING:  === JOIN detected! ===
+2024-11-23 23:30:04.925 UTC [38643] ERROR:  syntax error at or near "table2" at character 31
+2024-11-23 23:30:04.925 UTC [38643] STATEMENT:  select * from table1 hll_join table2 on table1.id = table2.id;
+2024-11-23 23:30:40.614 UTC [38643] ERROR:  syntax error at or near "table2" at character 31
+2024-11-23 23:30:40.614 UTC [38643] STATEMENT:  select * from table1 hll_join table2 on table1.id = table2.id;
+2024-11-23 23:32:20.086 UTC [38643] ERROR:  syntax error at or near "table2" at character 31
+2024-11-23 23:32:20.086 UTC [38643] STATEMENT:  select * from table1 hll_join table2 on table1.id = table2.id;
+2024-11-23 23:34:02.395 UTC [38643] ERROR:  syntax error at or near "table2" at character 31
+2024-11-23 23:34:02.395 UTC [38643] STATEMENT:  select * from table1 hll_join table2 on table1.id = table2.id;
+2024-11-23 23:35:11.771 UTC [38643] ERROR:  syntax error at or near "table2" at character 31
+2024-11-23 23:35:11.771 UTC [38643] STATEMENT:  select * from table1 hll_join table2 on table1.id = table2.id;
+2024-11-23 23:57:21.238 UTC [38643] ERROR:  syntax error at or near "table2" at character 31
+2024-11-23 23:57:21.238 UTC [38643] STATEMENT:  select * from table1 hll_join table2 on table1.id = table2.id;
+2024-11-23 23:57:25.332 UTC [38407] LOG:  received fast shutdown request
+2024-11-23 23:57:25.335 UTC [38407] LOG:  aborting any active transactions
+2024-11-23 23:57:25.338 UTC [38407] LOG:  background worker "logical replication launcher" (PID 38413) exited with exit code 1
+2024-11-23 23:57:25.338 UTC [38408] LOG:  shutting down
+2024-11-23 23:57:25.340 UTC [38408] LOG:  checkpoint starting: shutdown immediate
+2024-11-23 23:57:25.348 UTC [38408] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.011 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/1593990, redo lsn=0/1593990
+2024-11-23 23:57:25.352 UTC [38407] LOG:  database system is shut down
+2024-11-23 23:59:02.352 UTC [66580] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-23 23:59:02.353 UTC [66580] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-23 23:59:02.353 UTC [66580] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-23 23:59:02.355 UTC [66580] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-23 23:59:02.358 UTC [66583] LOG:  database system was shut down at 2024-11-23 23:57:25 UTC
+2024-11-23 23:59:02.363 UTC [66580] LOG:  database system is ready to accept connections
+2024-11-23 23:59:11.386 UTC [66619] ERROR:  syntax error at or near "table2" at character 31
+2024-11-23 23:59:11.386 UTC [66619] STATEMENT:  select * from table1 hll_join table2 on table1.id = table2.id;
+2024-11-23 23:59:18.672 UTC [66619] WARNING:  === JOIN detected! ===
+2024-11-24 00:04:02.465 UTC [66581] LOG:  checkpoint starting: time
+2024-11-24 00:04:02.483 UTC [66581] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.008 s, sync=0.002 s, total=0.019 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1593A78, redo lsn=0/1593A40
+2024-11-24 00:05:07.286 UTC [66580] LOG:  received fast shutdown request
+2024-11-24 00:05:07.290 UTC [66580] LOG:  aborting any active transactions
+2024-11-24 00:05:07.293 UTC [66580] LOG:  background worker "logical replication launcher" (PID 66586) exited with exit code 1
+2024-11-24 00:05:07.294 UTC [66581] LOG:  shutting down
+2024-11-24 00:05:07.295 UTC [66581] LOG:  checkpoint starting: shutdown immediate
+2024-11-24 00:05:07.304 UTC [66581] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.011 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/1593B28, redo lsn=0/1593B28
+2024-11-24 00:05:07.309 UTC [66580] LOG:  database system is shut down
+2024-11-24 00:07:17.650 UTC [83916] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-24 00:07:17.650 UTC [83916] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-24 00:07:17.650 UTC [83916] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-24 00:07:17.652 UTC [83916] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-24 00:07:17.654 UTC [83919] LOG:  database system was shut down at 2024-11-24 00:05:07 UTC
+2024-11-24 00:07:17.657 UTC [83916] LOG:  database system is ready to accept connections
+2024-11-24 00:07:32.006 UTC [83958] ERROR:  syntax error at or near "table2" at character 31
+2024-11-24 00:07:32.006 UTC [83958] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-24 00:07:39.402 UTC [83958] WARNING:  === JOIN detected! ===
+2024-11-24 00:09:07.368 UTC [83958] WARNING:  === JOIN detected! ===
+2024-11-24 00:11:15.392 UTC [83958] ERROR:  syntax error at or near "table2" at character 31
+2024-11-24 00:11:15.392 UTC [83958] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-24 00:12:17.673 UTC [83917] LOG:  checkpoint starting: time
+2024-11-24 00:12:17.694 UTC [83917] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.008 s, sync=0.001 s, total=0.022 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1593C10, redo lsn=0/1593BD8
+2024-11-24 00:55:26.143 UTC [83958] ERROR:  syntax error at or near "table2" at character 33
+2024-11-24 00:55:26.143 UTC [83958] STATEMENT:  SELECT * FROM table1 INNER_JOIN table2 ON table1.id = table2.id;
+2024-11-24 01:06:48.050 UTC [83916] LOG:  received fast shutdown request
+2024-11-24 01:06:48.054 UTC [83916] LOG:  aborting any active transactions
+2024-11-24 01:06:48.057 UTC [83916] LOG:  background worker "logical replication launcher" (PID 83922) exited with exit code 1
+2024-11-24 01:06:48.057 UTC [83917] LOG:  shutting down
+2024-11-24 01:06:48.058 UTC [83917] LOG:  checkpoint starting: shutdown immediate
+2024-11-24 01:06:48.067 UTC [83917] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.010 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/1593CC0, redo lsn=0/1593CC0
+2024-11-24 01:06:48.071 UTC [83916] LOG:  database system is shut down
+2024-11-24 01:22:43.255 UTC [30368] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-24 01:22:43.257 UTC [30368] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-24 01:22:43.257 UTC [30368] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-24 01:22:43.260 UTC [30368] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-24 01:22:43.264 UTC [30371] LOG:  database system was shut down at 2024-11-24 01:06:48 UTC
+2024-11-24 01:22:43.267 UTC [30368] LOG:  database system is ready to accept connections
+2024-11-24 01:22:55.143 UTC [30421] ERROR:  syntax error at or near "table2" at character 31
+2024-11-24 01:22:55.143 UTC [30421] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-24 01:24:17.524 UTC [30421] ERROR:  syntax error at or near "table2" at character 31
+2024-11-24 01:24:17.524 UTC [30421] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-24 01:24:33.150 UTC [30421] WARNING:  === JOIN detected! ===
+2024-11-24 01:27:35.458 UTC [30368] LOG:  received fast shutdown request
+2024-11-24 01:27:35.461 UTC [30368] LOG:  aborting any active transactions
+2024-11-24 01:27:35.464 UTC [30368] LOG:  background worker "logical replication launcher" (PID 30374) exited with exit code 1
+2024-11-24 01:27:35.465 UTC [30369] LOG:  shutting down
+2024-11-24 01:27:35.467 UTC [30369] LOG:  checkpoint starting: shutdown immediate
+2024-11-24 01:27:35.484 UTC [30369] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.009 s, sync=0.002 s, total=0.020 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1593D70, redo lsn=0/1593D70
+2024-11-24 01:27:35.496 UTC [30368] LOG:  database system is shut down
+2024-11-24 01:28:49.580 UTC [39298] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-24 01:28:49.581 UTC [39298] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-24 01:28:49.581 UTC [39298] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-24 01:28:49.583 UTC [39298] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-24 01:28:49.586 UTC [39301] LOG:  database system was shut down at 2024-11-24 01:27:35 UTC
+2024-11-24 01:28:49.589 UTC [39298] LOG:  database system is ready to accept connections
+2024-11-24 01:30:38.191 UTC [39298] LOG:  received fast shutdown request
+2024-11-24 01:30:38.193 UTC [39298] LOG:  aborting any active transactions
+2024-11-24 01:30:38.195 UTC [39298] LOG:  background worker "logical replication launcher" (PID 39304) exited with exit code 1
+2024-11-24 01:30:38.196 UTC [39299] LOG:  shutting down
+2024-11-24 01:30:38.198 UTC [39299] LOG:  checkpoint starting: shutdown immediate
+2024-11-24 01:30:38.211 UTC [39299] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.006 s, sync=0.002 s, total=0.016 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1593E20, redo lsn=0/1593E20
+2024-11-24 01:30:38.215 UTC [39298] LOG:  database system is shut down
+2024-11-24 01:31:54.240 UTC [46633] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-24 01:31:54.241 UTC [46633] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-24 01:31:54.241 UTC [46633] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-24 01:31:54.243 UTC [46633] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-24 01:31:54.246 UTC [46636] LOG:  database system was shut down at 2024-11-24 01:30:38 UTC
+2024-11-24 01:31:54.249 UTC [46633] LOG:  database system is ready to accept connections
+2024-11-24 01:32:13.345 UTC [46650] WARNING:  === JOIN detected! ===
+2024-11-24 01:32:23.664 UTC [46633] LOG:  received fast shutdown request
+2024-11-24 01:32:23.667 UTC [46633] LOG:  aborting any active transactions
+2024-11-24 01:32:23.669 UTC [46633] LOG:  background worker "logical replication launcher" (PID 46639) exited with exit code 1
+2024-11-24 01:32:23.670 UTC [46634] LOG:  shutting down
+2024-11-24 01:32:23.672 UTC [46634] LOG:  checkpoint starting: shutdown immediate
+2024-11-24 01:32:23.682 UTC [46634] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.001 s, total=0.013 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1593ED0, redo lsn=0/1593ED0
+2024-11-24 01:32:23.686 UTC [46633] LOG:  database system is shut down
+2024-11-24 01:33:58.185 UTC [53405] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-24 01:33:58.186 UTC [53405] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-24 01:33:58.186 UTC [53405] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-24 01:33:58.188 UTC [53405] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-24 01:33:58.191 UTC [53408] LOG:  database system was shut down at 2024-11-24 01:32:23 UTC
+2024-11-24 01:33:58.195 UTC [53405] LOG:  database system is ready to accept connections
+2024-11-24 01:34:03.913 UTC [53423] WARNING:  === JOIN detected! ===
+2024-11-24 01:34:13.656 UTC [53405] LOG:  received fast shutdown request
+2024-11-24 01:34:13.659 UTC [53405] LOG:  aborting any active transactions
+2024-11-24 01:34:13.660 UTC [53405] LOG:  background worker "logical replication launcher" (PID 53411) exited with exit code 1
+2024-11-24 01:34:13.661 UTC [53406] LOG:  shutting down
+2024-11-24 01:34:13.663 UTC [53406] LOG:  checkpoint starting: shutdown immediate
+2024-11-24 01:34:13.671 UTC [53406] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.010 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1593F80, redo lsn=0/1593F80
+2024-11-24 01:34:13.673 UTC [53405] LOG:  database system is shut down
+2024-11-24 01:34:23.115 UTC [54237] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-24 01:34:23.115 UTC [54237] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-24 01:34:23.115 UTC [54237] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-24 01:34:23.117 UTC [54237] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-24 01:34:23.120 UTC [54240] LOG:  database system was shut down at 2024-11-24 01:34:13 UTC
+2024-11-24 01:34:23.123 UTC [54237] LOG:  database system is ready to accept connections
+2024-11-24 01:34:26.941 UTC [54259] WARNING:  === JOIN detected, WoooHoooo! ===
+2024-11-24 01:34:34.331 UTC [54259] WARNING:  === table_ref join_type JOIN table_ref join_qual detected! ===
+2024-11-24 01:34:40.024 UTC [54259] WARNING:  === table_ref join_type JOIN table_ref join_qual detected! ===
+2024-11-24 01:39:23.243 UTC [54238] LOG:  checkpoint starting: time
+2024-11-24 01:39:23.266 UTC [54238] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.008 s, sync=0.002 s, total=0.023 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1594080, redo lsn=0/1594048
+2024-11-24 02:58:59.881 UTC [54237] LOG:  received fast shutdown request
+2024-11-24 02:58:59.884 UTC [54237] LOG:  aborting any active transactions
+2024-11-24 02:58:59.887 UTC [54237] LOG:  background worker "logical replication launcher" (PID 54243) exited with exit code 1
+2024-11-24 02:58:59.888 UTC [54238] LOG:  shutting down
+2024-11-24 02:58:59.889 UTC [54238] LOG:  checkpoint starting: shutdown immediate
+2024-11-24 02:58:59.898 UTC [54238] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.010 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/1594130, redo lsn=0/1594130
+2024-11-24 02:58:59.902 UTC [54237] LOG:  database system is shut down
+2024-11-24 02:59:22.679 UTC [89202] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-24 02:59:22.680 UTC [89202] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-24 02:59:22.680 UTC [89202] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-24 02:59:22.682 UTC [89202] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-24 02:59:22.684 UTC [89205] LOG:  database system was shut down at 2024-11-24 02:58:59 UTC
+2024-11-24 02:59:22.688 UTC [89202] LOG:  database system is ready to accept connections
+2024-11-24 02:59:29.214 UTC [89224] WARNING:  === INNER JOIN detected! ===
+2024-11-24 02:59:34.253 UTC [89224] WARNING:  === INNER JOIN detected! ===
+2024-11-24 03:04:22.768 UTC [89203] LOG:  checkpoint starting: time
+2024-11-24 03:04:22.790 UTC [89203] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.010 s, sync=0.002 s, total=0.022 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1594218, redo lsn=0/15941E0
+2024-11-24 03:37:11.703 UTC [89224] WARNING:  === INNER JOIN detected! ===
+2024-11-24 04:02:45.169 UTC [89202] LOG:  received fast shutdown request
+2024-11-24 04:02:45.173 UTC [89202] LOG:  aborting any active transactions
+2024-11-24 04:02:45.175 UTC [89202] LOG:  background worker "logical replication launcher" (PID 89208) exited with exit code 1
+2024-11-24 04:02:45.177 UTC [89203] LOG:  shutting down
+2024-11-24 04:02:45.179 UTC [89203] LOG:  checkpoint starting: shutdown immediate
+2024-11-24 04:02:45.188 UTC [89203] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.012 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15942C8, redo lsn=0/15942C8
+2024-11-24 04:02:45.193 UTC [89202] LOG:  database system is shut down
+2024-11-24 04:05:34.180 UTC [32196] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-24 04:05:34.181 UTC [32196] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-24 04:05:34.181 UTC [32196] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-24 04:05:34.183 UTC [32196] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-24 04:05:34.185 UTC [32199] LOG:  database system was shut down at 2024-11-24 04:02:45 UTC
+2024-11-24 04:05:34.189 UTC [32196] LOG:  database system is ready to accept connections
+2024-11-24 04:05:39.637 UTC [32229] WARNING:  === INNER JOIN detected! ===
+2024-11-24 04:05:39.640 UTC [32229] ERROR:  unrecognized join type: 9
+2024-11-24 04:05:39.640 UTC [32229] STATEMENT:  SELECT * FROM table1 HLL_JOIN JOIN table2 ON table1.id = table2.id;
+2024-11-24 04:09:30.106 UTC [32196] LOG:  received fast shutdown request
+2024-11-24 04:09:30.111 UTC [32196] LOG:  aborting any active transactions
+2024-11-24 04:09:30.113 UTC [32196] LOG:  background worker "logical replication launcher" (PID 32202) exited with exit code 1
+2024-11-24 04:09:30.114 UTC [32197] LOG:  shutting down
+2024-11-24 04:09:30.116 UTC [32197] LOG:  checkpoint starting: shutdown immediate
+2024-11-24 04:09:30.128 UTC [32197] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.006 s, sync=0.002 s, total=0.014 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1594378, redo lsn=0/1594378
+2024-11-24 04:09:30.132 UTC [32196] LOG:  database system is shut down
+2024-11-24 04:10:47.745 UTC [41314] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-24 04:10:47.746 UTC [41314] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-24 04:10:47.746 UTC [41314] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-24 04:10:47.748 UTC [41314] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-24 04:10:47.751 UTC [41317] LOG:  database system was shut down at 2024-11-24 04:09:30 UTC
+2024-11-24 04:10:47.754 UTC [41314] LOG:  database system is ready to accept connections
+2024-11-24 04:10:52.141 UTC [41339] WARNING:  === INNER JOIN detected! ===
+2024-11-24 04:10:52.144 UTC [41339] ERROR:  unrecognized join type: 9
+2024-11-24 04:10:52.144 UTC [41339] STATEMENT:  SELECT * FROM table1 HLL_JOIN JOIN table2 ON table1.id = table2.id;
+2024-11-24 04:15:47.832 UTC [41315] LOG:  checkpoint starting: time
+2024-11-24 04:15:47.853 UTC [41315] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.008 s, sync=0.002 s, total=0.022 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1594460, redo lsn=0/1594428
+2024-11-25 02:32:16.371 UTC [41314] LOG:  received fast shutdown request
+2024-11-25 02:32:16.373 UTC [41314] LOG:  aborting any active transactions
+2024-11-25 02:32:16.375 UTC [41314] LOG:  background worker "logical replication launcher" (PID 41320) exited with exit code 1
+2024-11-25 02:32:16.375 UTC [41315] LOG:  shutting down
+2024-11-25 02:32:16.377 UTC [41315] LOG:  checkpoint starting: shutdown immediate
+2024-11-25 02:32:16.382 UTC [41315] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.007 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/1594510, redo lsn=0/1594510
+2024-11-25 02:32:16.385 UTC [41314] LOG:  database system is shut down
+2024-11-25 02:33:35.578 UTC [40540] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-25 02:33:35.578 UTC [40540] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-25 02:33:35.578 UTC [40540] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-25 02:33:35.580 UTC [40540] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-25 02:33:35.582 UTC [40543] LOG:  database system was shut down at 2024-11-25 02:32:16 UTC
+2024-11-25 02:33:35.584 UTC [40540] LOG:  database system is ready to accept connections
+2024-11-25 02:33:45.286 UTC [40558] WARNING:  === HLL JOIN detected! ===
+2024-11-25 02:33:45.288 UTC [40558] ERROR:  unrecognized join type: 9
+2024-11-25 02:33:45.288 UTC [40558] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 02:37:15.146 UTC [40540] LOG:  received fast shutdown request
+2024-11-25 02:37:15.150 UTC [40540] LOG:  aborting any active transactions
+2024-11-25 02:37:15.153 UTC [40540] LOG:  background worker "logical replication launcher" (PID 40546) exited with exit code 1
+2024-11-25 02:37:15.154 UTC [40541] LOG:  shutting down
+2024-11-25 02:37:15.156 UTC [40541] LOG:  checkpoint starting: shutdown immediate
+2024-11-25 02:37:15.170 UTC [40541] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.008 s, sync=0.002 s, total=0.016 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15945C0, redo lsn=0/15945C0
+2024-11-25 02:37:15.174 UTC [40540] LOG:  database system is shut down
+2024-11-25 02:38:37.614 UTC [49467] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-25 02:38:37.615 UTC [49467] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-25 02:38:37.615 UTC [49467] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-25 02:38:37.617 UTC [49467] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-25 02:38:37.619 UTC [49470] LOG:  database system was shut down at 2024-11-25 02:37:15 UTC
+2024-11-25 02:38:37.623 UTC [49467] LOG:  database system is ready to accept connections
+2024-11-25 02:38:41.886 UTC [49492] WARNING:  === HLL JOIN detected! ===
+2024-11-25 02:38:41.887 UTC [49492] ERROR:  unrecognized join type: 9
+2024-11-25 02:38:41.887 UTC [49492] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 02:40:34.415 UTC [49467] LOG:  received fast shutdown request
+2024-11-25 02:40:34.418 UTC [49467] LOG:  aborting any active transactions
+2024-11-25 02:40:34.420 UTC [49467] LOG:  background worker "logical replication launcher" (PID 49473) exited with exit code 1
+2024-11-25 02:40:34.421 UTC [49468] LOG:  shutting down
+2024-11-25 02:40:34.423 UTC [49468] LOG:  checkpoint starting: shutdown immediate
+2024-11-25 02:40:34.436 UTC [49468] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.008 s, sync=0.001 s, total=0.016 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1594670, redo lsn=0/1594670
+2024-11-25 02:40:34.440 UTC [49467] LOG:  database system is shut down
+2024-11-25 02:41:56.847 UTC [57546] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-25 02:41:56.848 UTC [57546] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-25 02:41:56.848 UTC [57546] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-25 02:41:56.850 UTC [57546] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-25 02:41:56.853 UTC [57549] LOG:  database system was shut down at 2024-11-25 02:40:34 UTC
+2024-11-25 02:41:56.857 UTC [57546] LOG:  database system is ready to accept connections
+2024-11-25 02:42:01.658 UTC [57571] WARNING:  === HLL JOIN detected! ===
+2024-11-25 02:42:01.662 UTC [57571] ERROR:  unrecognized join type: 9
+2024-11-25 02:42:01.662 UTC [57571] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 02:44:02.596 UTC [57571] WARNING:  === HLL JOIN detected! ===
+2024-11-25 02:44:02.598 UTC [57571] ERROR:  unrecognized join type: 9
+2024-11-25 02:44:02.598 UTC [57571] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 02:44:44.536 UTC [57571] WARNING:  === HLL JOIN detected! ===
+2024-11-25 02:44:50.556 UTC [57571] ERROR:  unrecognized join type: 9
+2024-11-25 02:44:50.556 UTC [57571] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 02:45:37.774 UTC [57571] WARNING:  === HLL JOIN detected! ===
+2024-11-25 02:45:37.775 UTC [57571] ERROR:  unrecognized join type: 9
+2024-11-25 02:45:37.775 UTC [57571] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 02:46:11.991 UTC [57571] WARNING:  === HLL JOIN detected! ===
+2024-11-25 02:46:56.857 UTC [57547] LOG:  checkpoint starting: time
+2024-11-25 02:46:56.874 UTC [57547] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.008 s, sync=0.002 s, total=0.018 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1594758, redo lsn=0/1594720
+2024-11-25 02:47:45.494 UTC [57571] ERROR:  unrecognized join type: 9
+2024-11-25 02:47:45.494 UTC [57571] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 02:48:09.815 UTC [57571] WARNING:  === HLL JOIN detected! ===
+2024-11-25 02:48:43.972 UTC [57571] ERROR:  unrecognized join type: 9
+2024-11-25 02:48:43.972 UTC [57571] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 02:49:02.670 UTC [57571] WARNING:  === HLL JOIN detected! ===
+2024-11-25 02:49:28.500 UTC [57571] ERROR:  unrecognized join type: 9
+2024-11-25 02:49:28.500 UTC [57571] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 02:49:41.886 UTC [57571] WARNING:  === HLL JOIN detected! ===
+2024-11-25 02:50:17.413 UTC [57571] ERROR:  unrecognized join type: 9
+2024-11-25 02:50:17.413 UTC [57571] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 02:50:25.311 UTC [57571] WARNING:  === HLL JOIN detected! ===
+2024-11-25 02:51:16.994 UTC [57571] ERROR:  unrecognized join type: 9
+2024-11-25 02:51:16.994 UTC [57571] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 02:51:31.624 UTC [57571] WARNING:  === HLL JOIN detected! ===
+2024-11-25 02:58:11.545 UTC [57571] ERROR:  unrecognized join type: 9
+2024-11-25 02:58:11.545 UTC [57571] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 02:58:16.540 UTC [57546] LOG:  received fast shutdown request
+2024-11-25 02:58:16.543 UTC [57546] LOG:  aborting any active transactions
+2024-11-25 02:58:16.546 UTC [57546] LOG:  background worker "logical replication launcher" (PID 57552) exited with exit code 1
+2024-11-25 02:58:16.546 UTC [57547] LOG:  shutting down
+2024-11-25 02:58:16.549 UTC [57547] LOG:  checkpoint starting: shutdown immediate
+2024-11-25 02:58:16.558 UTC [57547] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.012 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/1594808, redo lsn=0/1594808
+2024-11-25 02:58:16.563 UTC [57546] LOG:  database system is shut down
+2024-11-25 02:59:34.194 UTC [72999] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-25 02:59:34.194 UTC [72999] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-25 02:59:34.194 UTC [72999] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-25 02:59:34.196 UTC [72999] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-25 02:59:34.198 UTC [73002] LOG:  database system was shut down at 2024-11-25 02:58:16 UTC
+2024-11-25 02:59:34.201 UTC [72999] LOG:  database system is ready to accept connections
+2024-11-25 02:59:38.462 UTC [73024] WARNING:  === HLL JOIN detected! ===
+2024-11-25 02:59:38.467 UTC [73024] ERROR:  unrecognized join type: 9
+2024-11-25 02:59:38.467 UTC [73024] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:00:33.025 UTC [73024] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:02:55.566 UTC [73024] ERROR:  unrecognized join type: 9
+2024-11-25 03:02:55.566 UTC [73024] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:03:05.488 UTC [73024] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:03:30.248 UTC [73024] ERROR:  unrecognized join type: 9
+2024-11-25 03:03:30.248 UTC [73024] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:03:39.731 UTC [73024] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:04:25.769 UTC [73024] ERROR:  unrecognized join type: 9
+2024-11-25 03:04:25.769 UTC [73024] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:04:34.220 UTC [73000] LOG:  checkpoint starting: time
+2024-11-25 03:04:34.242 UTC [73000] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.010 s, sync=0.002 s, total=0.022 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15948F0, redo lsn=0/15948B8
+2024-11-25 03:04:34.589 UTC [73024] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:05:27.532 UTC [73024] ERROR:  unrecognized join type: 9
+2024-11-25 03:05:27.532 UTC [73024] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:05:35.090 UTC [73024] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:09:42.078 UTC [73024] ERROR:  unrecognized join type: 9
+2024-11-25 03:09:42.078 UTC [73024] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:09:45.614 UTC [72999] LOG:  received fast shutdown request
+2024-11-25 03:09:45.616 UTC [72999] LOG:  aborting any active transactions
+2024-11-25 03:09:45.623 UTC [72999] LOG:  background worker "logical replication launcher" (PID 73005) exited with exit code 1
+2024-11-25 03:09:45.623 UTC [73000] LOG:  shutting down
+2024-11-25 03:09:45.625 UTC [73000] LOG:  checkpoint starting: shutdown immediate
+2024-11-25 03:09:45.631 UTC [73000] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.008 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15949A0, redo lsn=0/15949A0
+2024-11-25 03:09:45.634 UTC [72999] LOG:  database system is shut down
+2024-11-25 03:14:48.670 UTC [86532] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-25 03:14:48.671 UTC [86532] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-25 03:14:48.671 UTC [86532] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-25 03:14:48.673 UTC [86532] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-25 03:14:48.677 UTC [86535] LOG:  database system was shut down at 2024-11-25 03:09:45 UTC
+2024-11-25 03:14:48.682 UTC [86532] LOG:  database system is ready to accept connections
+2024-11-25 03:14:55.710 UTC [86557] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:14:55.714 UTC [86557] ERROR:  unrecognized join type: 9
+2024-11-25 03:14:55.714 UTC [86557] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:15:21.902 UTC [86532] LOG:  received fast shutdown request
+2024-11-25 03:15:21.906 UTC [86532] LOG:  aborting any active transactions
+2024-11-25 03:15:21.909 UTC [86532] LOG:  background worker "logical replication launcher" (PID 86538) exited with exit code 1
+2024-11-25 03:15:21.910 UTC [86533] LOG:  shutting down
+2024-11-25 03:15:21.911 UTC [86533] LOG:  checkpoint starting: shutdown immediate
+2024-11-25 03:15:21.929 UTC [86533] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.008 s, sync=0.002 s, total=0.019 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1594A50, redo lsn=0/1594A50
+2024-11-25 03:15:21.945 UTC [86532] LOG:  database system is shut down
+2024-11-25 03:16:41.393 UTC [93740] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-25 03:16:41.394 UTC [93740] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-25 03:16:41.394 UTC [93740] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-25 03:16:41.396 UTC [93740] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-25 03:16:41.398 UTC [93743] LOG:  database system was shut down at 2024-11-25 03:15:21 UTC
+2024-11-25 03:16:41.402 UTC [93740] LOG:  database system is ready to accept connections
+2024-11-25 03:16:43.237 UTC [93740] LOG:  received fast shutdown request
+2024-11-25 03:16:43.239 UTC [93740] LOG:  aborting any active transactions
+2024-11-25 03:16:43.240 UTC [93740] LOG:  background worker "logical replication launcher" (PID 93746) exited with exit code 1
+2024-11-25 03:16:43.240 UTC [93741] LOG:  shutting down
+2024-11-25 03:16:43.241 UTC [93741] LOG:  checkpoint starting: shutdown immediate
+2024-11-25 03:16:43.252 UTC [93741] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.012 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1594AC8, redo lsn=0/1594AC8
+2024-11-25 03:16:43.255 UTC [93740] LOG:  database system is shut down
+2024-11-25 03:16:44.527 UTC [93775] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-25 03:16:44.527 UTC [93775] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-25 03:16:44.527 UTC [93775] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-25 03:16:44.530 UTC [93775] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-25 03:16:44.532 UTC [93778] LOG:  database system was shut down at 2024-11-25 03:16:43 UTC
+2024-11-25 03:16:44.535 UTC [93775] LOG:  database system is ready to accept connections
+2024-11-25 03:16:53.092 UTC [93804] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:16:53.095 UTC [93804] ERROR:  unrecognized join type: 9
+2024-11-25 03:16:53.095 UTC [93804] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:17:31.774 UTC [93804] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:18:41.408 UTC [93804] ERROR:  unrecognized join type: 9
+2024-11-25 03:18:41.408 UTC [93804] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:18:49.082 UTC [93804] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:19:11.313 UTC [93804] ERROR:  unrecognized join type: 9
+2024-11-25 03:19:11.313 UTC [93804] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:19:18.695 UTC [93804] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:20:00.409 UTC [93804] ERROR:  unrecognized join type: 9
+2024-11-25 03:20:00.409 UTC [93804] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:20:06.465 UTC [93804] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:20:08.488 UTC [93804] ERROR:  unrecognized join type: 9
+2024-11-25 03:20:08.488 UTC [93804] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:20:22.576 UTC [93804] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:20:37.875 UTC [93804] ERROR:  unrecognized join type: 9
+2024-11-25 03:20:37.875 UTC [93804] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:20:48.160 UTC [93804] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:21:44.579 UTC [93776] LOG:  checkpoint starting: time
+2024-11-25 03:21:44.599 UTC [93776] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.008 s, sync=0.002 s, total=0.020 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1594BB0, redo lsn=0/1594B78
+2024-11-25 03:24:13.705 UTC [93804] ERROR:  unrecognized join type: 9
+2024-11-25 03:24:13.705 UTC [93804] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:24:18.196 UTC [93775] LOG:  received fast shutdown request
+2024-11-25 03:24:18.199 UTC [93775] LOG:  aborting any active transactions
+2024-11-25 03:24:18.202 UTC [93775] LOG:  background worker "logical replication launcher" (PID 93781) exited with exit code 1
+2024-11-25 03:24:18.202 UTC [93776] LOG:  shutting down
+2024-11-25 03:24:18.204 UTC [93776] LOG:  checkpoint starting: shutdown immediate
+2024-11-25 03:24:18.212 UTC [93776] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.010 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/1594C60, redo lsn=0/1594C60
+2024-11-25 03:24:18.217 UTC [93775] LOG:  database system is shut down
+2024-11-25 03:26:45.517 UTC [5602] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-25 03:26:45.518 UTC [5602] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-25 03:26:45.518 UTC [5602] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-25 03:26:45.520 UTC [5602] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-25 03:26:45.523 UTC [5605] LOG:  database system was shut down at 2024-11-25 03:24:18 UTC
+2024-11-25 03:26:45.526 UTC [5602] LOG:  database system is ready to accept connections
+2024-11-25 03:26:50.094 UTC [5634] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:26:50.102 UTC [5634] ERROR:  unrecognized join type: 9
+2024-11-25 03:26:50.102 UTC [5634] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:27:18.411 UTC [5634] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:28:09.057 UTC [5634] ERROR:  unrecognized join type: 9
+2024-11-25 03:28:09.057 UTC [5634] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:28:19.635 UTC [5634] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:28:37.273 UTC [5634] ERROR:  unrecognized join type: 9
+2024-11-25 03:28:37.273 UTC [5634] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:28:44.667 UTC [5634] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:29:07.031 UTC [5634] ERROR:  unrecognized join type: 9
+2024-11-25 03:29:07.031 UTC [5634] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:29:15.783 UTC [5634] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:29:30.937 UTC [5634] ERROR:  unrecognized join type: 9
+2024-11-25 03:29:30.937 UTC [5634] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:29:37.922 UTC [5634] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:29:51.761 UTC [5634] ERROR:  unrecognized join type: 9
+2024-11-25 03:29:51.761 UTC [5634] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:29:57.385 UTC [5634] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:30:10.548 UTC [5634] ERROR:  unrecognized join type: 9
+2024-11-25 03:30:10.548 UTC [5634] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:30:20.046 UTC [5634] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:30:41.013 UTC [5634] ERROR:  unrecognized join type: 9
+2024-11-25 03:30:41.013 UTC [5634] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:30:50.083 UTC [5634] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:31:34.522 UTC [5634] ERROR:  unrecognized join type: 9
+2024-11-25 03:31:34.522 UTC [5634] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:31:42.531 UTC [5634] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:31:45.628 UTC [5603] LOG:  checkpoint starting: time
+2024-11-25 03:31:45.649 UTC [5603] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.011 s, sync=0.002 s, total=0.021 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1594D48, redo lsn=0/1594D10
+2024-11-25 03:31:58.893 UTC [5634] ERROR:  unrecognized join type: 9
+2024-11-25 03:31:58.893 UTC [5634] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:32:08.630 UTC [5634] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:32:28.523 UTC [5634] ERROR:  unrecognized join type: 9
+2024-11-25 03:32:28.523 UTC [5634] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:32:38.623 UTC [5634] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:35:05.296 UTC [5634] ERROR:  unrecognized join type: 9
+2024-11-25 03:35:05.296 UTC [5634] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:35:35.905 UTC [5634] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:39:01.536 UTC [5634] ERROR:  unrecognized join type: 9
+2024-11-25 03:39:01.536 UTC [5634] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:39:10.176 UTC [5634] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:41:05.246 UTC [5634] ERROR:  unrecognized join type: 9
+2024-11-25 03:41:05.246 UTC [5634] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:41:12.583 UTC [5634] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:41:41.966 UTC [5634] ERROR:  unrecognized join type: 9
+2024-11-25 03:41:41.966 UTC [5634] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:41:49.722 UTC [5634] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:43:13.903 UTC [5634] ERROR:  unrecognized join type: 9
+2024-11-25 03:43:13.903 UTC [5634] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:43:36.382 UTC [5634] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:44:58.443 UTC [5634] ERROR:  unrecognized join type: 9
+2024-11-25 03:44:58.443 UTC [5634] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:46:14.444 UTC [5634] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:47:27.297 UTC [5634] ERROR:  unrecognized join type: 9
+2024-11-25 03:47:27.297 UTC [5634] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:47:47.226 UTC [5634] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:47:53.115 UTC [5634] ERROR:  unrecognized join type: 9
+2024-11-25 03:47:53.115 UTC [5634] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:48:02.588 UTC [5634] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:48:24.479 UTC [5634] ERROR:  unrecognized join type: 9
+2024-11-25 03:48:24.479 UTC [5634] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:48:35.822 UTC [5634] WARNING:  === HLL JOIN detected! ===
+2024-11-25 03:50:38.109 UTC [5634] ERROR:  unrecognized join type: 9
+2024-11-25 03:50:38.109 UTC [5634] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 03:52:27.358 UTC [5602] LOG:  received fast shutdown request
+2024-11-25 03:52:27.362 UTC [5602] LOG:  aborting any active transactions
+2024-11-25 03:52:27.365 UTC [5602] LOG:  background worker "logical replication launcher" (PID 5608) exited with exit code 1
+2024-11-25 03:52:27.365 UTC [5603] LOG:  shutting down
+2024-11-25 03:52:27.367 UTC [5603] LOG:  checkpoint starting: shutdown immediate
+2024-11-25 03:52:27.377 UTC [5603] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.001 s, total=0.012 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/1594DF8, redo lsn=0/1594DF8
+2024-11-25 03:52:27.381 UTC [5602] LOG:  database system is shut down
+2024-11-25 04:01:07.188 UTC [29614] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-25 04:01:07.191 UTC [29614] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-25 04:01:07.192 UTC [29614] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-25 04:01:07.197 UTC [29614] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-25 04:01:07.200 UTC [29617] LOG:  database system was shut down at 2024-11-25 03:52:27 UTC
+2024-11-25 04:01:07.205 UTC [29614] LOG:  database system is ready to accept connections
+2024-11-25 04:01:11.128 UTC [29639] WARNING:  === HLL JOIN detected! ===
+2024-11-25 04:01:11.141 UTC [29639] ERROR:  unrecognized join type: 9
+2024-11-25 04:01:11.141 UTC [29639] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 04:01:40.230 UTC [29639] WARNING:  === HLL JOIN detected! ===
+2024-11-25 04:02:07.027 UTC [29639] ERROR:  unrecognized join type: 9
+2024-11-25 04:02:07.027 UTC [29639] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 04:02:25.071 UTC [29639] WARNING:  === HLL JOIN detected! ===
+2024-11-25 04:02:46.083 UTC [29639] ERROR:  unrecognized join type: 9
+2024-11-25 04:02:46.083 UTC [29639] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 04:02:55.972 UTC [29639] WARNING:  === HLL JOIN detected! ===
+2024-11-25 04:03:55.254 UTC [29639] ERROR:  unrecognized join type: 9
+2024-11-25 04:03:55.254 UTC [29639] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 04:04:10.979 UTC [29639] WARNING:  === HLL JOIN detected! ===
+2024-11-25 04:04:13.771 UTC [29639] ERROR:  unrecognized join type: 9
+2024-11-25 04:04:13.771 UTC [29639] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 04:04:19.789 UTC [29639] WARNING:  === HLL JOIN detected! ===
+2024-11-25 04:05:40.531 UTC [29639] ERROR:  unrecognized join type: 9
+2024-11-25 04:05:40.531 UTC [29639] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 04:06:07.209 UTC [29615] LOG:  checkpoint starting: time
+2024-11-25 04:06:07.228 UTC [29615] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.009 s, sync=0.002 s, total=0.019 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1594EE0, redo lsn=0/1594EA8
+2024-11-25 04:10:59.814 UTC [29614] LOG:  received fast shutdown request
+2024-11-25 04:10:59.819 UTC [29614] LOG:  aborting any active transactions
+2024-11-25 04:10:59.822 UTC [29614] LOG:  background worker "logical replication launcher" (PID 29620) exited with exit code 1
+2024-11-25 04:10:59.823 UTC [29615] LOG:  shutting down
+2024-11-25 04:10:59.824 UTC [29615] LOG:  checkpoint starting: shutdown immediate
+2024-11-25 04:10:59.833 UTC [29615] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.011 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/1594F90, redo lsn=0/1594F90
+2024-11-25 04:10:59.838 UTC [29614] LOG:  database system is shut down
+2024-11-25 04:12:23.506 UTC [41808] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-25 04:12:23.507 UTC [41808] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-25 04:12:23.507 UTC [41808] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-25 04:12:23.509 UTC [41808] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-25 04:12:23.511 UTC [41811] LOG:  database system was shut down at 2024-11-25 04:10:59 UTC
+2024-11-25 04:12:23.515 UTC [41808] LOG:  database system is ready to accept connections
+2024-11-25 04:12:26.710 UTC [41833] WARNING:  === HLL JOIN detected! ===
+2024-11-25 04:12:26.721 UTC [41833] ERROR:  unrecognized join type: 9
+2024-11-25 04:12:26.721 UTC [41833] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 04:13:18.819 UTC [41833] WARNING:  === HLL JOIN detected! ===
+2024-11-25 04:17:23.614 UTC [41809] LOG:  checkpoint starting: time
+2024-11-25 04:17:23.630 UTC [41809] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.002 s, total=0.016 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1595078, redo lsn=0/1595040
+2024-11-25 04:29:01.626 UTC [41833] ERROR:  unrecognized join type: 9
+2024-11-25 04:29:01.626 UTC [41833] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 04:29:05.560 UTC [41808] LOG:  received fast shutdown request
+2024-11-25 04:29:05.585 UTC [41808] LOG:  aborting any active transactions
+2024-11-25 04:29:05.587 UTC [41808] LOG:  background worker "logical replication launcher" (PID 41814) exited with exit code 1
+2024-11-25 04:29:05.588 UTC [41809] LOG:  shutting down
+2024-11-25 04:29:05.589 UTC [41809] LOG:  checkpoint starting: shutdown immediate
+2024-11-25 04:29:05.596 UTC [41809] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.009 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/1595128, redo lsn=0/1595128
+2024-11-25 04:29:05.600 UTC [41808] LOG:  database system is shut down
+2024-11-25 04:30:31.620 UTC [57819] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-25 04:30:31.621 UTC [57819] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-25 04:30:31.621 UTC [57819] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-25 04:30:31.623 UTC [57819] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-25 04:30:31.625 UTC [57822] LOG:  database system was shut down at 2024-11-25 04:29:05 UTC
+2024-11-25 04:30:31.630 UTC [57819] LOG:  database system is ready to accept connections
+2024-11-25 04:30:35.174 UTC [57844] WARNING:  === HLL JOIN detected! ===
+2024-11-25 04:30:35.181 UTC [57844] ERROR:  M_eqjoinsel unrecognized join type: 9
+2024-11-25 04:30:35.181 UTC [57844] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 04:35:31.731 UTC [57820] LOG:  checkpoint starting: time
+2024-11-25 04:35:31.747 UTC [57820] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.007 s, sync=0.002 s, total=0.016 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1595210, redo lsn=0/15951D8
+2024-11-25 04:36:58.200 UTC [57819] LOG:  received fast shutdown request
+2024-11-25 04:36:58.203 UTC [57819] LOG:  aborting any active transactions
+2024-11-25 04:36:58.206 UTC [57819] LOG:  background worker "logical replication launcher" (PID 57825) exited with exit code 1
+2024-11-25 04:36:58.206 UTC [57820] LOG:  shutting down
+2024-11-25 04:36:58.208 UTC [57820] LOG:  checkpoint starting: shutdown immediate
+2024-11-25 04:36:58.216 UTC [57820] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.010 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15952C0, redo lsn=0/15952C0
+2024-11-25 04:36:58.221 UTC [57819] LOG:  database system is shut down
+2024-11-25 04:42:43.280 UTC [70437] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-25 04:42:43.281 UTC [70437] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-25 04:42:43.281 UTC [70437] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-25 04:42:43.283 UTC [70437] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-25 04:42:43.285 UTC [70440] LOG:  database system was shut down at 2024-11-25 04:36:58 UTC
+2024-11-25 04:42:43.288 UTC [70437] LOG:  database system is ready to accept connections
+2024-11-25 04:42:47.230 UTC [70462] WARNING:  === HLL JOIN detected! ===
+2024-11-25 04:42:47.242 UTC [70462] ERROR:  M_costsize unrecognized join type: 9
+2024-11-25 04:42:47.242 UTC [70462] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 04:47:43.329 UTC [70438] LOG:  checkpoint starting: time
+2024-11-25 04:47:43.338 UTC [70438] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.010 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15953A8, redo lsn=0/1595370
+2024-11-25 04:48:08.108 UTC [70437] LOG:  received fast shutdown request
+2024-11-25 04:48:08.111 UTC [70437] LOG:  aborting any active transactions
+2024-11-25 04:48:08.114 UTC [70437] LOG:  background worker "logical replication launcher" (PID 70443) exited with exit code 1
+2024-11-25 04:48:08.115 UTC [70438] LOG:  shutting down
+2024-11-25 04:48:08.116 UTC [70438] LOG:  checkpoint starting: shutdown immediate
+2024-11-25 04:48:08.125 UTC [70438] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.010 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/1595458, redo lsn=0/1595458
+2024-11-25 04:48:08.129 UTC [70437] LOG:  database system is shut down
+2024-11-25 04:49:32.956 UTC [80330] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-25 04:49:32.957 UTC [80330] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-25 04:49:32.957 UTC [80330] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-25 04:49:32.959 UTC [80330] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-25 04:49:32.961 UTC [80333] LOG:  database system was shut down at 2024-11-25 04:48:08 UTC
+2024-11-25 04:49:32.964 UTC [80330] LOG:  database system is ready to accept connections
+2024-11-25 04:49:35.951 UTC [80355] WARNING:  === HLL JOIN detected! ===
+2024-11-25 04:49:35.960 UTC [80355] ERROR:  M_joinrels_1.1 unrecognized join type: 9
+2024-11-25 04:49:35.960 UTC [80355] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-25 04:51:00.956 UTC [80330] LOG:  received fast shutdown request
+2024-11-25 04:51:01.020 UTC [80330] LOG:  aborting any active transactions
+2024-11-25 04:51:01.021 UTC [80330] LOG:  background worker "logical replication launcher" (PID 80336) exited with exit code 1
+2024-11-25 04:51:01.021 UTC [80331] LOG:  shutting down
+2024-11-25 04:51:01.025 UTC [80331] LOG:  checkpoint starting: shutdown immediate
+2024-11-25 04:51:01.032 UTC [80331] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.011 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1595508, redo lsn=0/1595508
+2024-11-25 04:51:01.034 UTC [80330] LOG:  database system is shut down
+2024-11-25 04:52:43.789 UTC [89324] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-25 04:52:43.790 UTC [89324] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-25 04:52:43.790 UTC [89324] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-25 04:52:43.793 UTC [89324] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-25 04:52:43.796 UTC [89327] LOG:  database system was shut down at 2024-11-25 04:51:01 UTC
+2024-11-25 04:52:43.802 UTC [89324] LOG:  database system is ready to accept connections
+2024-11-25 04:52:46.580 UTC [89342] WARNING:  === HLL JOIN detected! ===
+2024-11-25 04:57:43.902 UTC [89325] LOG:  checkpoint starting: time
+2024-11-25 04:57:43.915 UTC [89325] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.014 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15955F0, redo lsn=0/15955B8
