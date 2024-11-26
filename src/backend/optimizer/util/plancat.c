@@ -1956,8 +1956,8 @@ join_selectivity(PlannerInfo *root,
 	elog(NOTICE, "join_selectivity: original join type = %d", jointype);
 
 	// Adding for HLL case
-	if (modified_jointype == JOIN_HLL)
-		modified_jointype = JOIN_INNER;
+	// if (modified_jointype == JOIN_HLL)
+	// 	modified_jointype = JOIN_INNER;
 
 	oprjoin = get_oprjoin(operatorid);
 	elog(NOTICE, "join_selectivity: operatorid = %u, oprjoin = %u", operatorid, oprjoin);

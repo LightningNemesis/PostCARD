@@ -73,6 +73,8 @@ void join_search_one_level(PlannerInfo *root, int level)
 
 	Assert(joinrels[level] == NIL);
 
+	elog(NOTICE, "join_search_one_level: planning level %d", level);
+
 	/* Set join_cur_level so that new joinrels are added to proper list */
 	root->join_cur_level = level;
 
@@ -306,6 +308,8 @@ make_rels_by_clause_joins(PlannerInfo *root,
 			(have_relevant_joinclause(root, old_rel, other_rel) ||
 			 have_join_order_restriction(root, old_rel, other_rel)))
 		{
+			elog(NOTICE, "make_rels_by_clause_joins: attempting join between rels");
+
 			(void)make_join_rel(root, old_rel, other_rel);
 		}
 	}
@@ -691,6 +695,8 @@ make_join_rel(PlannerInfo *root, RelOptInfo *rel1, RelOptInfo *rel2)
 	RelOptInfo *joinrel;
 	List *restrictlist;
 
+	elog(NOTICE, "make_join_rel: checking join between rels");
+
 	/* We should never try to join two overlapping sets of rels. */
 	Assert(!bms_overlap(rel1->relids, rel2->relids));
 
@@ -729,13 +735,18 @@ make_join_rel(PlannerInfo *root, RelOptInfo *rel1, RelOptInfo *rel2)
 	 */
 	if (sjinfo == NULL)
 	{
+		JoinExpr *je = (JoinExpr *)linitial(root->parse->jointree->fromlist);
+		elog(NOTICE, "make_join_rel: found join type = %d", je->jointype);
+
 		sjinfo = &sjinfo_data;
 		sjinfo->type = T_SpecialJoinInfo;
 		sjinfo->min_lefthand = rel1->relids;
 		sjinfo->min_righthand = rel2->relids;
 		sjinfo->syn_lefthand = rel1->relids;
 		sjinfo->syn_righthand = rel2->relids;
-		sjinfo->jointype = JOIN_INNER;
+		// Preserve the original join type from JoinExpr
+		sjinfo->jointype = je->jointype; // This will keep JOIN_HLL instead of converting to JOIN_INNER
+		// sjinfo->jointype = JOIN_INNER; // Old code: This will convert JOIN_HLL to JOIN_INNER`
 		sjinfo->ojrelid = 0;
 		sjinfo->commute_above_l = NULL;
 		sjinfo->commute_above_r = NULL;
@@ -747,6 +758,8 @@ make_join_rel(PlannerInfo *root, RelOptInfo *rel1, RelOptInfo *rel2)
 		sjinfo->semi_can_hash = false;
 		sjinfo->semi_operators = NIL;
 		sjinfo->semi_rhs_exprs = NIL;
+
+		elog(NOTICE, "make_join_rel: set sjinfo jointype = %d", sjinfo->jointype);
 	}
 
 	/*
@@ -922,10 +935,10 @@ populate_joinrel_with_paths(PlannerInfo *root, RelOptInfo *rel1,
 			break;
 		}
 		add_paths_to_joinrel(root, joinrel, rel1, rel2,
-							 JOIN_INNER, sjinfo,
+							 sjinfo->jointype, sjinfo, // Use sjinfo->jointype
 							 restrictlist);
 		add_paths_to_joinrel(root, joinrel, rel2, rel1,
-							 JOIN_INNER, sjinfo,
+							 sjinfo->jointype, sjinfo, // Use sjinfo->jointype
 							 restrictlist);
 		break;
 	case JOIN_LEFT:

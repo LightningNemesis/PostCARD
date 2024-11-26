@@ -133,6 +133,8 @@ void add_paths_to_joinrel(PlannerInfo *root,
 	ListCell *lc;
 	Relids joinrelids;
 
+	elog(NOTICE, "add_paths_to_joinrel: received join type = %d", jointype);
+
 	/*
 	 * PlannerInfo doesn't contain the SpecialJoinInfos created for joins
 	 * between child relations, even if there is a SpecialJoinInfo node for
@@ -149,6 +151,8 @@ void add_paths_to_joinrel(PlannerInfo *root,
 	extra.mergeclause_list = NIL;
 	extra.sjinfo = sjinfo;
 	extra.param_source_rels = NULL;
+
+	elog(NOTICE, "add_paths_to_joinrel: after extra setup, sjinfo->jointype = %d", extra.sjinfo->jointype);
 
 	/*
 	 * See if the inner relation is provably unique for this outer rel.
@@ -188,6 +192,10 @@ void add_paths_to_joinrel(PlannerInfo *root,
 												JOIN_INNER,
 												restrictlist,
 												false);
+		break;
+	case JOIN_HLL: // Add this case
+		// Since HLL join is about cardinality estimation, not uniqueness
+		extra.inner_unique = false;
 		break;
 	default:
 		extra.inner_unique = innerrel_is_unique(root,
@@ -279,8 +287,11 @@ void add_paths_to_joinrel(PlannerInfo *root,
 	 * sorted.  Skip this if we can't mergejoin.
 	 */
 	if (mergejoin_allowed)
+	{
+		elog(NOTICE, "Before sort_inner_and_outer: jointype = %d", jointype);
 		sort_inner_and_outer(root, joinrel, outerrel, innerrel,
 							 jointype, &extra);
+	}
 
 	/*
 	 * 2. Consider paths where the outer relation need not be explicitly
@@ -291,8 +302,11 @@ void add_paths_to_joinrel(PlannerInfo *root,
 	 * prohibited cases either.)
 	 */
 	if (mergejoin_allowed)
+	{
+		elog(NOTICE, "Before match_unsorted_outer: jointype = %d", jointype);
 		match_unsorted_outer(root, joinrel, outerrel, innerrel,
 							 jointype, &extra);
+	}
 
 #ifdef NOT_USED
 
@@ -318,8 +332,11 @@ void add_paths_to_joinrel(PlannerInfo *root,
 	 * joins, because there may be no other alternative.
 	 */
 	if (enable_hashjoin || jointype == JOIN_FULL)
+	{
+		elog(NOTICE, "Before hash_inner_and_outer: jointype = %d", jointype);
 		hash_inner_and_outer(root, joinrel, outerrel, innerrel,
 							 jointype, &extra);
+	}
 
 	/*
 	 * createplan.c does not currently support handling of pseudoconstant
@@ -1758,6 +1775,11 @@ match_unsorted_outer(PlannerInfo *root,
 	case JOIN_UNIQUE_OUTER:
 	case JOIN_UNIQUE_INNER:
 		jointype = JOIN_INNER;
+		nestjoinOK = true;
+		useallclauses = false;
+		break;
+	case JOIN_HLL: // Add this case
+		// Since HLL_JOIN should behave like INNER JOIN for path generation
 		nestjoinOK = true;
 		useallclauses = false;
 		break;

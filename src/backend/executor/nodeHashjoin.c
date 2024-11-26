@@ -230,11 +230,16 @@ ExecHashJoinImpl(PlanState *pstate, bool parallel)
 	int batchno;
 	ParallelHashJoinState *parallel_state;
 
+	static bool hll_done = false; // Add this flag to keep track of whether we've already processed the HLL_JOIN
+
 	elog(NOTICE, "ExecHashJoinImpl: join type = %d", node->js.jointype);
 
 	/* Add special handling for HLL_JOIN */
 	if (node->js.jointype == JOIN_HLL)
 	{
+		if (hll_done) // If we've already returned our value
+			return NULL;
+
 		elog(NOTICE, "ExecHashJoinImpl: Processing HLL_JOIN");
 
 		/* Create a dummy result */
@@ -248,12 +253,14 @@ ExecHashJoinImpl(PlanState *pstate, bool parallel)
 		bool isnull[1] = {false};
 
 		/* For now, return a dummy cardinality value */
-		values[0] = Int64GetDatum(42424242);
+		values[0] = Int64GetDatum(69696969);
 
 		HeapTuple tuple = heap_form_tuple(result->tts_tupleDescriptor, values, isnull);
 
 		/* Store the tuple in the result slot */
 		ExecStoreHeapTuple(tuple, result, false);
+
+		hll_done = true; // Set flag to indicate we're done
 
 		/* Return the result */
 		return result;
@@ -813,9 +820,12 @@ ExecInitHashJoin(HashJoin *node, EState *estate, int eflags)
 						   "estimated_cardinality",
 						   INT8OID, -1, 0);
 
-		/* Initialize the result slot with our tuple descriptor */
-		ExecInitResultTupleSlotTL(&hjstate->js.ps, &TTSOpsVirtual);
-		hjstate->js.ps.ps_ResultTupleSlot->tts_tupleDescriptor = tupDesc;
+		/* Initialize the result slot with heap tuple operations */
+		hjstate->js.ps.ps_ResultTupleSlot = MakeSingleTupleTableSlot(tupDesc,
+																	 &TTSOpsHeapTuple);
+
+		/* Set the tuple descriptor for the plan state */
+		hjstate->js.ps.ps_ResultTupleDesc = tupDesc;
 
 		elog(NOTICE, "JOIN_HLL value: %d", JOIN_HLL);
 		/* No need for hash table setup since we're just returning a value */
