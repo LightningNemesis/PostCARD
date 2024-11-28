@@ -238,7 +238,14 @@ ExecHashJoinImpl(PlanState *pstate, bool parallel)
 	int batchno;
 	ParallelHashJoinState *parallel_state;
 
-	static bool hll_done = false;
+	// For HLL join, check if we're already done first
+	if (node->js.jointype == JOIN_HLL && node->hll_done)
+	{
+		return NULL; // No more results for HLL join
+	}
+
+	// static bool hll_done = false;
+	// node->hll_done = false;
 
 	elog(NOTICE, "ExecHashJoinImpl - node: %p", node);
 	elog(NOTICE, "ExecHashJoinImpl - innerPlanState: %p", innerPlanState(node));
@@ -264,7 +271,7 @@ ExecHashJoinImpl(PlanState *pstate, bool parallel)
 		elog(NOTICE, "ExecHashJoinImpl - innerPlan of hashNode: %p", innerPlan);
 	}
 
-	if (node->js.jointype == JOIN_HLL && !hll_done)
+	if (node->js.jointype == JOIN_HLL && !node->hll_done)
 	{
 		PG_TRY();
 		{
@@ -351,7 +358,11 @@ ExecHashJoinImpl(PlanState *pstate, bool parallel)
 			node->outer_hll = NULL;
 			node->inner_hll = NULL;
 
-			hll_done = true;
+			node->hll_done = true;
+
+			// Signal we're done - don't access hashtable
+			node->hj_JoinState = HJ_NEED_NEW_BATCH;
+			node->hj_HashTable = NULL; // Ensure no hashtable access
 
 			return node->js.ps.ps_ResultTupleSlot;
 		}
@@ -1063,6 +1074,11 @@ ExecInitHashJoin(HashJoin *node, EState *estate, int eflags)
 	 */
 	hjstate->hj_HashTable = NULL;
 	hjstate->hj_FirstOuterTupleSlot = NULL;
+
+	// Add HLL initialization here
+	hjstate->hll_done = false;
+	hjstate->outer_hll = NULL;
+	hjstate->inner_hll = NULL;
 
 	hjstate->hj_CurHashValue = 0;
 	hjstate->hj_CurBucketNo = 0;

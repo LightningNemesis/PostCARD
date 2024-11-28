@@ -2117,9 +2117,14 @@ typedef struct HashJoinState
 	int hj_JoinState;
 	bool hj_MatchedOuter;
 	bool hj_OuterNotEmpty;
+	/// HyperLogLog state for outer relation cardinality estimation
 	hyperLogLogState *outer_hll;
+	/// HyperLogLog state for inner relation cardinality estimation
 	hyperLogLogState *inner_hll;
+	/// HyperLogLog state for result cardinality estimation
 	hyperLogLogState *result_hll;
+	/// Flag indicating if HLL estimation is complete
+	bool hll_done;
 } HashJoinState;
 
 /* ----------------------------------------------------------------
