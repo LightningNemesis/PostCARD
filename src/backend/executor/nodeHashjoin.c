@@ -178,8 +178,9 @@
 #include "access/hash.h"
 
 /* HLL parameters */
-#define HLL_PRECISION 14  // Precision bits (resulting in 2^14 registers)
-#define HLL_HASH_SEED 123 // Seed for hash function
+#define HLL_PRECISION 16	 // Precision bits (resulting in 2^16 registers)
+#define HLL_HASH_SEED 123	 // Seed for hash function
+#define HLL_SAMPLE_SIZE 1000 // Sample size for calibration
 
 /*
  * States of the ExecHashJoin state machine
@@ -275,7 +276,7 @@ ExecHashJoinImpl(PlanState *pstate, bool parallel)
 	{
 		PG_TRY();
 		{
-			// Initialize HLL state if not already done
+			// Initialize main HLL sketches if not already done
 			if (!node->outer_hll)
 			{
 				node->outer_hll = palloc0(sizeof(hyperLogLogState));
@@ -330,39 +331,49 @@ ExecHashJoinImpl(PlanState *pstate, bool parallel)
 				}
 			}
 
-			// Calculate cardinality estimate
-			double estimate = Min(estimateHyperLogLog(node->outer_hll),
-								  estimateHyperLogLog(node->inner_hll));
+			// Create temporary union HLL
+			hyperLogLogState *union_hll = palloc0(sizeof(hyperLogLogState));
+			if (!union_hll)
+				ereport(ERROR, (errcode(ERRCODE_OUT_OF_MEMORY),
+								errmsg("failed to allocate union HLL sketch")));
+			initHyperLogLog(union_hll, HLL_PRECISION);
 
-			// Create result tuple using virtual tuple operations
+			// Calculate union
+			mergeHyperLogLog(union_hll, node->outer_hll);
+			mergeHyperLogLog(union_hll, node->inner_hll);
+
+			// Calculate estimates
+			double outer_est = estimateHyperLogLog(node->outer_hll);
+			double inner_est = estimateHyperLogLog(node->inner_hll);
+			double union_est = estimateHyperLogLog(union_hll);
+
+			// Calculate intersection using inclusion-exclusion principle
+			double intersection_est = outer_est + inner_est - union_est;
+
+			// Use intersection as estimate, which should be more accurate
+			double estimate = intersection_est;
+
+			/* Debug logging */
+			elog(NOTICE, "HLL estimates - outer: %.2f, inner: %.2f, union: %.2f, intersection: %.2f",
+				 outer_est, inner_est, union_est, intersection_est);
+
+			// Create result tuple
 			ExecClearTuple(node->js.ps.ps_ResultTupleSlot);
-
-			// Store value directly in slot
 			node->js.ps.ps_ResultTupleSlot->tts_values[0] = Int64GetDatum((int64)estimate);
 			node->js.ps.ps_ResultTupleSlot->tts_isnull[0] = false;
 			node->js.ps.ps_ResultTupleSlot->tts_nvalid = 1;
-
-			// Mark as containing data
 			ExecStoreVirtualTuple(node->js.ps.ps_ResultTupleSlot);
-
-			/* Debug logging */
-			elog(NOTICE, "HLL estimate: %f, converted to int64: %ld",
-				 estimate, (int64)estimate);
-			elog(NOTICE, "Result slot - values[0]: %ld, isnull[0]: %d",
-				 DatumGetInt64(node->js.ps.ps_ResultTupleSlot->tts_values[0]),
-				 node->js.ps.ps_ResultTupleSlot->tts_isnull[0]);
 
 			// Cleanup
 			pfree(node->outer_hll);
 			pfree(node->inner_hll);
+			pfree(union_hll);
 			node->outer_hll = NULL;
 			node->inner_hll = NULL;
 
 			node->hll_done = true;
-
-			// Signal we're done - don't access hashtable
 			node->hj_JoinState = HJ_NEED_NEW_BATCH;
-			node->hj_HashTable = NULL; // Ensure no hashtable access
+			node->hj_HashTable = NULL;
 
 			return node->js.ps.ps_ResultTupleSlot;
 		}
@@ -1076,9 +1087,13 @@ ExecInitHashJoin(HashJoin *node, EState *estate, int eflags)
 	hjstate->hj_FirstOuterTupleSlot = NULL;
 
 	// Add HLL initialization here
-	hjstate->hll_done = false;
 	hjstate->outer_hll = NULL;
 	hjstate->inner_hll = NULL;
+	// hjstate->union_hll = NULL;
+	// hjstate->intersection_hll = NULL;
+	hjstate->hll_done = false;
+	hjstate->sample_matches = 0;
+	hjstate->sample_total = 0;
 
 	hjstate->hj_CurHashValue = 0;
 	hjstate->hj_CurBucketNo = 0;

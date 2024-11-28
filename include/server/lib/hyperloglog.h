@@ -52,11 +52,11 @@
  */
 typedef struct hyperLogLogState
 {
-	uint8		registerWidth;
-	Size		nRegisters;
-	double		alphaMM;
-	uint8	   *hashesArr;
-	Size		arrSize;
+	uint8 registerWidth;
+	Size nRegisters;
+	double alphaMM;
+	uint8 *hashesArr;
+	Size arrSize;
 } hyperLogLogState;
 
 extern void initHyperLogLog(hyperLogLogState *cState, uint8 bwidth);
@@ -64,5 +64,6 @@ extern void initHyperLogLogError(hyperLogLogState *cState, double error);
 extern void addHyperLogLog(hyperLogLogState *cState, uint32 hash);
 extern double estimateHyperLogLog(hyperLogLogState *cState);
 extern void freeHyperLogLog(hyperLogLogState *cState);
+extern void mergeHyperLogLog(hyperLogLogState *dest, hyperLogLogState *src);
 
-#endif							/* HYPERLOGLOG_H */
+#endif /* HYPERLOGLOG_H */

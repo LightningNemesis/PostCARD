@@ -51,8 +51,8 @@
 #include "lib/hyperloglog.h"
 #include "port/pg_bitutils.h"
 
-#define POW_2_32			(4294967296.0)
-#define NEG_POW_2_32		(-4294967296.0)
+#define POW_2_32 (4294967296.0)
+#define NEG_POW_2_32 (-4294967296.0)
 
 static inline uint8 rho(uint32 x, uint8 b);
 
@@ -62,16 +62,15 @@ static inline uint8 rho(uint32 x, uint8 b);
  * bwidth is bit width (so register size will be 2 to the power of bwidth).
  * Must be between 4 and 16 inclusive.
  */
-void
-initHyperLogLog(hyperLogLogState *cState, uint8 bwidth)
+void initHyperLogLog(hyperLogLogState *cState, uint8 bwidth)
 {
-	double		alpha;
+	double alpha;
 
 	if (bwidth < 4 || bwidth > 16)
 		elog(ERROR, "bit width must be between 4 and 16 inclusive");
 
 	cState->registerWidth = bwidth;
-	cState->nRegisters = (Size) 1 << bwidth;
+	cState->nRegisters = (Size)1 << bwidth;
 	cState->arrSize = sizeof(uint8) * cState->nRegisters + 1;
 
 	/*
@@ -88,17 +87,17 @@ initHyperLogLog(hyperLogLogState *cState, uint8 bwidth)
 	 */
 	switch (cState->nRegisters)
 	{
-		case 16:
-			alpha = 0.673;
-			break;
-		case 32:
-			alpha = 0.697;
-			break;
-		case 64:
-			alpha = 0.709;
-			break;
-		default:
-			alpha = 0.7213 / (1.0 + 1.079 / cState->nRegisters);
+	case 16:
+		alpha = 0.673;
+		break;
+	case 32:
+		alpha = 0.697;
+		break;
+	case 64:
+		alpha = 0.709;
+		break;
+	default:
+		alpha = 0.7213 / (1.0 + 1.079 / cState->nRegisters);
 	}
 
 	/*
@@ -124,14 +123,13 @@ initHyperLogLog(hyperLogLogState *cState, uint8 bwidth)
  * As bwidth has to be between 4 and 16, the worst possible error rate
  * is between ~25% (bwidth=4) and 0.4% (bwidth=16).
  */
-void
-initHyperLogLogError(hyperLogLogState *cState, double error)
+void initHyperLogLogError(hyperLogLogState *cState, double error)
 {
-	uint8		bwidth = 4;
+	uint8 bwidth = 4;
 
 	while (bwidth < 16)
 	{
-		double		m = (Size) 1 << bwidth;
+		double m = (Size)1 << bwidth;
 
 		if (1.04 / sqrt(m) < error)
 			break;
@@ -147,8 +145,7 @@ initHyperLogLogError(hyperLogLogState *cState, double error)
  * Releases allocated resources, but not the state itself (in case it's not
  * allocated by palloc).
  */
-void
-freeHyperLogLog(hyperLogLogState *cState)
+void freeHyperLogLog(hyperLogLogState *cState)
 {
 	Assert(cState->hashesArr != NULL);
 	pfree(cState->hashesArr);
@@ -163,11 +160,10 @@ freeHyperLogLog(hyperLogLogState *cState)
  * uniform distribution of bits in hash values for each distinct original value
  * observed.
  */
-void
-addHyperLogLog(hyperLogLogState *cState, uint32 hash)
+void addHyperLogLog(hyperLogLogState *cState, uint32 hash)
 {
-	uint8		count;
-	uint32		index;
+	uint8 count;
+	uint32 index;
 
 	/* Use the first "k" (registerWidth) bits as a zero based index */
 	index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
@@ -185,9 +181,9 @@ addHyperLogLog(hyperLogLogState *cState, uint32 hash)
 double
 estimateHyperLogLog(hyperLogLogState *cState)
 {
-	double		result;
-	double		sum = 0.0;
-	int			i;
+	double result;
+	double sum = 0.0;
+	int i;
 
 	for (i = 0; i < cState->nRegisters; i++)
 	{
@@ -200,7 +196,7 @@ estimateHyperLogLog(hyperLogLogState *cState)
 	if (result <= (5.0 / 2.0) * cState->nRegisters)
 	{
 		/* Small range correction */
-		int			zero_count = 0;
+		int zero_count = 0;
 
 		for (i = 0; i < cState->nRegisters; i++)
 		{
@@ -209,7 +205,7 @@ estimateHyperLogLog(hyperLogLogState *cState)
 		}
 
 		if (zero_count != 0)
-			result = cState->nRegisters * log((double) cState->nRegisters /
+			result = cState->nRegisters * log((double)cState->nRegisters /
 											  zero_count);
 	}
 	else if (result > (1.0 / 30.0) * POW_2_32)
@@ -219,6 +215,23 @@ estimateHyperLogLog(hyperLogLogState *cState)
 	}
 
 	return result;
+}
+
+/*
+ * Merge one HLL sketch into another
+ */
+void mergeHyperLogLog(hyperLogLogState *dest, hyperLogLogState *src)
+{
+	/* Both sketches must have the same number of registers */
+	if (dest->nRegisters != src->nRegisters || dest->registerWidth != src->registerWidth)
+		elog(ERROR, "Cannot merge HyperLogLog sketches with different configurations");
+
+	/* Take the maximum register value for each position */
+	for (Size i = 0; i < dest->nRegisters; i++)
+	{
+		if (src->hashesArr[i] > dest->hashesArr[i])
+			dest->hashesArr[i] = src->hashesArr[i];
+	}
 }
 
 /*
@@ -241,7 +254,7 @@ estimateHyperLogLog(hyperLogLogState *cState)
 static inline uint8
 rho(uint32 x, uint8 b)
 {
-	uint8		j = 1;
+	uint8 j = 1;
 
 	if (x == 0)
 		return b + 1;

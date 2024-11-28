@@ -2125,6 +2125,9 @@ typedef struct HashJoinState
 	hyperLogLogState *result_hll;
 	/// Flag indicating if HLL estimation is complete
 	bool hll_done;
+	// New sampling fields
+	int sample_matches;
+	int sample_total;
 } HashJoinState;
 
 /* ----------------------------------------------------------------
