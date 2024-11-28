@@ -172,6 +172,14 @@
 #include "pgstat.h"
 #include "utils/memutils.h"
 #include "utils/sharedtuplestore.h"
+#include "lib/hyperloglog.h"
+
+#include <setjmp.h>
+#include "access/hash.h"
+
+/* HLL parameters */
+#define HLL_PRECISION 14  // Precision bits (resulting in 2^14 registers)
+#define HLL_HASH_SEED 123 // Seed for hash function
 
 /*
  * States of the ExecHashJoin state machine
@@ -230,41 +238,12 @@ ExecHashJoinImpl(PlanState *pstate, bool parallel)
 	int batchno;
 	ParallelHashJoinState *parallel_state;
 
-	static bool hll_done = false; // Add this flag to keep track of whether we've already processed the HLL_JOIN
+	static bool hll_done = false;
+
+	elog(NOTICE, "ExecHashJoinImpl - node: %p", node);
+	elog(NOTICE, "ExecHashJoinImpl - innerPlanState: %p", innerPlanState(node));
 
 	elog(NOTICE, "ExecHashJoinImpl: join type = %d", node->js.jointype);
-
-	/* Add special handling for HLL_JOIN */
-	if (node->js.jointype == JOIN_HLL)
-	{
-		if (hll_done) // If we've already returned our value
-			return NULL;
-
-		elog(NOTICE, "ExecHashJoinImpl: Processing HLL_JOIN");
-
-		/* Create a dummy result */
-		TupleTableSlot *result = node->js.ps.ps_ResultTupleSlot;
-
-		/* Clear the slot */
-		ExecClearTuple(result);
-
-		/* Set up dummy values */
-		Datum values[1];
-		bool isnull[1] = {false};
-
-		/* For now, return a dummy cardinality value */
-		values[0] = Int64GetDatum(69696969);
-
-		HeapTuple tuple = heap_form_tuple(result->tts_tupleDescriptor, values, isnull);
-
-		/* Store the tuple in the result slot */
-		ExecStoreHeapTuple(tuple, result, false);
-
-		hll_done = true; // Set flag to indicate we're done
-
-		/* Return the result */
-		return result;
-	}
 
 	/*
 	 * get information from HashJoin node
@@ -275,7 +254,123 @@ ExecHashJoinImpl(PlanState *pstate, bool parallel)
 	outerNode = outerPlanState(node);
 	hashtable = node->hj_HashTable;
 	econtext = node->js.ps.ps_ExprContext;
-	parallel_state = hashNode->parallel_state;
+	parallel_state = hashNode ? hashNode->parallel_state : NULL;
+
+	elog(NOTICE, "ExecHashJoinImpl - hashNode: %p", hashNode);
+	if (hashNode)
+	{
+		elog(NOTICE, "ExecHashJoinImpl - hashNode->ps.plan: %p", hashNode->ps.plan);
+		PlanState *innerPlan = innerPlanState(hashNode);
+		elog(NOTICE, "ExecHashJoinImpl - innerPlan of hashNode: %p", innerPlan);
+	}
+
+	if (node->js.jointype == JOIN_HLL && !hll_done)
+	{
+		PG_TRY();
+		{
+			// Initialize HLL state if not already done
+			if (!node->outer_hll)
+			{
+				node->outer_hll = palloc0(sizeof(hyperLogLogState));
+				if (!node->outer_hll)
+					ereport(ERROR, (errcode(ERRCODE_OUT_OF_MEMORY),
+									errmsg("failed to allocate outer HLL sketch")));
+				initHyperLogLog(node->outer_hll, HLL_PRECISION);
+
+				node->inner_hll = palloc0(sizeof(hyperLogLogState));
+				if (!node->inner_hll)
+					ereport(ERROR, (errcode(ERRCODE_OUT_OF_MEMORY),
+									errmsg("failed to allocate inner HLL sketch")));
+				initHyperLogLog(node->inner_hll, HLL_PRECISION);
+			}
+
+			// Process outer relation
+			PlanState *outerPlan = outerPlanState(node);
+			TupleTableSlot *outerTupleSlot;
+
+			while ((outerTupleSlot = ExecProcNode(outerPlan)) != NULL)
+			{
+				if (!TupIsNull(outerTupleSlot))
+				{
+					Datum value;
+					bool isNull;
+					value = slot_getattr(outerTupleSlot, 1, &isNull);
+					if (!isNull)
+					{
+						uint32 hash = hash_any((unsigned char *)&value, sizeof(Datum));
+						addHyperLogLog(node->outer_hll, hash);
+					}
+				}
+			}
+
+			// Process inner relation
+			HashState *hashState = (HashState *)innerPlanState(node);
+			PlanState *innerPlan = outerPlanState(hashState);
+			TupleTableSlot *innerTupleSlot;
+
+			while ((innerTupleSlot = ExecProcNode(innerPlan)) != NULL)
+			{
+				if (!TupIsNull(innerTupleSlot))
+				{
+					Datum value;
+					bool isNull;
+					value = slot_getattr(innerTupleSlot, 1, &isNull);
+					if (!isNull)
+					{
+						uint32 hash = hash_any((unsigned char *)&value, sizeof(Datum));
+						addHyperLogLog(node->inner_hll, hash);
+					}
+				}
+			}
+
+			// Calculate cardinality estimate
+			double estimate = Min(estimateHyperLogLog(node->outer_hll),
+								  estimateHyperLogLog(node->inner_hll));
+
+			// Create result tuple using virtual tuple operations
+			ExecClearTuple(node->js.ps.ps_ResultTupleSlot);
+
+			// Store value directly in slot
+			node->js.ps.ps_ResultTupleSlot->tts_values[0] = Int64GetDatum((int64)estimate);
+			node->js.ps.ps_ResultTupleSlot->tts_isnull[0] = false;
+			node->js.ps.ps_ResultTupleSlot->tts_nvalid = 1;
+
+			// Mark as containing data
+			ExecStoreVirtualTuple(node->js.ps.ps_ResultTupleSlot);
+
+			/* Debug logging */
+			elog(NOTICE, "HLL estimate: %f, converted to int64: %ld",
+				 estimate, (int64)estimate);
+			elog(NOTICE, "Result slot - values[0]: %ld, isnull[0]: %d",
+				 DatumGetInt64(node->js.ps.ps_ResultTupleSlot->tts_values[0]),
+				 node->js.ps.ps_ResultTupleSlot->tts_isnull[0]);
+
+			// Cleanup
+			pfree(node->outer_hll);
+			pfree(node->inner_hll);
+			node->outer_hll = NULL;
+			node->inner_hll = NULL;
+
+			hll_done = true;
+
+			return node->js.ps.ps_ResultTupleSlot;
+		}
+		PG_CATCH();
+		{
+			if (node->outer_hll)
+			{
+				pfree(node->outer_hll);
+				node->outer_hll = NULL;
+			}
+			if (node->inner_hll)
+			{
+				pfree(node->inner_hll);
+				node->inner_hll = NULL;
+			}
+			PG_RE_THROW();
+		}
+		PG_END_TRY();
+	}
 
 	/*
 	 * Reset per-tuple memory context to free any expression evaluation
@@ -304,6 +399,16 @@ ExecHashJoinImpl(PlanState *pstate, bool parallel)
 			 * First time through: build hash table for inner relation.
 			 */
 			Assert(hashtable == NULL);
+
+			/*
+			 * Create the hash table first since we need it for hash value generation
+			 * even in HLL_JOIN mode
+			 */
+			hashtable = ExecHashTableCreate(hashNode,
+											node->hj_HashOperators,
+											node->hj_Collations,
+											HJ_FILL_INNER(node));
+			node->hj_HashTable = hashtable;
 
 			/*
 			 * If the outer relation is completely empty, and it's not
@@ -366,11 +471,11 @@ ExecHashJoinImpl(PlanState *pstate, bool parallel)
 			 * whoever gets here first will create the hash table and any
 			 * later arrivals will merely attach to it.
 			 */
-			hashtable = ExecHashTableCreate(hashNode,
-											node->hj_HashOperators,
-											node->hj_Collations,
-											HJ_FILL_INNER(node));
-			node->hj_HashTable = hashtable;
+			// hashtable = ExecHashTableCreate(hashNode,
+			// 								node->hj_HashOperators,
+			// 								node->hj_Collations,
+			// 								HJ_FILL_INNER(node));
+			// node->hj_HashTable = hashtable;
 
 			/*
 			 * Execute the Hash node, to build the hash table.  If using
@@ -743,6 +848,27 @@ ExecParallelHashJoin(PlanState *pstate)
 HashJoinState *
 ExecInitHashJoin(HashJoin *node, EState *estate, int eflags)
 {
+	/* Add debug logging at the start */
+	elog(NOTICE, "=== HashJoin node initial contents ===");
+	elog(NOTICE, "Join type: %d", node->join.jointype);
+	elog(NOTICE, "Hash keys count: %d", list_length(node->hashkeys));
+	elog(NOTICE, "Hash clauses count: %d", list_length(node->hashclauses));
+	elog(NOTICE, "Outer plan: %p", outerPlan(node));
+	elog(NOTICE, "Inner plan (Hash node): %p", innerPlan(node));
+
+	if (innerPlan(node))
+	{
+		Hash *hashNode = (Hash *)innerPlan(node);
+		elog(NOTICE, "Hash node contents:");
+		elog(NOTICE, "Hash node target list length: %d",
+			 list_length(hashNode->plan.targetlist));
+		elog(NOTICE, "Hash node plan id: %d", hashNode->plan.plan_node_id);
+	}
+	else
+	{
+		elog(NOTICE, "Inner plan (Hash node) is NULL");
+	}
+
 	HashJoinState *hjstate;
 	Plan *outerNode;
 	Hash *hashNode;
@@ -777,17 +903,19 @@ ExecInitHashJoin(HashJoin *node, EState *estate, int eflags)
 
 	/*
 	 * initialize child nodes
-	 *
-	 * Note: we could suppress the REWIND flag for the inner input, which
-	 * would amount to betting that the hash will be a single batch.  Not
-	 * clear if this would be a win or not.
 	 */
 	outerNode = outerPlan(node);
 	hashNode = (Hash *)innerPlan(node);
 
+	elog(NOTICE, "Before initializing child nodes - hashNode: %p", hashNode);
+
 	outerPlanState(hjstate) = ExecInitNode(outerNode, estate, eflags);
+	elog(NOTICE, "After initializing outer node");
+
 	outerDesc = ExecGetResultType(outerPlanState(hjstate));
 	innerPlanState(hjstate) = ExecInitNode((Plan *)hashNode, estate, eflags);
+	elog(NOTICE, "After initializing inner node - innerPlanState: %p", innerPlanState(hjstate));
+
 	innerDesc = ExecGetResultType(innerPlanState(hjstate));
 
 	/*
@@ -814,21 +942,27 @@ ExecInitHashJoin(HashJoin *node, EState *estate, int eflags)
 	{
 	case JOIN_HLL:
 	{
-		/* Create tuple descriptor with one int64 column */
+		// Create tuple descriptor with one int64 column
 		TupleDesc tupDesc = CreateTemplateTupleDesc(1);
 		TupleDescInitEntry(tupDesc, (AttrNumber)1,
 						   "estimated_cardinality",
 						   INT8OID, -1, 0);
 
-		/* Initialize the result slot with heap tuple operations */
-		hjstate->js.ps.ps_ResultTupleSlot = MakeSingleTupleTableSlot(tupDesc,
-																	 &TTSOpsHeapTuple);
-
-		/* Set the tuple descriptor for the plan state */
+		// Set the tuple descriptor for the plan state
 		hjstate->js.ps.ps_ResultTupleDesc = tupDesc;
 
-		elog(NOTICE, "JOIN_HLL value: %d", JOIN_HLL);
-		/* No need for hash table setup since we're just returning a value */
+		// Initialize the result slot with FIXED tuple operations
+		hjstate->js.ps.ps_ResultTupleSlot = MakeSingleTupleTableSlot(tupDesc,
+																	 &TTSOpsVirtual);
+
+		// Mark the tuple descriptor as belonging to a query result
+		tupDesc->tdtypeid = RECORDOID; // Set to a generic record type
+		tupDesc->tdtypmod = -1;
+
+		/* Add debug logging */
+		elog(NOTICE, "HLL Tuple Descriptor initialized - natts: %d, typeid: %u",
+			 tupDesc->natts, tupDesc->tdtypeid);
+
 		break;
 	}
 	case JOIN_INNER:
@@ -851,7 +985,7 @@ ExecInitHashJoin(HashJoin *node, EState *estate, int eflags)
 			ExecInitNullTupleSlot(estate, innerDesc, &TTSOpsVirtual);
 		break;
 	default:
-		elog(ERROR, "M_ExecInitHashJoin unrecognized join type: %d",
+		elog(ERROR, "unrecognized join type: %d",
 			 (int)node->join.jointype);
 	}
 
@@ -876,8 +1010,53 @@ ExecInitHashJoin(HashJoin *node, EState *estate, int eflags)
 		ExecInitQual(node->join.plan.qual, (PlanState *)hjstate);
 	hjstate->js.joinqual =
 		ExecInitQual(node->join.joinqual, (PlanState *)hjstate);
-	hjstate->hashclauses =
-		ExecInitQual(node->hashclauses, (PlanState *)hjstate);
+
+	/* Initialize hash clauses */
+	elog(NOTICE, "=== Hash initialization details ===");
+	elog(NOTICE, "Original node hash clauses count: %d", list_length(node->hashclauses));
+
+	/* Print original hash clauses */
+	if (node->hashclauses)
+	{
+		ListCell *lc;
+		int i = 0;
+		elog(NOTICE, "=== Original hash clauses ===");
+		foreach (lc, node->hashclauses)
+		{
+			Node *clause = lfirst(lc);
+			elog(NOTICE, "Original hash clause %d: pointer=%p, type=%d",
+				 i++, clause, clause ? nodeTag(clause) : -1);
+		}
+	}
+
+	/* Initialize hash clauses and keys */
+	hjstate->hashclauses = ExecInitQual(node->hashclauses, (PlanState *)hjstate);
+	hjstate->hj_OuterHashKeys = ExecInitExprList(node->hashkeys, (PlanState *)hjstate);
+
+	/* Check if hashclauses were properly initialized */
+	if (hjstate->hashclauses)
+	{
+		elog(NOTICE, "Hash clauses initialized: %p", hjstate->hashclauses);
+		elog(NOTICE, "Hash clause type: %d", hjstate->hashclauses->type);
+	}
+	else
+	{
+		elog(NOTICE, "hashclauses is NULL after initialization");
+	}
+
+	/* Print details of each hash key */
+	if (hjstate->hj_OuterHashKeys)
+	{
+		ListCell *lc;
+		int i = 0;
+		elog(NOTICE, "=== Hash keys details ===");
+		foreach (lc, hjstate->hj_OuterHashKeys)
+		{
+			ExprState *key = (ExprState *)lfirst(lc);
+			elog(NOTICE, "Hash key %d: pointer=%p, type=%d",
+				 i++, key, key ? key->type : -1);
+		}
+	}
 
 	/*
 	 * initialize hash-specific info
@@ -890,8 +1069,6 @@ ExecInitHashJoin(HashJoin *node, EState *estate, int eflags)
 	hjstate->hj_CurSkewBucketNo = INVALID_SKEW_BUCKET_NO;
 	hjstate->hj_CurTuple = NULL;
 
-	hjstate->hj_OuterHashKeys = ExecInitExprList(node->hashkeys,
-												 (PlanState *)hjstate);
 	hjstate->hj_HashOperators = node->hashoperators;
 	hjstate->hj_Collations = node->hashcollations;
 

@@ -1288,3 +1288,863 @@
 2024-11-26 07:25:18.311 UTC [37916] WARNING:  === HLL JOIN detected! ===
 2024-11-26 07:30:09.212 UTC [37881] LOG:  checkpoint starting: time
 2024-11-26 07:30:09.234 UTC [37881] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.009 s, sync=0.002 s, total=0.023 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1595FF8, redo lsn=0/1595FC0
+2024-11-26 19:18:32.119 UTC [37916] WARNING:  === INNER JOIN detected! ===
+2024-11-27 01:51:11.260 UTC [37916] WARNING:  === HLL JOIN detected! ===
+2024-11-27 02:30:02.911 UTC [37880] LOG:  received fast shutdown request
+2024-11-27 02:30:02.915 UTC [37880] LOG:  aborting any active transactions
+2024-11-27 02:30:02.919 UTC [37880] LOG:  background worker "logical replication launcher" (PID 37886) exited with exit code 1
+2024-11-27 02:30:02.919 UTC [37881] LOG:  shutting down
+2024-11-27 02:30:02.921 UTC [37881] LOG:  checkpoint starting: shutdown immediate
+2024-11-27 02:30:02.932 UTC [37881] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.001 s, total=0.013 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15960C0, redo lsn=0/15960C0
+2024-11-27 02:30:02.938 UTC [37880] LOG:  database system is shut down
+2024-11-27 03:05:25.050 UTC [87202] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-27 03:05:25.051 UTC [87202] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-27 03:05:25.051 UTC [87202] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-27 03:05:25.056 UTC [87202] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-27 03:05:25.059 UTC [87205] LOG:  database system was shut down at 2024-11-27 02:30:02 UTC
+2024-11-27 03:05:25.063 UTC [87202] LOG:  database system is ready to accept connections
+2024-11-27 03:05:28.270 UTC [87227] WARNING:  === HLL JOIN detected! ===
+2024-11-27 03:05:28.282 UTC [87227] ERROR:  Hash node does not support ExecProcNode call convention
+2024-11-27 03:05:28.282 UTC [87227] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-27 03:08:53.268 UTC [87202] LOG:  received fast shutdown request
+2024-11-27 03:08:53.272 UTC [87202] LOG:  aborting any active transactions
+2024-11-27 03:08:53.275 UTC [87202] LOG:  background worker "logical replication launcher" (PID 87208) exited with exit code 1
+2024-11-27 03:08:53.276 UTC [87203] LOG:  shutting down
+2024-11-27 03:08:53.278 UTC [87203] LOG:  checkpoint starting: shutdown immediate
+2024-11-27 03:08:53.315 UTC [87203] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.021 s, sync=0.001 s, total=0.040 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1596170, redo lsn=0/1596170
+2024-11-27 03:08:53.319 UTC [87202] LOG:  database system is shut down
+2024-11-27 10:40:13.565 UTC [85496] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-27 10:40:13.565 UTC [85496] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-27 10:40:13.565 UTC [85496] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-27 10:40:13.572 UTC [85496] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-27 10:40:13.577 UTC [85499] LOG:  database system was shut down at 2024-11-27 03:08:53 UTC
+2024-11-27 10:40:13.580 UTC [85496] LOG:  database system is ready to accept connections
+2024-11-27 10:40:18.866 UTC [85533] WARNING:  === HLL JOIN detected! ===
+2024-11-27 10:41:51.606 UTC [85533] WARNING:  === JOIN detected, WoooHoooo! ===
+2024-11-27 10:43:17.758 UTC [85533] WARNING:  === JOIN detected, WoooHoooo! ===
+2024-11-27 10:43:34.202 UTC [85533] WARNING:  === JOIN detected, WoooHoooo! ===
+2024-11-27 10:43:41.814 UTC [85533] WARNING:  === HLL JOIN detected! ===
+2024-11-27 10:45:13.624 UTC [85497] LOG:  checkpoint starting: time
+2024-11-27 10:45:17.686 UTC [85497] LOG:  checkpoint complete: wrote 42 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.037 s, sync=0.017 s, total=4.063 s; sync files=30, longest=0.014 s, average=0.001 s; distance=276 kB, estimate=276 kB; lsn=0/15DB1E0, redo lsn=0/15DB1A8
+2024-11-27 10:49:06.734 UTC [85496] LOG:  received fast shutdown request
+2024-11-27 10:49:06.736 UTC [85496] LOG:  aborting any active transactions
+2024-11-27 10:49:06.740 UTC [85496] LOG:  background worker "logical replication launcher" (PID 85502) exited with exit code 1
+2024-11-27 10:49:06.741 UTC [85497] LOG:  shutting down
+2024-11-27 10:49:06.744 UTC [85497] LOG:  checkpoint starting: shutdown immediate
+2024-11-27 10:49:06.753 UTC [85497] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.013 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=248 kB; lsn=0/15DB290, redo lsn=0/15DB290
+2024-11-27 10:49:06.758 UTC [85496] LOG:  database system is shut down
+2024-11-27 10:50:29.611 UTC [97502] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-27 10:50:29.612 UTC [97502] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-27 10:50:29.612 UTC [97502] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-27 10:50:29.613 UTC [97502] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-27 10:50:29.616 UTC [97505] LOG:  database system was shut down at 2024-11-27 10:49:06 UTC
+2024-11-27 10:50:29.622 UTC [97502] LOG:  database system is ready to accept connections
+2024-11-27 10:50:33.914 UTC [97527] WARNING:  === HLL JOIN detected! ===
+2024-11-27 10:51:39.190 UTC [97502] LOG:  received fast shutdown request
+2024-11-27 10:51:39.193 UTC [97502] LOG:  aborting any active transactions
+2024-11-27 10:51:39.196 UTC [97502] LOG:  background worker "logical replication launcher" (PID 97508) exited with exit code 1
+2024-11-27 10:51:39.197 UTC [97503] LOG:  shutting down
+2024-11-27 10:51:39.199 UTC [97503] LOG:  checkpoint starting: shutdown immediate
+2024-11-27 10:51:39.212 UTC [97503] LOG:  checkpoint complete: wrote 4 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.007 s, sync=0.003 s, total=0.015 s; sync files=3, longest=0.002 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DB340, redo lsn=0/15DB340
+2024-11-27 10:51:39.216 UTC [97502] LOG:  database system is shut down
+2024-11-27 10:52:58.110 UTC [5584] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-27 10:52:58.111 UTC [5584] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-27 10:52:58.111 UTC [5584] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-27 10:52:58.114 UTC [5584] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-27 10:52:58.117 UTC [5587] LOG:  database system was shut down at 2024-11-27 10:51:39 UTC
+2024-11-27 10:52:58.121 UTC [5584] LOG:  database system is ready to accept connections
+2024-11-27 10:53:01.508 UTC [5609] WARNING:  === HLL JOIN detected! ===
+2024-11-27 10:54:52.283 UTC [5584] LOG:  received fast shutdown request
+2024-11-27 10:54:52.286 UTC [5584] LOG:  aborting any active transactions
+2024-11-27 10:54:52.290 UTC [5584] LOG:  background worker "logical replication launcher" (PID 5590) exited with exit code 1
+2024-11-27 10:54:52.290 UTC [5585] LOG:  shutting down
+2024-11-27 10:54:52.293 UTC [5585] LOG:  checkpoint starting: shutdown immediate
+2024-11-27 10:54:52.306 UTC [5585] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.007 s, sync=0.001 s, total=0.016 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DB3F0, redo lsn=0/15DB3F0
+2024-11-27 10:54:52.311 UTC [5584] LOG:  database system is shut down
+2024-11-27 10:56:16.735 UTC [13653] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-27 10:56:16.736 UTC [13653] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-27 10:56:16.736 UTC [13653] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-27 10:56:16.737 UTC [13653] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-27 10:56:16.740 UTC [13656] LOG:  database system was shut down at 2024-11-27 10:54:52 UTC
+2024-11-27 10:56:16.743 UTC [13653] LOG:  database system is ready to accept connections
+2024-11-27 10:56:19.492 UTC [13678] WARNING:  === HLL JOIN detected! ===
+2024-11-27 10:56:19.502 UTC [13678] ERROR:  Hash node does not support ExecProcNode call convention
+2024-11-27 10:56:19.502 UTC [13678] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-27 10:57:32.907 UTC [13653] LOG:  received fast shutdown request
+2024-11-27 10:57:32.910 UTC [13653] LOG:  aborting any active transactions
+2024-11-27 10:57:32.913 UTC [13653] LOG:  background worker "logical replication launcher" (PID 13659) exited with exit code 1
+2024-11-27 10:57:32.914 UTC [13654] LOG:  shutting down
+2024-11-27 10:57:32.915 UTC [13654] LOG:  checkpoint starting: shutdown immediate
+2024-11-27 10:57:32.923 UTC [13654] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.009 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DB4A0, redo lsn=0/15DB4A0
+2024-11-27 10:57:32.925 UTC [13653] LOG:  database system is shut down
+2024-11-27 10:59:22.238 UTC [21642] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-27 10:59:22.239 UTC [21642] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-27 10:59:22.239 UTC [21642] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-27 10:59:22.240 UTC [21642] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-27 10:59:22.242 UTC [21645] LOG:  database system was shut down at 2024-11-27 10:57:32 UTC
+2024-11-27 10:59:22.245 UTC [21642] LOG:  database system is ready to accept connections
+2024-11-27 10:59:25.060 UTC [21661] WARNING:  === HLL JOIN detected! ===
+2024-11-27 10:59:25.075 UTC [21642] LOG:  server process (PID 21661) was terminated by signal 11: Segmentation fault
+2024-11-27 10:59:25.075 UTC [21642] DETAIL:  Failed process was running: SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-27 10:59:25.075 UTC [21642] LOG:  terminating any other active server processes
+2024-11-27 10:59:25.076 UTC [21676] FATAL:  the database system is in recovery mode
+2024-11-27 10:59:25.076 UTC [21642] LOG:  all server processes terminated; reinitializing
+2024-11-27 10:59:25.087 UTC [21677] LOG:  database system was interrupted; last known up at 2024-11-27 10:59:22 UTC
+2024-11-27 10:59:25.139 UTC [21677] LOG:  database system was not properly shut down; automatic recovery in progress
+2024-11-27 10:59:25.140 UTC [21677] LOG:  invalid record length at 0/15DB518: expected at least 24, got 0
+2024-11-27 10:59:25.140 UTC [21677] LOG:  redo is not required
+2024-11-27 10:59:25.142 UTC [21678] LOG:  checkpoint starting: end-of-recovery immediate wait
+2024-11-27 10:59:25.146 UTC [21678] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.005 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DB518, redo lsn=0/15DB518
+2024-11-27 10:59:25.146 UTC [21642] LOG:  database system is ready to accept connections
+2024-11-27 10:59:36.061 UTC [21759] WARNING:  === HLL JOIN detected! ===
+2024-11-27 10:59:36.071 UTC [21642] LOG:  server process (PID 21759) was terminated by signal 11: Segmentation fault
+2024-11-27 10:59:36.071 UTC [21642] DETAIL:  Failed process was running: SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-27 10:59:36.071 UTC [21642] LOG:  terminating any other active server processes
+2024-11-27 10:59:36.072 UTC [21777] FATAL:  the database system is in recovery mode
+2024-11-27 10:59:36.073 UTC [21642] LOG:  all server processes terminated; reinitializing
+2024-11-27 10:59:36.101 UTC [21778] LOG:  database system was interrupted; last known up at 2024-11-27 10:59:25 UTC
+2024-11-27 10:59:36.156 UTC [21778] LOG:  database system was not properly shut down; automatic recovery in progress
+2024-11-27 10:59:36.157 UTC [21778] LOG:  invalid record length at 0/15DB590: expected at least 24, got 0
+2024-11-27 10:59:36.157 UTC [21778] LOG:  redo is not required
+2024-11-27 10:59:36.158 UTC [21779] LOG:  checkpoint starting: end-of-recovery immediate wait
+2024-11-27 10:59:36.162 UTC [21779] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.005 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DB590, redo lsn=0/15DB590
+2024-11-27 10:59:36.163 UTC [21642] LOG:  database system is ready to accept connections
+2024-11-27 11:00:01.101 UTC [21642] LOG:  received fast shutdown request
+2024-11-27 11:00:01.103 UTC [21642] LOG:  aborting any active transactions
+2024-11-27 11:00:01.106 UTC [21642] LOG:  background worker "logical replication launcher" (PID 21783) exited with exit code 1
+2024-11-27 11:00:01.106 UTC [21779] LOG:  shutting down
+2024-11-27 11:00:01.107 UTC [21779] LOG:  checkpoint starting: shutdown immediate
+2024-11-27 11:00:01.112 UTC [21779] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.007 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15DB640, redo lsn=0/15DB640
+2024-11-27 11:00:01.114 UTC [21642] LOG:  database system is shut down
+2024-11-27 11:07:43.533 UTC [32725] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-27 11:07:43.534 UTC [32725] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-27 11:07:43.534 UTC [32725] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-27 11:07:43.536 UTC [32725] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-27 11:07:43.538 UTC [32728] LOG:  database system was shut down at 2024-11-27 11:00:01 UTC
+2024-11-27 11:07:43.541 UTC [32725] LOG:  database system is ready to accept connections
+2024-11-27 11:07:47.574 UTC [32750] WARNING:  === HLL JOIN detected! ===
+2024-11-27 11:07:47.585 UTC [32750] ERROR:  Inner plan is NULL
+2024-11-27 11:07:47.585 UTC [32750] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-27 11:12:46.406 UTC [32726] LOG:  checkpoint starting: time
+2024-11-27 11:12:46.421 UTC [32726] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.007 s, sync=0.001 s, total=0.019 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DB728, redo lsn=0/15DB6F0
+2024-11-27 11:23:42.013 UTC [32725] LOG:  received fast shutdown request
+2024-11-27 11:23:42.017 UTC [32725] LOG:  aborting any active transactions
+2024-11-27 11:23:42.020 UTC [32725] LOG:  background worker "logical replication launcher" (PID 32731) exited with exit code 1
+2024-11-27 11:23:42.020 UTC [32726] LOG:  shutting down
+2024-11-27 11:23:42.021 UTC [32726] LOG:  checkpoint starting: shutdown immediate
+2024-11-27 11:23:42.031 UTC [32726] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.011 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15DB7D8, redo lsn=0/15DB7D8
+2024-11-27 11:23:42.038 UTC [32725] LOG:  database system is shut down
+2024-11-27 11:27:52.220 UTC [55729] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-27 11:27:52.221 UTC [55729] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-27 11:27:52.221 UTC [55729] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-27 11:27:52.222 UTC [55729] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-27 11:27:52.224 UTC [55732] LOG:  database system was shut down at 2024-11-27 11:23:42 UTC
+2024-11-27 11:27:52.227 UTC [55729] LOG:  database system is ready to accept connections
+2024-11-27 11:27:56.361 UTC [55757] WARNING:  === HLL JOIN detected! ===
+2024-11-27 11:27:56.372 UTC [55757] ERROR:  inner plan is NULL
+2024-11-27 11:27:56.372 UTC [55757] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-27 11:31:40.525 UTC [55729] LOG:  received fast shutdown request
+2024-11-27 11:31:40.533 UTC [55729] LOG:  aborting any active transactions
+2024-11-27 11:31:40.536 UTC [55729] LOG:  background worker "logical replication launcher" (PID 55735) exited with exit code 1
+2024-11-27 11:31:40.537 UTC [55730] LOG:  shutting down
+2024-11-27 11:31:40.538 UTC [55730] LOG:  checkpoint starting: shutdown immediate
+2024-11-27 11:31:40.550 UTC [55730] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.006 s, sync=0.001 s, total=0.013 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DB888, redo lsn=0/15DB888
+2024-11-27 11:31:40.553 UTC [55729] LOG:  database system is shut down
+2024-11-27 11:33:07.485 UTC [64890] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-27 11:33:07.489 UTC [64890] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-27 11:33:07.489 UTC [64890] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-27 11:33:07.491 UTC [64890] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-27 11:33:07.494 UTC [64893] LOG:  database system was shut down at 2024-11-27 11:31:40 UTC
+2024-11-27 11:33:07.497 UTC [64890] LOG:  database system is ready to accept connections
+2024-11-27 11:33:10.977 UTC [64915] WARNING:  === HLL JOIN detected! ===
+2024-11-27 11:33:10.986 UTC [64915] ERROR:  inner plan is NULL
+2024-11-27 11:33:10.986 UTC [64915] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-27 11:33:28.980 UTC [64915] WARNING:  === JOIN detected, WoooHoooo! ===
+2024-11-27 11:33:58.589 UTC [64915] WARNING:  === HLL JOIN detected! ===
+2024-11-27 11:33:58.594 UTC [64915] ERROR:  inner plan is NULL
+2024-11-27 11:33:58.594 UTC [64915] STATEMENT:  SELECT * FROM tableA HLL_JOIN tableB ON tableA.id = tableB.id;
+2024-11-27 11:38:07.908 UTC [64891] LOG:  checkpoint starting: time
+2024-11-27 11:38:08.033 UTC [64891] LOG:  checkpoint complete: wrote 4 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.111 s, sync=0.004 s, total=0.126 s; sync files=3, longest=0.002 s, average=0.002 s; distance=0 kB, estimate=0 kB; lsn=0/15DB970, redo lsn=0/15DB938
+2024-11-27 19:55:01.172 UTC [64890] LOG:  received fast shutdown request
+2024-11-27 19:55:01.185 UTC [64890] LOG:  aborting any active transactions
+2024-11-27 19:55:01.188 UTC [64890] LOG:  background worker "logical replication launcher" (PID 64896) exited with exit code 1
+2024-11-27 19:55:01.189 UTC [64891] LOG:  shutting down
+2024-11-27 19:55:01.191 UTC [64891] LOG:  checkpoint starting: shutdown immediate
+2024-11-27 19:55:01.200 UTC [64891] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.011 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15DBA20, redo lsn=0/15DBA20
+2024-11-27 19:55:01.205 UTC [64890] LOG:  database system is shut down
+2024-11-27 19:57:57.378 UTC [41812] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-27 19:57:57.379 UTC [41812] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-27 19:57:57.379 UTC [41812] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-27 19:57:57.381 UTC [41812] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-27 19:57:57.384 UTC [41815] LOG:  database system was shut down at 2024-11-27 19:55:01 UTC
+2024-11-27 19:57:57.387 UTC [41812] LOG:  database system is ready to accept connections
+2024-11-27 19:58:01.534 UTC [41832] WARNING:  === HLL JOIN detected! ===
+2024-11-27 19:58:01.543 UTC [41832] ERROR:  inner plan is NULL
+2024-11-27 19:58:01.543 UTC [41832] STATEMENT:  SELECT * FROM tableA HLL_JOIN tableB ON tableA.id = tableB.id;
+2024-11-27 20:02:57.386 UTC [41813] LOG:  checkpoint starting: time
+2024-11-27 20:02:57.508 UTC [41813] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.027 s, sync=0.009 s, total=0.123 s; sync files=2, longest=0.005 s, average=0.005 s; distance=0 kB, estimate=0 kB; lsn=0/15DBB08, redo lsn=0/15DBAD0
+2024-11-27 20:09:42.759 UTC [41812] LOG:  received fast shutdown request
+2024-11-27 20:09:42.763 UTC [41812] LOG:  aborting any active transactions
+2024-11-27 20:09:42.766 UTC [41812] LOG:  background worker "logical replication launcher" (PID 41818) exited with exit code 1
+2024-11-27 20:09:42.767 UTC [41813] LOG:  shutting down
+2024-11-27 20:09:42.769 UTC [41813] LOG:  checkpoint starting: shutdown immediate
+2024-11-27 20:09:42.782 UTC [41813] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.001 s, total=0.015 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15DBBB8, redo lsn=0/15DBBB8
+2024-11-27 20:09:42.788 UTC [41812] LOG:  database system is shut down
+2024-11-27 20:11:03.564 UTC [55106] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-27 20:11:03.565 UTC [55106] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-27 20:11:03.565 UTC [55106] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-27 20:11:03.570 UTC [55106] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-27 20:11:03.575 UTC [55112] LOG:  database system was shut down at 2024-11-27 20:09:42 UTC
+2024-11-27 20:11:03.578 UTC [55106] LOG:  database system is ready to accept connections
+2024-11-27 20:11:06.005 UTC [55124] WARNING:  === HLL JOIN detected! ===
+2024-11-27 20:11:06.017 UTC [55106] LOG:  server process (PID 55124) was terminated by signal 11: Segmentation fault
+2024-11-27 20:11:06.017 UTC [55106] DETAIL:  Failed process was running: SELECT * FROM tableA HLL_JOIN tableB ON tableA.id = tableB.id;
+2024-11-27 20:11:06.017 UTC [55106] LOG:  terminating any other active server processes
+2024-11-27 20:11:06.018 UTC [55135] FATAL:  the database system is in recovery mode
+2024-11-27 20:11:06.018 UTC [55106] LOG:  all server processes terminated; reinitializing
+2024-11-27 20:11:06.034 UTC [55136] LOG:  database system was interrupted; last known up at 2024-11-27 20:11:03 UTC
+2024-11-27 20:11:06.084 UTC [55136] LOG:  database system was not properly shut down; automatic recovery in progress
+2024-11-27 20:11:06.085 UTC [55136] LOG:  invalid record length at 0/15DBC30: expected at least 24, got 0
+2024-11-27 20:11:06.085 UTC [55136] LOG:  redo is not required
+2024-11-27 20:11:06.086 UTC [55137] LOG:  checkpoint starting: end-of-recovery immediate wait
+2024-11-27 20:11:06.091 UTC [55137] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.006 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DBC30, redo lsn=0/15DBC30
+2024-11-27 20:11:06.092 UTC [55106] LOG:  database system is ready to accept connections
+2024-11-27 20:14:23.740 UTC [55106] LOG:  received fast shutdown request
+2024-11-27 20:14:23.744 UTC [55106] LOG:  aborting any active transactions
+2024-11-27 20:14:23.749 UTC [55106] LOG:  background worker "logical replication launcher" (PID 55141) exited with exit code 1
+2024-11-27 20:14:23.750 UTC [55137] LOG:  shutting down
+2024-11-27 20:14:23.752 UTC [55137] LOG:  checkpoint starting: shutdown immediate
+2024-11-27 20:14:23.760 UTC [55137] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.010 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15DBCE0, redo lsn=0/15DBCE0
+2024-11-27 20:14:23.764 UTC [55106] LOG:  database system is shut down
+2024-11-27 20:15:49.704 UTC [63952] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-27 20:15:49.705 UTC [63952] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-27 20:15:49.705 UTC [63952] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-27 20:15:49.708 UTC [63952] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-27 20:15:49.713 UTC [63955] LOG:  database system was shut down at 2024-11-27 20:14:23 UTC
+2024-11-27 20:15:49.715 UTC [63952] LOG:  database system is ready to accept connections
+2024-11-27 20:15:54.209 UTC [63980] WARNING:  === HLL JOIN detected! ===
+2024-11-27 20:15:54.222 UTC [63952] LOG:  server process (PID 63980) was terminated by signal 11: Segmentation fault
+2024-11-27 20:15:54.222 UTC [63952] DETAIL:  Failed process was running: SELECT * FROM tableA HLL_JOIN tableB ON tableA.id = tableB.id;
+2024-11-27 20:15:54.222 UTC [63952] LOG:  terminating any other active server processes
+2024-11-27 20:15:54.223 UTC [64005] FATAL:  the database system is in recovery mode
+2024-11-27 20:15:54.224 UTC [63952] LOG:  all server processes terminated; reinitializing
+2024-11-27 20:15:54.274 UTC [64006] LOG:  database system was interrupted; last known up at 2024-11-27 20:15:49 UTC
+2024-11-27 20:15:54.322 UTC [64006] LOG:  database system was not properly shut down; automatic recovery in progress
+2024-11-27 20:15:54.323 UTC [64006] LOG:  invalid record length at 0/15DBD58: expected at least 24, got 0
+2024-11-27 20:15:54.323 UTC [64006] LOG:  redo is not required
+2024-11-27 20:15:54.325 UTC [64007] LOG:  checkpoint starting: end-of-recovery immediate wait
+2024-11-27 20:15:54.328 UTC [64007] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.005 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DBD58, redo lsn=0/15DBD58
+2024-11-27 20:15:54.329 UTC [63952] LOG:  database system is ready to accept connections
+2024-11-27 20:19:28.472 UTC [63952] LOG:  received fast shutdown request
+2024-11-27 20:19:28.476 UTC [63952] LOG:  aborting any active transactions
+2024-11-27 20:19:28.482 UTC [63952] LOG:  background worker "logical replication launcher" (PID 64011) exited with exit code 1
+2024-11-27 20:19:28.483 UTC [64007] LOG:  shutting down
+2024-11-27 20:19:28.486 UTC [64007] LOG:  checkpoint starting: shutdown immediate
+2024-11-27 20:19:28.497 UTC [64007] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.001 s, total=0.015 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15DBE08, redo lsn=0/15DBE08
+2024-11-27 20:19:28.502 UTC [63952] LOG:  database system is shut down
+2024-11-27 20:21:00.404 UTC [73107] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-27 20:21:00.406 UTC [73107] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-27 20:21:00.406 UTC [73107] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-27 20:21:00.407 UTC [73107] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-27 20:21:00.410 UTC [73111] LOG:  database system was shut down at 2024-11-27 20:19:28 UTC
+2024-11-27 20:21:00.412 UTC [73107] LOG:  database system is ready to accept connections
+2024-11-27 20:21:04.640 UTC [73151] WARNING:  === HLL JOIN detected! ===
+2024-11-27 20:21:04.652 UTC [73151] ERROR:  Hash node does not support ExecProcNode call convention
+2024-11-27 20:21:04.652 UTC [73151] STATEMENT:  SELECT * FROM tableA HLL_JOIN tableB ON tableA.id = tableB.id;
+2024-11-27 20:26:00.410 UTC [73109] LOG:  checkpoint starting: time
+2024-11-27 20:26:00.426 UTC [73109] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.007 s, sync=0.002 s, total=0.017 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DBEF0, redo lsn=0/15DBEB8
+2024-11-27 20:26:55.689 UTC [73107] LOG:  received fast shutdown request
+2024-11-27 20:26:55.694 UTC [73107] LOG:  aborting any active transactions
+2024-11-27 20:26:55.698 UTC [73107] LOG:  background worker "logical replication launcher" (PID 73116) exited with exit code 1
+2024-11-27 20:26:55.699 UTC [73109] LOG:  shutting down
+2024-11-27 20:26:55.701 UTC [73109] LOG:  checkpoint starting: shutdown immediate
+2024-11-27 20:26:55.711 UTC [73109] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.013 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15DBFA0, redo lsn=0/15DBFA0
+2024-11-27 20:26:55.719 UTC [73107] LOG:  database system is shut down
+2024-11-27 20:29:11.650 UTC [83818] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-27 20:29:11.650 UTC [83818] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-27 20:29:11.650 UTC [83818] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-27 20:29:11.654 UTC [83818] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-27 20:29:11.658 UTC [83821] LOG:  database system was shut down at 2024-11-27 20:26:55 UTC
+2024-11-27 20:29:11.661 UTC [83818] LOG:  database system is ready to accept connections
+2024-11-27 20:29:15.614 UTC [83851] WARNING:  === HLL JOIN detected! ===
+2024-11-27 20:29:15.628 UTC [83818] LOG:  server process (PID 83851) was terminated by signal 11: Segmentation fault
+2024-11-27 20:29:15.628 UTC [83818] DETAIL:  Failed process was running: SELECT * FROM tableA HLL_JOIN tableB ON tableA.id = tableB.id;
+2024-11-27 20:29:15.628 UTC [83818] LOG:  terminating any other active server processes
+2024-11-27 20:29:15.630 UTC [83859] FATAL:  the database system is in recovery mode
+2024-11-27 20:29:15.630 UTC [83818] LOG:  all server processes terminated; reinitializing
+2024-11-27 20:29:15.644 UTC [83860] LOG:  database system was interrupted; last known up at 2024-11-27 20:29:11 UTC
+2024-11-27 20:29:15.713 UTC [83860] LOG:  database system was not properly shut down; automatic recovery in progress
+2024-11-27 20:29:15.714 UTC [83860] LOG:  invalid record length at 0/15DC030: expected at least 24, got 0
+2024-11-27 20:29:15.714 UTC [83860] LOG:  redo is not required
+2024-11-27 20:29:15.715 UTC [83861] LOG:  checkpoint starting: end-of-recovery immediate wait
+2024-11-27 20:29:15.720 UTC [83861] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.006 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DC030, redo lsn=0/15DC030
+2024-11-27 20:29:15.721 UTC [83818] LOG:  database system is ready to accept connections
+2024-11-27 20:32:01.236 UTC [83818] LOG:  received fast shutdown request
+2024-11-27 20:32:01.241 UTC [83818] LOG:  aborting any active transactions
+2024-11-27 20:32:01.262 UTC [83818] LOG:  background worker "logical replication launcher" (PID 83865) exited with exit code 1
+2024-11-27 20:32:01.265 UTC [83861] LOG:  shutting down
+2024-11-27 20:32:01.271 UTC [83861] LOG:  checkpoint starting: shutdown immediate
+2024-11-27 20:32:01.280 UTC [83861] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.015 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15DC0E0, redo lsn=0/15DC0E0
+2024-11-27 20:32:01.284 UTC [83818] LOG:  database system is shut down
+2024-11-27 20:33:48.824 UTC [92720] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-27 20:33:48.825 UTC [92720] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-27 20:33:48.825 UTC [92720] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-27 20:33:48.826 UTC [92720] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-27 20:33:48.830 UTC [92723] LOG:  database system was shut down at 2024-11-27 20:32:01 UTC
+2024-11-27 20:33:48.832 UTC [92720] LOG:  database system is ready to accept connections
+2024-11-27 20:33:52.525 UTC [92746] WARNING:  === HLL JOIN detected! ===
+2024-11-27 20:33:52.557 UTC [92720] LOG:  server process (PID 92746) was terminated by signal 11: Segmentation fault
+2024-11-27 20:33:52.557 UTC [92720] DETAIL:  Failed process was running: SELECT * FROM tableA HLL_JOIN tableB ON tableA.id = tableB.id;
+2024-11-27 20:33:52.557 UTC [92720] LOG:  terminating any other active server processes
+2024-11-27 20:33:52.558 UTC [92764] FATAL:  the database system is in recovery mode
+2024-11-27 20:33:52.558 UTC [92720] LOG:  all server processes terminated; reinitializing
+2024-11-27 20:33:52.569 UTC [92765] LOG:  database system was interrupted; last known up at 2024-11-27 20:33:48 UTC
+2024-11-27 20:33:52.624 UTC [92765] LOG:  database system was not properly shut down; automatic recovery in progress
+2024-11-27 20:33:52.625 UTC [92765] LOG:  invalid record length at 0/15DC158: expected at least 24, got 0
+2024-11-27 20:33:52.625 UTC [92765] LOG:  redo is not required
+2024-11-27 20:33:52.626 UTC [92766] LOG:  checkpoint starting: end-of-recovery immediate wait
+2024-11-27 20:33:52.630 UTC [92766] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.005 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DC158, redo lsn=0/15DC158
+2024-11-27 20:33:52.631 UTC [92720] LOG:  database system is ready to accept connections
+2024-11-27 20:36:20.779 UTC [92720] LOG:  received fast shutdown request
+2024-11-27 20:36:20.783 UTC [92720] LOG:  aborting any active transactions
+2024-11-27 20:36:20.801 UTC [92720] LOG:  background worker "logical replication launcher" (PID 92770) exited with exit code 1
+2024-11-27 20:36:20.802 UTC [92766] LOG:  shutting down
+2024-11-27 20:36:20.808 UTC [92766] LOG:  checkpoint starting: shutdown immediate
+2024-11-27 20:36:20.823 UTC [92766] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.020 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15DC208, redo lsn=0/15DC208
+2024-11-27 20:36:20.826 UTC [92720] LOG:  database system is shut down
+2024-11-27 20:38:10.191 UTC [1863] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-27 20:38:10.192 UTC [1863] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-27 20:38:10.192 UTC [1863] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-27 20:38:10.196 UTC [1863] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-27 20:38:10.203 UTC [1867] LOG:  database system was shut down at 2024-11-27 20:36:20 UTC
+2024-11-27 20:38:10.213 UTC [1863] LOG:  database system is ready to accept connections
+2024-11-27 20:38:14.122 UTC [1898] WARNING:  === HLL JOIN detected! ===
+2024-11-27 20:38:14.135 UTC [1863] LOG:  server process (PID 1898) was terminated by signal 11: Segmentation fault
+2024-11-27 20:38:14.135 UTC [1863] DETAIL:  Failed process was running: SELECT * FROM tableA HLL_JOIN tableB ON tableA.id = tableB.id;
+2024-11-27 20:38:14.135 UTC [1863] LOG:  terminating any other active server processes
+2024-11-27 20:38:14.136 UTC [1913] FATAL:  the database system is in recovery mode
+2024-11-27 20:38:14.137 UTC [1863] LOG:  all server processes terminated; reinitializing
+2024-11-27 20:38:14.152 UTC [1914] LOG:  database system was interrupted; last known up at 2024-11-27 20:38:10 UTC
+2024-11-27 20:38:14.208 UTC [1914] LOG:  database system was not properly shut down; automatic recovery in progress
+2024-11-27 20:38:14.210 UTC [1914] LOG:  invalid record length at 0/15DC280: expected at least 24, got 0
+2024-11-27 20:38:14.210 UTC [1914] LOG:  redo is not required
+2024-11-27 20:38:14.211 UTC [1915] LOG:  checkpoint starting: end-of-recovery immediate wait
+2024-11-27 20:38:14.216 UTC [1915] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.006 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DC280, redo lsn=0/15DC280
+2024-11-27 20:38:14.217 UTC [1863] LOG:  database system is ready to accept connections
+2024-11-27 20:41:20.661 UTC [3504] WARNING:  === HLL JOIN detected! ===
+2024-11-27 20:41:20.674 UTC [1863] LOG:  server process (PID 3504) was terminated by signal 11: Segmentation fault
+2024-11-27 20:41:20.674 UTC [1863] DETAIL:  Failed process was running: SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-27 20:41:20.674 UTC [1863] LOG:  terminating any other active server processes
+2024-11-27 20:41:20.675 UTC [3568] FATAL:  the database system is in recovery mode
+2024-11-27 20:41:20.676 UTC [1863] LOG:  all server processes terminated; reinitializing
+2024-11-27 20:41:20.710 UTC [3569] LOG:  database system was interrupted; last known up at 2024-11-27 20:38:14 UTC
+2024-11-27 20:41:20.765 UTC [3569] LOG:  database system was not properly shut down; automatic recovery in progress
+2024-11-27 20:41:20.766 UTC [3569] LOG:  redo starts at 0/15DC2F8
+2024-11-27 20:41:20.766 UTC [3569] LOG:  invalid record length at 0/15DC330: expected at least 24, got 0
+2024-11-27 20:41:20.766 UTC [3569] LOG:  redo done at 0/15DC2F8 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+2024-11-27 20:41:20.768 UTC [3570] LOG:  checkpoint starting: end-of-recovery immediate wait
+2024-11-27 20:41:20.773 UTC [3570] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.007 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DC330, redo lsn=0/15DC330
+2024-11-27 20:41:20.774 UTC [1863] LOG:  database system is ready to accept connections
+2024-11-27 20:51:52.384 UTC [1863] LOG:  received fast shutdown request
+2024-11-27 20:51:52.389 UTC [1863] LOG:  aborting any active transactions
+2024-11-27 20:51:52.393 UTC [1863] LOG:  background worker "logical replication launcher" (PID 3574) exited with exit code 1
+2024-11-27 20:51:52.394 UTC [3570] LOG:  shutting down
+2024-11-27 20:51:52.395 UTC [3570] LOG:  checkpoint starting: shutdown immediate
+2024-11-27 20:51:52.403 UTC [3570] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.009 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15DC3E0, redo lsn=0/15DC3E0
+2024-11-27 20:51:52.406 UTC [1863] LOG:  database system is shut down
+2024-11-27 20:53:23.448 UTC [16243] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-27 20:53:23.448 UTC [16243] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-27 20:53:23.448 UTC [16243] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-27 20:53:23.453 UTC [16243] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-27 20:53:23.459 UTC [16246] LOG:  database system was shut down at 2024-11-27 20:51:52 UTC
+2024-11-27 20:53:23.462 UTC [16243] LOG:  database system is ready to accept connections
+2024-11-27 20:53:28.851 UTC [16243] LOG:  received fast shutdown request
+2024-11-27 20:53:28.854 UTC [16243] LOG:  aborting any active transactions
+2024-11-27 20:53:28.856 UTC [16243] LOG:  background worker "logical replication launcher" (PID 16249) exited with exit code 1
+2024-11-27 20:53:28.857 UTC [16244] LOG:  shutting down
+2024-11-27 20:53:28.859 UTC [16244] LOG:  checkpoint starting: shutdown immediate
+2024-11-27 20:53:28.879 UTC [16244] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.008 s, sync=0.002 s, total=0.022 s; sync files=2, longest=0.002 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DC458, redo lsn=0/15DC458
+2024-11-27 20:53:28.887 UTC [16243] LOG:  database system is shut down
+2024-11-27 20:53:30.519 UTC [16317] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-27 20:53:30.519 UTC [16317] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-27 20:53:30.519 UTC [16317] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-27 20:53:30.521 UTC [16317] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-27 20:53:30.524 UTC [16320] LOG:  database system was shut down at 2024-11-27 20:53:28 UTC
+2024-11-27 20:53:30.526 UTC [16317] LOG:  database system is ready to accept connections
+2024-11-27 20:53:36.683 UTC [16346] WARNING:  === HLL JOIN detected! ===
+2024-11-27 20:53:36.700 UTC [16317] LOG:  server process (PID 16346) was terminated by signal 11: Segmentation fault
+2024-11-27 20:53:36.700 UTC [16317] DETAIL:  Failed process was running: SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-27 20:53:36.700 UTC [16317] LOG:  terminating any other active server processes
+2024-11-27 20:53:36.701 UTC [16368] FATAL:  the database system is in recovery mode
+2024-11-27 20:53:36.702 UTC [16317] LOG:  all server processes terminated; reinitializing
+2024-11-27 20:53:36.719 UTC [16369] LOG:  database system was interrupted; last known up at 2024-11-27 20:53:30 UTC
+2024-11-27 20:53:36.766 UTC [16369] LOG:  database system was not properly shut down; automatic recovery in progress
+2024-11-27 20:53:36.767 UTC [16369] LOG:  invalid record length at 0/15DC4D0: expected at least 24, got 0
+2024-11-27 20:53:36.767 UTC [16369] LOG:  redo is not required
+2024-11-27 20:53:36.768 UTC [16370] LOG:  checkpoint starting: end-of-recovery immediate wait
+2024-11-27 20:53:36.772 UTC [16370] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.005 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DC4D0, redo lsn=0/15DC4D0
+2024-11-27 20:53:36.774 UTC [16317] LOG:  database system is ready to accept connections
+2024-11-27 21:29:48.794 UTC [16317] LOG:  received fast shutdown request
+2024-11-27 21:29:48.797 UTC [16317] LOG:  aborting any active transactions
+2024-11-27 21:29:48.801 UTC [16317] LOG:  background worker "logical replication launcher" (PID 16374) exited with exit code 1
+2024-11-27 21:29:48.801 UTC [16370] LOG:  shutting down
+2024-11-27 21:29:48.803 UTC [16370] LOG:  checkpoint starting: shutdown immediate
+2024-11-27 21:29:48.811 UTC [16370] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.010 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15DC580, redo lsn=0/15DC580
+2024-11-27 21:29:48.815 UTC [16317] LOG:  database system is shut down
+2024-11-27 21:31:14.448 UTC [42470] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-27 21:31:14.448 UTC [42470] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-27 21:31:14.448 UTC [42470] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-27 21:31:14.453 UTC [42470] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-27 21:31:14.457 UTC [42473] LOG:  database system was shut down at 2024-11-27 21:29:48 UTC
+2024-11-27 21:31:14.460 UTC [42470] LOG:  database system is ready to accept connections
+2024-11-27 21:31:16.857 UTC [42491] WARNING:  === HLL JOIN detected! ===
+2024-11-27 21:31:16.868 UTC [42491] ERROR:  Hash node does not support ExecProcNode call convention
+2024-11-27 21:31:16.868 UTC [42491] STATEMENT:  SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-27 21:32:06.743 UTC [42470] LOG:  received fast shutdown request
+2024-11-27 21:32:06.746 UTC [42470] LOG:  aborting any active transactions
+2024-11-27 21:32:06.750 UTC [42470] LOG:  background worker "logical replication launcher" (PID 42476) exited with exit code 1
+2024-11-27 21:32:06.751 UTC [42471] LOG:  shutting down
+2024-11-27 21:32:06.753 UTC [42471] LOG:  checkpoint starting: shutdown immediate
+2024-11-27 21:32:06.765 UTC [42471] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.007 s, sync=0.001 s, total=0.015 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DC630, redo lsn=0/15DC630
+2024-11-27 21:32:06.769 UTC [42470] LOG:  database system is shut down
+2024-11-27 21:33:29.496 UTC [50075] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-27 21:33:29.497 UTC [50075] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-27 21:33:29.497 UTC [50075] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-27 21:33:29.499 UTC [50075] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-27 21:33:29.501 UTC [50078] LOG:  database system was shut down at 2024-11-27 21:32:06 UTC
+2024-11-27 21:33:29.504 UTC [50075] LOG:  database system is ready to accept connections
+2024-11-27 21:33:33.278 UTC [50093] WARNING:  === HLL JOIN detected! ===
+2024-11-27 21:33:33.291 UTC [50075] LOG:  server process (PID 50093) was terminated by signal 11: Segmentation fault
+2024-11-27 21:33:33.291 UTC [50075] DETAIL:  Failed process was running: SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-27 21:33:33.291 UTC [50075] LOG:  terminating any other active server processes
+2024-11-27 21:33:33.292 UTC [50111] FATAL:  the database system is in recovery mode
+2024-11-27 21:33:33.293 UTC [50075] LOG:  all server processes terminated; reinitializing
+2024-11-27 21:33:33.304 UTC [50112] LOG:  database system was interrupted; last known up at 2024-11-27 21:33:29 UTC
+2024-11-27 21:33:33.376 UTC [50112] LOG:  database system was not properly shut down; automatic recovery in progress
+2024-11-27 21:33:33.377 UTC [50112] LOG:  invalid record length at 0/15DC6A8: expected at least 24, got 0
+2024-11-27 21:33:33.377 UTC [50112] LOG:  redo is not required
+2024-11-27 21:33:33.378 UTC [50113] LOG:  checkpoint starting: end-of-recovery immediate wait
+2024-11-27 21:33:33.383 UTC [50113] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.006 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DC6A8, redo lsn=0/15DC6A8
+2024-11-27 21:33:33.384 UTC [50075] LOG:  database system is ready to accept connections
+2024-11-27 21:34:36.132 UTC [50075] LOG:  received fast shutdown request
+2024-11-27 21:34:36.136 UTC [50075] LOG:  aborting any active transactions
+2024-11-27 21:34:36.141 UTC [50075] LOG:  background worker "logical replication launcher" (PID 50125) exited with exit code 1
+2024-11-27 21:34:36.141 UTC [50113] LOG:  shutting down
+2024-11-27 21:34:36.143 UTC [50113] LOG:  checkpoint starting: shutdown immediate
+2024-11-27 21:34:36.152 UTC [50113] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.011 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15DC758, redo lsn=0/15DC758
+2024-11-27 21:34:36.156 UTC [50075] LOG:  database system is shut down
+2024-11-27 21:36:00.200 UTC [57756] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-27 21:36:00.201 UTC [57756] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-27 21:36:00.201 UTC [57756] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-27 21:36:00.202 UTC [57756] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-27 21:36:00.203 UTC [57759] LOG:  database system was shut down at 2024-11-27 21:34:36 UTC
+2024-11-27 21:36:00.205 UTC [57756] LOG:  database system is ready to accept connections
+2024-11-27 21:36:03.108 UTC [57784] WARNING:  === HLL JOIN detected! ===
+2024-11-27 21:36:03.124 UTC [57756] LOG:  server process (PID 57784) was terminated by signal 11: Segmentation fault
+2024-11-27 21:36:03.124 UTC [57756] DETAIL:  Failed process was running: SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-27 21:36:03.124 UTC [57756] LOG:  terminating any other active server processes
+2024-11-27 21:36:03.125 UTC [57795] FATAL:  the database system is in recovery mode
+2024-11-27 21:36:03.126 UTC [57756] LOG:  all server processes terminated; reinitializing
+2024-11-27 21:36:03.173 UTC [57796] LOG:  database system was interrupted; last known up at 2024-11-27 21:36:00 UTC
+2024-11-27 21:36:03.222 UTC [57796] LOG:  database system was not properly shut down; automatic recovery in progress
+2024-11-27 21:36:03.223 UTC [57796] LOG:  invalid record length at 0/15DC7D0: expected at least 24, got 0
+2024-11-27 21:36:03.223 UTC [57796] LOG:  redo is not required
+2024-11-27 21:36:03.225 UTC [57797] LOG:  checkpoint starting: end-of-recovery immediate wait
+2024-11-27 21:36:03.229 UTC [57797] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.005 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DC7D0, redo lsn=0/15DC7D0
+2024-11-27 21:36:03.230 UTC [57756] LOG:  database system is ready to accept connections
+2024-11-27 21:37:23.249 UTC [57756] LOG:  received fast shutdown request
+2024-11-27 21:37:23.255 UTC [57756] LOG:  aborting any active transactions
+2024-11-27 21:37:23.258 UTC [57756] LOG:  background worker "logical replication launcher" (PID 57801) exited with exit code 1
+2024-11-27 21:37:23.259 UTC [57797] LOG:  shutting down
+2024-11-27 21:37:23.261 UTC [57797] LOG:  checkpoint starting: shutdown immediate
+2024-11-27 21:37:23.272 UTC [57797] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.014 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15DC880, redo lsn=0/15DC880
+2024-11-27 21:37:23.274 UTC [57756] LOG:  database system is shut down
+2024-11-27 21:38:43.788 UTC [65629] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-27 21:38:43.789 UTC [65629] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-27 21:38:43.789 UTC [65629] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-27 21:38:43.793 UTC [65629] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-27 21:38:43.796 UTC [65636] LOG:  database system was shut down at 2024-11-27 21:37:23 UTC
+2024-11-27 21:38:43.800 UTC [65629] LOG:  database system is ready to accept connections
+2024-11-27 21:38:47.270 UTC [65648] WARNING:  === HLL JOIN detected! ===
+2024-11-27 21:38:47.283 UTC [65629] LOG:  server process (PID 65648) was terminated by signal 11: Segmentation fault
+2024-11-27 21:38:47.283 UTC [65629] DETAIL:  Failed process was running: SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-27 21:38:47.283 UTC [65629] LOG:  terminating any other active server processes
+2024-11-27 21:38:47.284 UTC [65674] FATAL:  the database system is in recovery mode
+2024-11-27 21:38:47.284 UTC [65629] LOG:  all server processes terminated; reinitializing
+2024-11-27 21:38:47.296 UTC [65675] LOG:  database system was interrupted; last known up at 2024-11-27 21:38:43 UTC
+2024-11-27 21:38:47.348 UTC [65675] LOG:  database system was not properly shut down; automatic recovery in progress
+2024-11-27 21:38:47.349 UTC [65675] LOG:  invalid record length at 0/15DC8F8: expected at least 24, got 0
+2024-11-27 21:38:47.349 UTC [65675] LOG:  redo is not required
+2024-11-27 21:38:47.350 UTC [65676] LOG:  checkpoint starting: end-of-recovery immediate wait
+2024-11-27 21:38:47.355 UTC [65676] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.005 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DC8F8, redo lsn=0/15DC8F8
+2024-11-27 21:38:47.356 UTC [65629] LOG:  database system is ready to accept connections
+2024-11-27 21:39:45.199 UTC [65629] LOG:  received fast shutdown request
+2024-11-27 21:39:45.202 UTC [65629] LOG:  aborting any active transactions
+2024-11-27 21:39:45.209 UTC [65629] LOG:  background worker "logical replication launcher" (PID 65680) exited with exit code 1
+2024-11-27 21:39:45.209 UTC [65676] LOG:  shutting down
+2024-11-27 21:39:45.211 UTC [65676] LOG:  checkpoint starting: shutdown immediate
+2024-11-27 21:39:45.220 UTC [65676] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.011 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15DC9A8, redo lsn=0/15DC9A8
+2024-11-27 21:39:45.224 UTC [65629] LOG:  database system is shut down
+2024-11-27 21:41:09.743 UTC [73303] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-27 21:41:09.744 UTC [73303] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-27 21:41:09.744 UTC [73303] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-27 21:41:09.748 UTC [73303] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-27 21:41:09.753 UTC [73309] LOG:  database system was shut down at 2024-11-27 21:39:45 UTC
+2024-11-27 21:41:09.758 UTC [73303] LOG:  database system is ready to accept connections
+2024-11-27 21:41:12.277 UTC [73327] WARNING:  === HLL JOIN detected! ===
+2024-11-27 21:41:12.293 UTC [73303] LOG:  server process (PID 73327) was terminated by signal 11: Segmentation fault
+2024-11-27 21:41:12.293 UTC [73303] DETAIL:  Failed process was running: SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-27 21:41:12.293 UTC [73303] LOG:  terminating any other active server processes
+2024-11-27 21:41:12.294 UTC [73338] FATAL:  the database system is in recovery mode
+2024-11-27 21:41:12.295 UTC [73303] LOG:  all server processes terminated; reinitializing
+2024-11-27 21:41:12.312 UTC [73339] LOG:  database system was interrupted; last known up at 2024-11-27 21:41:09 UTC
+2024-11-27 21:41:12.363 UTC [73339] LOG:  database system was not properly shut down; automatic recovery in progress
+2024-11-27 21:41:12.364 UTC [73339] LOG:  invalid record length at 0/15DCA20: expected at least 24, got 0
+2024-11-27 21:41:12.364 UTC [73339] LOG:  redo is not required
+2024-11-27 21:41:12.365 UTC [73340] LOG:  checkpoint starting: end-of-recovery immediate wait
+2024-11-27 21:41:12.369 UTC [73340] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.005 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DCA20, redo lsn=0/15DCA20
+2024-11-27 21:41:12.370 UTC [73303] LOG:  database system is ready to accept connections
+2024-11-27 21:58:49.444 UTC [73303] LOG:  received fast shutdown request
+2024-11-27 21:58:49.447 UTC [73303] LOG:  aborting any active transactions
+2024-11-27 21:58:49.453 UTC [73303] LOG:  background worker "logical replication launcher" (PID 73344) exited with exit code 1
+2024-11-27 21:58:49.453 UTC [73340] LOG:  shutting down
+2024-11-27 21:58:49.455 UTC [73340] LOG:  checkpoint starting: shutdown immediate
+2024-11-27 21:58:49.465 UTC [73340] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.001 s, total=0.012 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15DCAD0, redo lsn=0/15DCAD0
+2024-11-27 21:58:49.469 UTC [73303] LOG:  database system is shut down
+2024-11-27 22:00:53.541 UTC [90008] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-27 22:00:53.542 UTC [90008] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-27 22:00:53.542 UTC [90008] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-27 22:00:53.543 UTC [90008] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-27 22:00:53.546 UTC [90011] LOG:  database system was shut down at 2024-11-27 21:58:49 UTC
+2024-11-27 22:00:53.549 UTC [90008] LOG:  database system is ready to accept connections
+2024-11-27 22:00:57.456 UTC [90037] WARNING:  === HLL JOIN detected! ===
+2024-11-27 22:00:57.468 UTC [90008] LOG:  server process (PID 90037) was terminated by signal 11: Segmentation fault
+2024-11-27 22:00:57.468 UTC [90008] DETAIL:  Failed process was running: SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-27 22:00:57.468 UTC [90008] LOG:  terminating any other active server processes
+2024-11-27 22:00:57.469 UTC [90052] FATAL:  the database system is in recovery mode
+2024-11-27 22:00:57.470 UTC [90008] LOG:  all server processes terminated; reinitializing
+2024-11-27 22:00:57.486 UTC [90053] LOG:  database system was interrupted; last known up at 2024-11-27 22:00:53 UTC
+2024-11-27 22:00:57.528 UTC [90053] LOG:  database system was not properly shut down; automatic recovery in progress
+2024-11-27 22:00:57.530 UTC [90053] LOG:  invalid record length at 0/15DCB48: expected at least 24, got 0
+2024-11-27 22:00:57.530 UTC [90053] LOG:  redo is not required
+2024-11-27 22:00:57.531 UTC [90054] LOG:  checkpoint starting: end-of-recovery immediate wait
+2024-11-27 22:00:57.536 UTC [90054] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.006 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DCB48, redo lsn=0/15DCB48
+2024-11-27 22:00:57.537 UTC [90008] LOG:  database system is ready to accept connections
+2024-11-27 22:03:29.426 UTC [90008] LOG:  received fast shutdown request
+2024-11-27 22:03:29.430 UTC [90008] LOG:  aborting any active transactions
+2024-11-27 22:03:29.436 UTC [90008] LOG:  background worker "logical replication launcher" (PID 90061) exited with exit code 1
+2024-11-27 22:03:29.436 UTC [90054] LOG:  shutting down
+2024-11-27 22:03:29.439 UTC [90054] LOG:  checkpoint starting: shutdown immediate
+2024-11-27 22:03:29.448 UTC [90054] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.012 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15DCBF8, redo lsn=0/15DCBF8
+2024-11-27 22:03:29.452 UTC [90008] LOG:  database system is shut down
+2024-11-27 22:04:49.204 UTC [98515] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-27 22:04:49.205 UTC [98515] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-27 22:04:49.205 UTC [98515] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-27 22:04:49.207 UTC [98515] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-27 22:04:49.210 UTC [98522] LOG:  database system was shut down at 2024-11-27 22:03:29 UTC
+2024-11-27 22:04:49.212 UTC [98515] LOG:  database system is ready to accept connections
+2024-11-27 22:04:53.058 UTC [98537] WARNING:  === HLL JOIN detected! ===
+2024-11-27 22:04:53.069 UTC [98515] LOG:  server process (PID 98537) was terminated by signal 11: Segmentation fault
+2024-11-27 22:04:53.069 UTC [98515] DETAIL:  Failed process was running: SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-27 22:04:53.069 UTC [98515] LOG:  terminating any other active server processes
+2024-11-27 22:04:53.070 UTC [98562] FATAL:  the database system is in recovery mode
+2024-11-27 22:04:53.071 UTC [98515] LOG:  all server processes terminated; reinitializing
+2024-11-27 22:04:53.082 UTC [98563] LOG:  database system was interrupted; last known up at 2024-11-27 22:04:49 UTC
+2024-11-27 22:04:53.136 UTC [98563] LOG:  database system was not properly shut down; automatic recovery in progress
+2024-11-27 22:04:53.137 UTC [98563] LOG:  invalid record length at 0/15DCC70: expected at least 24, got 0
+2024-11-27 22:04:53.137 UTC [98563] LOG:  redo is not required
+2024-11-27 22:04:53.138 UTC [98564] LOG:  checkpoint starting: end-of-recovery immediate wait
+2024-11-27 22:04:53.142 UTC [98564] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.005 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DCC70, redo lsn=0/15DCC70
+2024-11-27 22:04:53.143 UTC [98515] LOG:  database system is ready to accept connections
+2024-11-27 22:07:55.458 UTC [98515] LOG:  received fast shutdown request
+2024-11-27 22:07:55.463 UTC [98515] LOG:  aborting any active transactions
+2024-11-27 22:07:55.468 UTC [98515] LOG:  background worker "logical replication launcher" (PID 98568) exited with exit code 1
+2024-11-27 22:07:55.469 UTC [98564] LOG:  shutting down
+2024-11-27 22:07:55.471 UTC [98564] LOG:  checkpoint starting: shutdown immediate
+2024-11-27 22:07:55.479 UTC [98564] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.010 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15DCD20, redo lsn=0/15DCD20
+2024-11-27 22:07:55.482 UTC [98515] LOG:  database system is shut down
+2024-11-27 22:09:47.902 UTC [7842] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-27 22:09:47.902 UTC [7842] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-27 22:09:47.902 UTC [7842] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-27 22:09:47.904 UTC [7842] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-27 22:09:47.906 UTC [7845] LOG:  database system was shut down at 2024-11-27 22:07:55 UTC
+2024-11-27 22:09:47.908 UTC [7842] LOG:  database system is ready to accept connections
+2024-11-27 22:09:50.719 UTC [7863] WARNING:  === HLL JOIN detected! ===
+2024-11-27 22:09:50.729 UTC [7842] LOG:  server process (PID 7863) was terminated by signal 11: Segmentation fault
+2024-11-27 22:09:50.729 UTC [7842] DETAIL:  Failed process was running: SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-27 22:09:50.729 UTC [7842] LOG:  terminating any other active server processes
+2024-11-27 22:09:50.730 UTC [7871] FATAL:  the database system is in recovery mode
+2024-11-27 22:09:50.731 UTC [7842] LOG:  all server processes terminated; reinitializing
+2024-11-27 22:09:50.762 UTC [7872] LOG:  database system was interrupted; last known up at 2024-11-27 22:09:47 UTC
+2024-11-27 22:09:50.809 UTC [7872] LOG:  database system was not properly shut down; automatic recovery in progress
+2024-11-27 22:09:50.809 UTC [7872] LOG:  invalid record length at 0/15DCD98: expected at least 24, got 0
+2024-11-27 22:09:50.809 UTC [7872] LOG:  redo is not required
+2024-11-27 22:09:50.810 UTC [7873] LOG:  checkpoint starting: end-of-recovery immediate wait
+2024-11-27 22:09:50.814 UTC [7873] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.004 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DCD98, redo lsn=0/15DCD98
+2024-11-27 22:09:50.814 UTC [7842] LOG:  database system is ready to accept connections
+2024-11-27 22:11:29.994 UTC [7842] LOG:  server process (PID 7935) was terminated by signal 9: Killed
+2024-11-27 22:11:29.994 UTC [7842] DETAIL:  Failed process was running: SELECT pg_backend_pid();
+2024-11-27 22:11:29.996 UTC [7842] LOG:  terminating any other active server processes
+2024-11-27 22:11:30.003 UTC [8755] FATAL:  the database system is in recovery mode
+2024-11-27 22:11:30.005 UTC [7842] LOG:  all server processes terminated; reinitializing
+2024-11-27 22:11:30.050 UTC [8756] LOG:  database system was interrupted; last known up at 2024-11-27 22:09:50 UTC
+2024-11-27 22:11:30.104 UTC [8756] LOG:  database system was not properly shut down; automatic recovery in progress
+2024-11-27 22:11:30.107 UTC [8756] LOG:  redo starts at 0/15DCE10
+2024-11-27 22:11:30.107 UTC [8756] LOG:  invalid record length at 0/15DCE48: expected at least 24, got 0
+2024-11-27 22:11:30.107 UTC [8756] LOG:  redo done at 0/15DCE10 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+2024-11-27 22:11:30.110 UTC [8757] LOG:  checkpoint starting: end-of-recovery immediate wait
+2024-11-27 22:11:30.115 UTC [8757] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.007 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DCE48, redo lsn=0/15DCE48
+2024-11-27 22:11:30.116 UTC [7842] LOG:  database system is ready to accept connections
+2024-11-27 22:11:43.691 UTC [8846] WARNING:  === HLL JOIN detected! ===
+2024-11-27 22:11:43.702 UTC [7842] LOG:  server process (PID 8846) was terminated by signal 11: Segmentation fault
+2024-11-27 22:11:43.702 UTC [7842] DETAIL:  Failed process was running: SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-27 22:11:43.702 UTC [7842] LOG:  terminating any other active server processes
+2024-11-27 22:11:43.703 UTC [8877] FATAL:  the database system is in recovery mode
+2024-11-27 22:11:43.704 UTC [7842] LOG:  all server processes terminated; reinitializing
+2024-11-27 22:11:43.716 UTC [8878] LOG:  database system was interrupted; last known up at 2024-11-27 22:11:30 UTC
+2024-11-27 22:11:43.770 UTC [8878] LOG:  database system was not properly shut down; automatic recovery in progress
+2024-11-27 22:11:43.771 UTC [8878] LOG:  invalid record length at 0/15DCEC0: expected at least 24, got 0
+2024-11-27 22:11:43.771 UTC [8878] LOG:  redo is not required
+2024-11-27 22:11:43.773 UTC [8879] LOG:  checkpoint starting: end-of-recovery immediate wait
+2024-11-27 22:11:43.777 UTC [8879] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.005 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DCEC0, redo lsn=0/15DCEC0
+2024-11-27 22:11:43.778 UTC [7842] LOG:  database system is ready to accept connections
+2024-11-27 22:12:35.690 UTC [8926] WARNING:  === HLL JOIN detected! ===
+2024-11-27 22:14:43.571 UTC [7842] LOG:  server process (PID 8926) was terminated by signal 11: Segmentation fault
+2024-11-27 22:14:43.571 UTC [7842] DETAIL:  Failed process was running: SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-27 22:14:43.571 UTC [7842] LOG:  terminating any other active server processes
+2024-11-27 22:14:43.577 UTC [10466] FATAL:  the database system is in recovery mode
+2024-11-27 22:14:43.581 UTC [7842] LOG:  all server processes terminated; reinitializing
+2024-11-27 22:14:43.630 UTC [10467] LOG:  database system was interrupted; last known up at 2024-11-27 22:11:43 UTC
+2024-11-27 22:14:43.683 UTC [10467] LOG:  database system was not properly shut down; automatic recovery in progress
+2024-11-27 22:14:43.685 UTC [10467] LOG:  redo starts at 0/15DCF38
+2024-11-27 22:14:43.685 UTC [10467] LOG:  invalid record length at 0/15DCF70: expected at least 24, got 0
+2024-11-27 22:14:43.685 UTC [10467] LOG:  redo done at 0/15DCF38 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+2024-11-27 22:14:43.689 UTC [10468] LOG:  checkpoint starting: end-of-recovery immediate wait
+2024-11-27 22:14:43.695 UTC [10468] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.002 s, total=0.007 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DCF70, redo lsn=0/15DCF70
+2024-11-27 22:14:43.696 UTC [7842] LOG:  database system is ready to accept connections
+2024-11-27 22:19:25.784 UTC [7842] LOG:  received fast shutdown request
+2024-11-27 22:19:25.796 UTC [7842] LOG:  aborting any active transactions
+2024-11-27 22:19:25.800 UTC [7842] LOG:  background worker "logical replication launcher" (PID 10472) exited with exit code 1
+2024-11-27 22:19:25.800 UTC [10468] LOG:  shutting down
+2024-11-27 22:19:25.802 UTC [10468] LOG:  checkpoint starting: shutdown immediate
+2024-11-27 22:19:25.810 UTC [10468] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.010 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15DD020, redo lsn=0/15DD020
+2024-11-27 22:19:25.815 UTC [7842] LOG:  database system is shut down
+2024-11-27 22:20:50.122 UTC [20090] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-27 22:20:50.124 UTC [20090] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-27 22:20:50.124 UTC [20090] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-27 22:20:50.125 UTC [20090] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-27 22:20:50.128 UTC [20093] LOG:  database system was shut down at 2024-11-27 22:19:25 UTC
+2024-11-27 22:20:50.131 UTC [20090] LOG:  database system is ready to accept connections
+2024-11-27 22:20:56.632 UTC [20108] WARNING:  === HLL JOIN detected! ===
+2024-11-27 22:20:56.644 UTC [20090] LOG:  server process (PID 20108) was terminated by signal 11: Segmentation fault
+2024-11-27 22:20:56.644 UTC [20090] DETAIL:  Failed process was running: SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-27 22:20:56.644 UTC [20090] LOG:  terminating any other active server processes
+2024-11-27 22:20:56.645 UTC [20144] FATAL:  the database system is in recovery mode
+2024-11-27 22:20:56.646 UTC [20090] LOG:  all server processes terminated; reinitializing
+2024-11-27 22:20:56.656 UTC [20145] LOG:  database system was interrupted; last known up at 2024-11-27 22:20:50 UTC
+2024-11-27 22:20:56.711 UTC [20145] LOG:  database system was not properly shut down; automatic recovery in progress
+2024-11-27 22:20:56.712 UTC [20145] LOG:  invalid record length at 0/15DD098: expected at least 24, got 0
+2024-11-27 22:20:56.712 UTC [20145] LOG:  redo is not required
+2024-11-27 22:20:56.713 UTC [20146] LOG:  checkpoint starting: end-of-recovery immediate wait
+2024-11-27 22:20:56.718 UTC [20146] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.006 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DD098, redo lsn=0/15DD098
+2024-11-27 22:20:56.720 UTC [20090] LOG:  database system is ready to accept connections
+2024-11-27 22:21:06.305 UTC [20090] LOG:  received fast shutdown request
+2024-11-27 22:21:06.308 UTC [20090] LOG:  aborting any active transactions
+2024-11-27 22:21:06.309 UTC [20090] LOG:  background worker "logical replication launcher" (PID 20150) exited with exit code 1
+2024-11-27 22:21:06.310 UTC [20146] LOG:  shutting down
+2024-11-27 22:21:06.311 UTC [20146] LOG:  checkpoint starting: shutdown immediate
+2024-11-27 22:21:06.318 UTC [20146] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.008 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15DD110, redo lsn=0/15DD110
+2024-11-27 22:21:06.321 UTC [20090] LOG:  database system is shut down
+2024-11-27 22:21:07.827 UTC [20241] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-27 22:21:07.827 UTC [20241] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-27 22:21:07.827 UTC [20241] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-27 22:21:07.830 UTC [20241] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-27 22:21:07.833 UTC [20248] LOG:  database system was shut down at 2024-11-27 22:21:06 UTC
+2024-11-27 22:21:07.835 UTC [20241] LOG:  database system is ready to accept connections
+2024-11-27 22:23:35.706 UTC [20263] WARNING:  === HLL JOIN detected! ===
+2024-11-27 22:26:07.922 UTC [20246] LOG:  checkpoint starting: time
+2024-11-27 22:26:07.940 UTC [20246] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.007 s, sync=0.002 s, total=0.019 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DD1F8, redo lsn=0/15DD1C0
+2024-11-27 22:27:44.457 UTC [20241] LOG:  server process (PID 20263) was terminated by signal 11: Segmentation fault
+2024-11-27 22:27:44.457 UTC [20241] DETAIL:  Failed process was running: SELECT * FROM table1 HLL_JOIN table2 ON table1.id = table2.id;
+2024-11-27 22:27:44.457 UTC [20241] LOG:  terminating any other active server processes
+2024-11-27 22:27:44.459 UTC [23626] FATAL:  the database system is in recovery mode
+2024-11-27 22:27:44.460 UTC [20241] LOG:  all server processes terminated; reinitializing
+2024-11-27 22:27:44.498 UTC [23627] LOG:  database system was interrupted; last known up at 2024-11-27 22:26:07 UTC
+2024-11-27 22:27:44.546 UTC [23627] LOG:  database system was not properly shut down; automatic recovery in progress
+2024-11-27 22:27:44.549 UTC [23627] LOG:  redo starts at 0/15DD1C0
+2024-11-27 22:27:44.549 UTC [23627] LOG:  invalid record length at 0/15DD2A8: expected at least 24, got 0
+2024-11-27 22:27:44.549 UTC [23627] LOG:  redo done at 0/15DD270 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+2024-11-27 22:27:44.551 UTC [23628] LOG:  checkpoint starting: end-of-recovery immediate wait
+2024-11-27 22:27:44.556 UTC [23628] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.006 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DD2A8, redo lsn=0/15DD2A8
+2024-11-27 22:27:44.558 UTC [20241] LOG:  database system is ready to accept connections
+2024-11-28 01:28:41.853 UTC [20241] LOG:  received fast shutdown request
+2024-11-28 01:28:41.856 UTC [20241] LOG:  aborting any active transactions
+2024-11-28 01:28:41.859 UTC [20241] LOG:  background worker "logical replication launcher" (PID 23632) exited with exit code 1
+2024-11-28 01:28:41.860 UTC [23628] LOG:  shutting down
+2024-11-28 01:28:41.862 UTC [23628] LOG:  checkpoint starting: shutdown immediate
+2024-11-28 01:28:41.870 UTC [23628] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.011 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15DD358, redo lsn=0/15DD358
+2024-11-28 01:28:41.872 UTC [20241] LOG:  database system is shut down
+2024-11-28 01:30:24.957 UTC [25031] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-28 01:30:24.957 UTC [25031] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-28 01:30:24.957 UTC [25031] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-28 01:30:24.959 UTC [25031] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-28 01:30:24.961 UTC [25035] LOG:  database system was shut down at 2024-11-28 01:28:41 UTC
+2024-11-28 01:30:24.964 UTC [25031] LOG:  database system is ready to accept connections
+2024-11-28 01:30:29.489 UTC [25066] WARNING:  === HLL JOIN detected! ===
+2024-11-28 01:35:24.992 UTC [25033] LOG:  checkpoint starting: time
+2024-11-28 01:35:25.006 UTC [25033] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.006 s, sync=0.002 s, total=0.016 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DD440, redo lsn=0/15DD408
+2024-11-28 01:40:34.353 UTC [25066] WARNING:  === HLL JOIN detected! ===
+2024-11-28 01:47:11.464 UTC [25066] WARNING:  === HLL JOIN detected! ===
+2024-11-28 01:48:40.938 UTC [25066] WARNING:  === HLL JOIN detected! ===
+2024-11-28 01:52:38.567 UTC [25066] WARNING:  === HLL JOIN detected! ===
+2024-11-28 01:54:41.365 UTC [25031] LOG:  received fast shutdown request
+2024-11-28 01:54:41.368 UTC [25031] LOG:  aborting any active transactions
+2024-11-28 01:54:41.370 UTC [25031] LOG:  background worker "logical replication launcher" (PID 25040) exited with exit code 1
+2024-11-28 01:54:41.371 UTC [25033] LOG:  shutting down
+2024-11-28 01:54:41.372 UTC [25033] LOG:  checkpoint starting: shutdown immediate
+2024-11-28 01:54:41.383 UTC [25033] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.012 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15DD4F0, redo lsn=0/15DD4F0
+2024-11-28 01:54:41.386 UTC [25031] LOG:  database system is shut down
+2024-11-28 01:56:09.747 UTC [45022] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-28 01:56:09.747 UTC [45022] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-28 01:56:09.747 UTC [45022] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-28 01:56:09.749 UTC [45022] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-28 01:56:09.752 UTC [45025] LOG:  database system was shut down at 2024-11-28 01:54:41 UTC
+2024-11-28 01:56:09.754 UTC [45022] LOG:  database system is ready to accept connections
+2024-11-28 01:56:45.954 UTC [45048] WARNING:  === HLL JOIN detected! ===
+2024-11-28 02:01:09.854 UTC [45023] LOG:  checkpoint starting: time
+2024-11-28 02:01:09.866 UTC [45023] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.006 s, sync=0.001 s, total=0.013 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DD5D8, redo lsn=0/15DD5A0
+2024-11-28 02:04:52.397 UTC [45048] WARNING:  === HLL JOIN detected! ===
+2024-11-28 02:05:34.675 UTC [45048] WARNING:  === HLL JOIN detected! ===
+2024-11-28 02:06:07.662 UTC [45022] LOG:  received fast shutdown request
+2024-11-28 02:06:07.666 UTC [45022] LOG:  aborting any active transactions
+2024-11-28 02:06:07.669 UTC [45022] LOG:  background worker "logical replication launcher" (PID 45028) exited with exit code 1
+2024-11-28 02:06:07.669 UTC [45023] LOG:  shutting down
+2024-11-28 02:06:07.671 UTC [45023] LOG:  checkpoint starting: shutdown immediate
+2024-11-28 02:06:07.683 UTC [45023] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.014 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15DD688, redo lsn=0/15DD688
+2024-11-28 02:06:07.687 UTC [45022] LOG:  database system is shut down
+2024-11-28 02:06:09.668 UTC [50354] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-28 02:06:09.669 UTC [50354] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-28 02:06:09.669 UTC [50354] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-28 02:06:09.670 UTC [50354] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-28 02:06:09.672 UTC [50357] LOG:  database system was shut down at 2024-11-28 02:06:07 UTC
+2024-11-28 02:06:09.675 UTC [50354] LOG:  database system is ready to accept connections
+2024-11-28 02:06:55.194 UTC [50422] WARNING:  === HLL JOIN detected! ===
+2024-11-28 02:11:09.754 UTC [50355] LOG:  checkpoint starting: time
+2024-11-28 02:11:09.766 UTC [50355] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.006 s, sync=0.001 s, total=0.013 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DD770, redo lsn=0/15DD738
+2024-11-28 02:15:45.657 UTC [50354] LOG:  received fast shutdown request
+2024-11-28 02:15:45.661 UTC [50354] LOG:  aborting any active transactions
+2024-11-28 02:15:45.663 UTC [50354] LOG:  background worker "logical replication launcher" (PID 50360) exited with exit code 1
+2024-11-28 02:15:45.664 UTC [50355] LOG:  shutting down
+2024-11-28 02:15:45.666 UTC [50355] LOG:  checkpoint starting: shutdown immediate
+2024-11-28 02:15:45.674 UTC [50355] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.011 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15DD820, redo lsn=0/15DD820
+2024-11-28 02:15:45.678 UTC [50354] LOG:  database system is shut down
+2024-11-28 02:17:08.916 UTC [62448] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-28 02:17:08.917 UTC [62448] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-28 02:17:08.917 UTC [62448] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-28 02:17:08.918 UTC [62448] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-28 02:17:08.920 UTC [62451] LOG:  database system was shut down at 2024-11-28 02:15:45 UTC
+2024-11-28 02:17:08.921 UTC [62448] LOG:  database system is ready to accept connections
+2024-11-28 02:17:11.557 UTC [62464] WARNING:  === HLL JOIN detected! ===
+2024-11-28 02:17:33.746 UTC [62464] WARNING:  === HLL JOIN detected! ===
+2024-11-28 02:17:48.778 UTC [62464] WARNING:  === HLL JOIN detected! ===
+2024-11-28 02:18:11.013 UTC [62973] WARNING:  === HLL JOIN detected! ===
+2024-11-28 02:18:18.276 UTC [62973] WARNING:  === HLL JOIN detected! ===
+2024-11-28 02:18:46.807 UTC [63253] WARNING:  === HLL JOIN detected! ===
+2024-11-28 02:19:58.655 UTC [63253] WARNING:  === HLL JOIN detected! ===
+2024-11-28 02:21:39.406 UTC [63253] WARNING:  === HLL JOIN detected! ===
+2024-11-28 02:22:09.001 UTC [62449] LOG:  checkpoint starting: time
+2024-11-28 02:22:09.020 UTC [62449] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.009 s, sync=0.002 s, total=0.020 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DD908, redo lsn=0/15DD8D0
+2024-11-28 02:23:34.233 UTC [62448] LOG:  received fast shutdown request
+2024-11-28 02:23:34.238 UTC [62448] LOG:  aborting any active transactions
+2024-11-28 02:23:34.241 UTC [62448] LOG:  background worker "logical replication launcher" (PID 62454) exited with exit code 1
+2024-11-28 02:23:34.241 UTC [62449] LOG:  shutting down
+2024-11-28 02:23:34.243 UTC [62449] LOG:  checkpoint starting: shutdown immediate
+2024-11-28 02:23:34.253 UTC [62449] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.012 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/15DD9B8, redo lsn=0/15DD9B8
+2024-11-28 02:23:34.256 UTC [62448] LOG:  database system is shut down
+2024-11-28 02:34:34.042 UTC [71540] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-28 02:34:34.043 UTC [71540] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-28 02:34:34.043 UTC [71540] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-28 02:34:34.045 UTC [71540] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-28 02:34:34.048 UTC [71546] LOG:  database system was shut down at 2024-11-28 02:23:34 UTC
+2024-11-28 02:34:34.052 UTC [71540] LOG:  database system is ready to accept connections
+2024-11-28 02:34:40.863 UTC [71583] WARNING:  === HLL JOIN detected! ===
+2024-11-28 02:35:38.662 UTC [71540] LOG:  received fast shutdown request
+2024-11-28 02:35:38.667 UTC [71540] LOG:  aborting any active transactions
+2024-11-28 02:35:38.670 UTC [71540] LOG:  background worker "logical replication launcher" (PID 71549) exited with exit code 1
+2024-11-28 02:35:38.670 UTC [71544] LOG:  shutting down
+2024-11-28 02:35:38.673 UTC [71544] LOG:  checkpoint starting: shutdown immediate
+2024-11-28 02:35:38.682 UTC [71544] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.012 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DDA68, redo lsn=0/15DDA68
+2024-11-28 02:35:38.685 UTC [71540] LOG:  database system is shut down
+2024-11-28 02:35:43.301 UTC [72087] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-28 02:35:43.302 UTC [72087] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-28 02:35:43.302 UTC [72087] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-28 02:35:43.304 UTC [72087] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-28 02:35:43.307 UTC [72090] LOG:  database system was shut down at 2024-11-28 02:35:38 UTC
+2024-11-28 02:35:43.311 UTC [72087] LOG:  database system is ready to accept connections
+2024-11-28 02:35:50.097 UTC [72130] WARNING:  === HLL JOIN detected! ===
+2024-11-28 02:37:02.975 UTC [72087] LOG:  received fast shutdown request
+2024-11-28 02:37:02.980 UTC [72087] LOG:  aborting any active transactions
+2024-11-28 02:37:02.985 UTC [72087] LOG:  background worker "logical replication launcher" (PID 72093) exited with exit code 1
+2024-11-28 02:37:02.986 UTC [72088] LOG:  shutting down
+2024-11-28 02:37:02.988 UTC [72088] LOG:  checkpoint starting: shutdown immediate
+2024-11-28 02:37:03.000 UTC [72088] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.006 s, sync=0.001 s, total=0.015 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DDB18, redo lsn=0/15DDB18
+2024-11-28 02:37:03.005 UTC [72087] LOG:  database system is shut down
+2024-11-28 02:37:03.134 UTC [72678] LOG:  starting PostgreSQL 16.4 on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2024-11-28 02:37:03.135 UTC [72678] LOG:  listening on IPv6 address "::1", port 5432
+2024-11-28 02:37:03.135 UTC [72678] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-11-28 02:37:03.137 UTC [72678] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-11-28 02:37:03.141 UTC [72681] LOG:  database system was shut down at 2024-11-28 02:37:02 UTC
+2024-11-28 02:37:03.145 UTC [72678] LOG:  database system is ready to accept connections
+2024-11-28 02:37:07.111 UTC [72707] WARNING:  === HLL JOIN detected! ===
+2024-11-28 02:40:09.159 UTC [72678] LOG:  received fast shutdown request
+2024-11-28 02:40:09.162 UTC [72678] LOG:  aborting any active transactions
+2024-11-28 02:40:09.164 UTC [72678] LOG:  background worker "logical replication launcher" (PID 72684) exited with exit code 1
+2024-11-28 02:40:09.166 UTC [72679] LOG:  shutting down
+2024-11-28 02:40:09.167 UTC [72679] LOG:  checkpoint starting: shutdown immediate
+2024-11-28 02:40:09.178 UTC [72679] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.002 s, total=0.013 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/15DDBC8, redo lsn=0/15DDBC8
+2024-11-28 02:40:09.182 UTC [72678] LOG:  database system is shut down
+2024-11-28 02:40:09.314 UTC [74223] LOG:  redirecting log output to logging collector process
+2024-11-28 02:40:09.314 UTC [74223] HINT:  Future log output will appear in directory "log".
+2024-11-28 02:40:20.089 UTC [74305] LOG:  redirecting log output to logging collector process
+2024-11-28 02:40:20.089 UTC [74305] HINT:  Future log output will appear in directory "log".
+2024-11-28 02:48:30.569 UTC [78568] DEBUG:  postgres: PostmasterMain: initial environment dump:
+2024-11-28 02:48:30.569 UTC [78568] DEBUG:  -----------------------------------------
+2024-11-28 02:48:30.569 UTC [78568] DEBUG:  	LESSOPEN=| /usr/bin/lesspipe %s
+2024-11-28 02:48:30.569 UTC [78568] DEBUG:  	HOSTNAME=b8aeb9df6164
+2024-11-28 02:48:30.569 UTC [78568] DEBUG:  	SHLVL=1
+2024-11-28 02:48:30.569 UTC [78568] DEBUG:  	HOME=/home/csci550user
+2024-11-28 02:48:30.569 UTC [78568] DEBUG:  	OLDPWD=/home/csci550user/postgresql-16.4/src/backend/parser
+2024-11-28 02:48:30.569 UTC [78568] DEBUG:  	PG_GRANDPARENT_PID=23
+2024-11-28 02:48:30.569 UTC [78568] DEBUG:  	_=/home/csci550user/postgresql-16.4/bin/pg_ctl
+2024-11-28 02:48:30.569 UTC [78568] DEBUG:  	TERM=xterm
+2024-11-28 02:48:30.569 UTC [78568] DEBUG:  	PGSYSCONFDIR=/home/csci550user/postgresql-16.4/etc
+2024-11-28 02:48:30.569 UTC [78568] DEBUG:  	PATH=/home/csci550user/postgresql-16.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2024-11-28 02:48:30.569 UTC [78568] DEBUG:  	LANG=en_US.UTF-8
+2024-11-28 02:48:30.569 UTC [78568] DEBUG:  	LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+2024-11-28 02:48:30.569 UTC [78568] DEBUG:  	LESSCLOSE=/usr/bin/lesspipe %s %s
+2024-11-28 02:48:30.569 UTC [78568] DEBUG:  	PWD=/home/csci550user/postgresql-16.4
+2024-11-28 02:48:30.569 UTC [78568] DEBUG:  	PGDATA=/home/csci550user/databases
+2024-11-28 02:48:30.569 UTC [78568] DEBUG:  	LC_COLLATE=en_US.UTF-8
+2024-11-28 02:48:30.569 UTC [78568] DEBUG:  	LC_CTYPE=en_US.UTF-8
+2024-11-28 02:48:30.569 UTC [78568] DEBUG:  	LC_MESSAGES=en_US.UTF-8
+2024-11-28 02:48:30.569 UTC [78568] DEBUG:  	LC_MONETARY=C
+2024-11-28 02:48:30.569 UTC [78568] DEBUG:  	LC_NUMERIC=C
+2024-11-28 02:48:30.569 UTC [78568] DEBUG:  	LC_TIME=C
+2024-11-28 02:48:30.569 UTC [78568] DEBUG:  -----------------------------------------
+2024-11-28 02:48:30.571 UTC [78568] DEBUG:  using armv8 crc32 hardware = 1
+2024-11-28 02:48:30.571 UTC [78568] DEBUG:  registering background worker "logical replication launcher"
+2024-11-28 02:48:30.571 UTC [78568] DEBUG:  invoking IpcMemoryCreate(size=149495808)
+2024-11-28 02:48:30.571 UTC [78568] DEBUG:  mmap(150994944) with MAP_HUGETLB failed, huge pages disabled: Cannot allocate memory
+2024-11-28 02:48:30.592 UTC [78568] DEBUG:  dynamic shared memory system will support 674 segments
+2024-11-28 02:48:30.592 UTC [78568] DEBUG:  created dynamic shared memory control segment 2998522678 (26976 bytes)
+2024-11-28 02:48:30.592 UTC [78568] DEBUG:  max_safe_fds = 986, usable_fds = 1000, already_open = 4
+2024-11-28 02:48:30.592 UTC [78568] LOG:  redirecting log output to logging collector process
+2024-11-28 02:48:30.592 UTC [78568] HINT:  Future log output will appear in directory "log".
+2024-11-28 02:53:02.095 UTC [78569] DEBUG:  logger shutting down
+2024-11-28 02:53:02.095 UTC [78569] DEBUG:  shmem_exit(0): 0 before_shmem_exit callbacks to make
+2024-11-28 02:53:02.095 UTC [78569] DEBUG:  shmem_exit(0): 0 on_shmem_exit callbacks to make
+2024-11-28 02:53:02.095 UTC [78569] DEBUG:  proc_exit(0): 0 callbacks to make
+2024-11-28 02:53:02.095 UTC [78569] DEBUG:  exit(0)
+2024-11-28 02:53:02.095 UTC [78569] DEBUG:  shmem_exit(-1): 0 before_shmem_exit callbacks to make
+2024-11-28 02:53:02.095 UTC [78569] DEBUG:  shmem_exit(-1): 0 on_shmem_exit callbacks to make
+2024-11-28 02:53:02.095 UTC [78569] DEBUG:  proc_exit(-1): 0 callbacks to make
