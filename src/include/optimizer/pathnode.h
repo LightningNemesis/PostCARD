@@ -17,14 +17,13 @@
 #include "nodes/bitmapset.h"
 #include "nodes/pathnodes.h"
 
-
 /*
  * prototypes for pathnode.c
  */
-extern int	compare_path_costs(Path *path1, Path *path2,
-							   CostSelector criterion);
-extern int	compare_fractional_path_costs(Path *path1, Path *path2,
-										  double fraction);
+extern int compare_path_costs(Path *path1, Path *path2,
+							  CostSelector criterion);
+extern int compare_fractional_path_costs(Path *path1, Path *path2,
+										 double fraction);
 extern void set_cheapest(RelOptInfo *parent_rel);
 extern void add_path(RelOptInfo *parent_rel, Path *new_path);
 extern bool add_path_precheck(RelOptInfo *parent_rel,
@@ -340,4 +339,4 @@ extern RelOptInfo *build_child_join_rel(PlannerInfo *root,
 										RelOptInfo *parent_joinrel, List *restrictlist,
 										SpecialJoinInfo *sjinfo);
 
-#endif							/* PATHNODE_H */
+#endif /* PATHNODE_H */
