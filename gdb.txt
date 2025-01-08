@@ -1,0 +1,1043 @@
+Continuing.
+
+Breakpoint 1, pull_up_subqueries_recurse (root=0xaaaacd4004b8, jtnode=0xaaaacd400400, lowest_outer_join=0x0, containing_appendrel=0x0) at prepjointree.c:810
+810		check_stack_depth();
+__func__ = "pull_up_subqueries_recurse"
+#0  pull_up_subqueries_recurse (root=0xaaaacd4004b8, jtnode=0xaaaacd400400, lowest_outer_join=0x0, 
+    containing_appendrel=0x0) at prepjointree.c:810
+#1  0x0000aaaaaf318958 in pull_up_subqueries (root=0xaaaacd4004b8) at prepjointree.c:767
+#2  0x0000aaaaaf2ff300 in subquery_planner (glob=0xaaaacd336040, parse=0xaaaacd336148, parent_root=0x0, 
+    hasRecursion=false, tuple_fraction=0) at planner.c:703
+#3  0x0000aaaaaf2fe948 in standard_planner (parse=0xaaaacd336148, 
+    query_string=0xaaaacd335040 "SELECT * FROM tableA HLL_JOIN tableB ON tableA.id = tableB.id;", cursorOptions=2048, 
+    boundParams=0x0) at planner.c:413
+#4  0x0000aaaaaf2fe6f4 in planner (parse=0xaaaacd336148, 
+    query_string=0xaaaacd335040 "SELECT * FROM tableA HLL_JOIN tableB ON tableA.id = tableB.id;", cursorOptions=2048, 
+    boundParams=0x0) at planner.c:281
+#5  0x0000aaaaaf440c94 in pg_plan_query (querytree=0xaaaacd336148, 
+    query_string=0xaaaacd335040 "SELECT * FROM tableA HLL_JOIN tableB ON tableA.id = tableB.id;", cursorOptions=2048, 
+    boundParams=0x0) at postgres.c:908
+#6  0x0000aaaaaf440de4 in pg_plan_queries (querytrees=0xaaaacd400470, 
+    query_string=0xaaaacd335040 "SELECT * FROM tableA HLL_JOIN tableB ON tableA.id = tableB.id;", cursorOptions=2048, 
+    boundParams=0x0) at postgres.c:1000
+#7  0x0000aaaaaf441164 in exec_simple_query (
+    query_string=0xaaaacd335040 "SELECT * FROM tableA HLL_JOIN tableB ON tableA.id = tableB.id;") at postgres.c:1197
+#8  0x0000aaaaaf446978 in PostgresMain (dbname=0xaaaacd36d4e0 "postgres", username=0xaaaacd3318d0 "csci550user")
+    at postgres.c:4701
+#9  0x0000aaaaaf36a180 in BackendRun (port=0xaaaacd362d60) at postmaster.c:4464
+#10 0x0000aaaaaf369a88 in BackendStartup (port=0xaaaacd362d60) at postmaster.c:4192
+#11 0x0000aaaaaf36581c in ServerLoop () at postmaster.c:1782
+#12 0x0000aaaaaf365000 in PostmasterMain (argc=3, argv=0xaaaacd32f820) at postmaster.c:1466
+#13 0x0000aaaaaf2300a0 in main (argc=3, argv=0xaaaacd32f820) at main.c:198
+A syntax error in expression, near `'.
+A syntax error in expression, near `'.
+Continuing.
+
+Breakpoint 1, pull_up_subqueries_recurse (root=0xaaaacd4004b8, jtnode=0xaaaacd335de0, lowest_outer_join=0x0, containing_appendrel=0x0) at prepjointree.c:810
+810		check_stack_depth();
+Continuing.
+
+Breakpoint 1, pull_up_subqueries_recurse (root=0xaaaacd4004b8, jtnode=0xaaaacd336590, lowest_outer_join=0x0, containing_appendrel=0x0) at prepjointree.c:810
+810		check_stack_depth();
+Continuing.
+
+Breakpoint 1, pull_up_subqueries_recurse (root=0xaaaacd4004b8, jtnode=0xaaaacd336898, lowest_outer_join=0x0, containing_appendrel=0x0) at prepjointree.c:810
+810		check_stack_depth();
+Continuing.
+
+Breakpoint 2, deconstruct_recurse (root=0xaaaacd4004b8, jtnode=0xaaaacd400400, parent_domain=0xaaaacd4008c0, parent_jtitem=0x0, item_list=0xffffd92cae08) at initsplan.c:822
+822		jtitem = palloc0_object(JoinTreeItem);
+joinlist = 0xaaaacd4013a0
+jtitem = 0xaaaaaf66500c <pfree+68>
+__func__ = "deconstruct_recurse"
+#0  deconstruct_recurse (root=0xaaaacd4004b8, jtnode=0xaaaacd400400, parent_domain=0xaaaacd4008c0, parent_jtitem=0x0, 
+    item_list=0xffffd92cae08) at initsplan.c:822
+#1  0x0000aaaaaf2f992c in deconstruct_jointree (root=0xaaaacd4004b8) at initsplan.c:756
+#2  0x0000aaaaaf2fe378 in query_planner (root=0xaaaacd4004b8, qp_callback=0xaaaaaf303ab4 <standard_qp_callback>, 
+    qp_extra=0xffffd92cb098) at planmain.c:186
+#3  0x0000aaaaaf3005f0 in grouping_planner (root=0xaaaacd4004b8, tuple_fraction=0) at planner.c:1495
+#4  0x0000aaaaaf2ffea4 in subquery_planner (glob=0xaaaacd336040, parse=0xaaaacd336148, parent_root=0x0, 
+    hasRecursion=false, tuple_fraction=0) at planner.c:1064
+#5  0x0000aaaaaf2fe948 in standard_planner (parse=0xaaaacd336148, 
+    query_string=0xaaaacd335040 "SELECT * FROM tableA HLL_JOIN tableB ON tableA.id = tableB.id;", cursorOptions=2048, 
+    boundParams=0x0) at planner.c:413
+#6  0x0000aaaaaf2fe6f4 in planner (parse=0xaaaacd336148, 
+    query_string=0xaaaacd335040 "SELECT * FROM tableA HLL_JOIN tableB ON tableA.id = tableB.id;", cursorOptions=2048, 
+    boundParams=0x0) at planner.c:281
+#7  0x0000aaaaaf440c94 in pg_plan_query (querytree=0xaaaacd336148, 
+    query_string=0xaaaacd335040 "SELECT * FROM tableA HLL_JOIN tableB ON tableA.id = tableB.id;", cursorOptions=2048, 
+    boundParams=0x0) at postgres.c:908
+#8  0x0000aaaaaf440de4 in pg_plan_queries (querytrees=0xaaaacd400470, 
+    query_string=0xaaaacd335040 "SELECT * FROM tableA HLL_JOIN tableB ON tableA.id = tableB.id;", cursorOptions=2048, 
+    boundParams=0x0) at postgres.c:1000
+#9  0x0000aaaaaf441164 in exec_simple_query (
+    query_string=0xaaaacd335040 "SELECT * FROM tableA HLL_JOIN tableB ON tableA.id = tableB.id;") at postgres.c:1197
+#10 0x0000aaaaaf446978 in PostgresMain (dbname=0xaaaacd36d4e0 "postgres", username=0xaaaacd3318d0 "csci550user")
+    at postgres.c:4701
+#11 0x0000aaaaaf36a180 in BackendRun (port=0xaaaacd362d60) at postmaster.c:4464
+#12 0x0000aaaaaf369a88 in BackendStartup (port=0xaaaacd362d60) at postmaster.c:4192
+#13 0x0000aaaaaf36581c in ServerLoop () at postmaster.c:1782
+#14 0x0000aaaaaf365000 in PostmasterMain (argc=3, argv=0xaaaacd32f820) at postmaster.c:1466
+#15 0x0000aaaaaf2300a0 in main (argc=3, argv=0xaaaacd32f820) at main.c:198
+Continuing.
+
+Breakpoint 2, deconstruct_recurse (root=0xaaaacd4004b8, jtnode=0xaaaacd335de0, parent_domain=0xaaaacd4008c0, parent_jtitem=0xaaaacd401508, item_list=0xffffd92cae08) at initsplan.c:822
+822		jtitem = palloc0_object(JoinTreeItem);
+Continuing.
+
+Breakpoint 2, deconstruct_recurse (root=0xaaaacd4004b8, jtnode=0xaaaacd336590, parent_domain=0xaaaacd4008c0, parent_jtitem=0xaaaacd401590, item_list=0xffffd92cae08) at initsplan.c:822
+822		jtitem = palloc0_object(JoinTreeItem);
+Continuing.
+
+Breakpoint 2, deconstruct_recurse (root=0xaaaacd4004b8, jtnode=0xaaaacd336898, parent_domain=0xaaaacd4008c0, parent_jtitem=0xaaaacd401590, item_list=0xffffd92cae08) at initsplan.c:822
+822		jtitem = palloc0_object(JoinTreeItem);
+Continuing.
+
+Breakpoint 5, calc_joinrel_size_estimate (root=0xaaaacd4004b8, joinrel=0xaaaacd40b0e0, outer_rel=0xaaaacd400da8, inner_rel=0xaaaacd401080, outer_rows=1000, inner_rows=500, sjinfo=0xaaaacd4018f0, restrictlist=0xaaaacd40b720) at costsize.c:5099
+5099		JoinType jointype = sjinfo->jointype;
+jointype = JOIN_RIGHT
+fkselec = 3.8233451226703758e-314
+jselec = -nan(0xfffffffffffff)
+pselec = 4.9406564584124654e-324
+nrows = 1.390667943301802e-309
+__func__ = "calc_joinrel_size_estimate"
+#0  calc_joinrel_size_estimate (root=0xaaaacd4004b8, joinrel=0xaaaacd40b0e0, outer_rel=0xaaaacd400da8, 
+    inner_rel=0xaaaacd401080, outer_rows=1000, inner_rows=500, sjinfo=0xaaaacd4018f0, restrictlist=0xaaaacd40b720)
+    at costsize.c:5099
+#1  0x0000aaaaaf2d10dc in set_joinrel_size_estimates (root=0xaaaacd4004b8, rel=0xaaaacd40b0e0, 
+    outer_rel=0xaaaacd400da8, inner_rel=0xaaaacd401080, sjinfo=0xaaaacd4018f0, restrictlist=0xaaaacd40b720)
+    at costsize.c:5023
+#2  0x0000aaaaaf3408c8 in build_join_rel (root=0xaaaacd4004b8, joinrelids=0xaaaacd401f80, outer_rel=0xaaaacd400da8, 
+    inner_rel=0xaaaacd401080, sjinfo=0xaaaacd4018f0, pushed_down_joins=0x0, restrictlist_ptr=0xffffd92cabc8)
+    at relnode.c:800
+#3  0x0000aaaaaf2e357c in make_join_rel (root=0xaaaacd4004b8, rel1=0xaaaacd400da8, rel2=0xaaaacd401080)
+    at joinrels.c:769
+#4  0x0000aaaaaf2e28b4 in make_rels_by_clause_joins (root=0xaaaacd4004b8, old_rel=0xaaaacd400da8, 
+    other_rels_list=0xaaaacd401f20, other_rels=0xaaaacd401f40) at joinrels.c:313
+#5  0x0000aaaaaf2e237c in join_search_one_level (root=0xaaaacd4004b8, level=2) at joinrels.c:122
+#6  0x0000aaaaaf2c679c in standard_join_search (root=0xaaaacd4004b8, levels_needed=2, initial_rels=0xaaaacd401f20)
+    at allpaths.c:3449
+#7  0x0000aaaaaf2c66f8 in make_rel_from_joinlist (root=0xaaaacd4004b8, joinlist=0xaaaacd401848) at allpaths.c:3378
+#8  0x0000aaaaaf2c1ca0 in make_one_rel (root=0xaaaacd4004b8, joinlist=0xaaaacd401848) at allpaths.c:226
+#9  0x0000aaaaaf2fe3f8 in query_planner (root=0xaaaacd4004b8, qp_callback=0xaaaaaf303ab4 <standard_qp_callback>, 
+    qp_extra=0xffffd92cb098) at planmain.c:278
+#10 0x0000aaaaaf3005f0 in grouping_planner (root=0xaaaacd4004b8, tuple_fraction=0) at planner.c:1495
+#11 0x0000aaaaaf2ffea4 in subquery_planner (glob=0xaaaacd336040, parse=0xaaaacd336148, parent_root=0x0, 
+    hasRecursion=false, tuple_fraction=0) at planner.c:1064
+#12 0x0000aaaaaf2fe948 in standard_planner (parse=0xaaaacd336148, 
+    query_string=0xaaaacd335040 "SELECT * FROM tableA HLL_JOIN tableB ON tableA.id = tableB.id;", cursorOptions=2048, 
+    boundParams=0x0) at planner.c:413
+#13 0x0000aaaaaf2fe6f4 in planner (parse=0xaaaacd336148, 
+    query_string=0xaaaacd335040 "SELECT * FROM tableA HLL_JOIN tableB ON tableA.id = tableB.id;", cursorOptions=2048, 
+    boundParams=0x0) at planner.c:281
+#14 0x0000aaaaaf440c94 in pg_plan_query (querytree=0xaaaacd336148, 
+    query_string=0xaaaacd335040 "SELECT * FROM tableA HLL_JOIN tableB ON tableA.id = tableB.id;", cursorOptions=2048, 
+    boundParams=0x0) at postgres.c:908
+#15 0x0000aaaaaf440de4 in pg_plan_queries (querytrees=0xaaaacd400470, 
+    query_string=0xaaaacd335040 "SELECT * FROM tableA HLL_JOIN tableB ON tableA.id = tableB.id;", cursorOptions=2048, 
+    boundParams=0x0) at postgres.c:1000
+#16 0x0000aaaaaf441164 in exec_simple_query (
+    query_string=0xaaaacd335040 "SELECT * FROM tableA HLL_JOIN tableB ON tableA.id = tableB.id;") at postgres.c:1197
+#17 0x0000aaaaaf446978 in PostgresMain (dbname=0xaaaacd36d4e0 "postgres", username=0xaaaacd3318d0 "csci550user")
+    at postgres.c:4701
+#18 0x0000aaaaaf36a180 in BackendRun (port=0xaaaacd362d60) at postmaster.c:4464
+#19 0x0000aaaaaf369a88 in BackendStartup (port=0xaaaacd362d60) at postmaster.c:4192
+#20 0x0000aaaaaf36581c in ServerLoop () at postmaster.c:1782
+#21 0x0000aaaaaf365000 in PostmasterMain (argc=3, argv=0xaaaacd32f820) at postmaster.c:1466
+#22 0x0000aaaaaf2300a0 in main (argc=3, argv=0xaaaacd32f820) at main.c:198
+Continuing.
+
+Breakpoint 3, join_selectivity (root=0xaaaacd4004b8, operatorid=96, args=0xaaaacd40b558, inputcollid=0, jointype=JOIN_HLL, sjinfo=0xaaaacd4018f0) at plancat.c:1955
+1955		JoinType modified_jointype = jointype; // Create a modified copy
+oprjoin = 43690
+result = 9.2711697434573077e-310
+modified_jointype = 3443569936
+__func__ = "join_selectivity"
+Continuing.
+
+Breakpoint 4, eqjoinsel (fcinfo=0xffffd92ca6f8) at selfuncs.c:2231
+2231	{
+root = 0xffffd92ca720
+operator = 65535
+args = 0xffffd92ca720
+sjinfo = 0xffffd92ca6f0
+collation = 1535132416
+selec = 9.2711450134901349e-310
+selec_inner = 9.2711450866650119e-310
+vardata1 = {
+  var = 0xffffd92ca768,
+  rel = 0xffffd92ca610,
+  statsTuple = 0xffffd92ca76c,
+  freefunc = 0xffffd92ca768,
+  vartype = 3643582323,
+  atttype = 65535,
+  atttypmod = 0,
+  isunique = false,
+  acl_ok = false
+}
+vardata2 = {
+  var = 0xff0000000000,
+  rel = 0xffffd92ca700,
+  statsTuple = 0xa7d937095b804300,
+  freefunc = 0xffffd92ca630,
+  vartype = 2938253012,
+  atttype = 43690,
+  atttypmod = -852268704,
+  isunique = 170,
+  acl_ok = 170
+}
+nd1 = -nan(0xfff80ffffffe0)
+nd2 = 4.8813685809115159e-321
+isdefault1 = 217
+isdefault2 = 167
+opfuncoid = 2816030473
+sslot1 = {
+  staop = 3,
+  stacoll = 0,
+  valuetype = 3643582192,
+  values = 0xffffff80ffffffd8,
+  nvalues = -1356661484,
+  numbers = 0xaaaaaf80fb60,
+  nnumbers = -651385232,
+  values_arr = 0xaaaaaf222d50 <secure_write+68>,
+  numbers_arr = 0xffffd92ca670
+}
+sslot2 = {
+  staop = 2938252916,
+  stacoll = 43690,
+  valuetype = 3442914256,
+  values = 0xaaaacd362d60,
+  nvalues = -40,
+  numbers = 0x40000006a,
+  nnumbers = -651385136,
+  values_arr = 0xaaaaaf22d124 <internal_flush+124>,
+  numbers_arr = 0x653d206e00
+}
+stats1 = 0xaaaacd336960
+stats2 = 0xffffd92ca730
+have_mcvs1 = 165
+have_mcvs2 = 44
+get_mcv_stats = 217
+join_is_reversed = 176
+inner_rel = 0xc
+__func__ = "eqjoinsel"
+Continuing.
+
+Breakpoint 6, add_paths_to_joinrel (root=0xaaaacd4004b8, joinrel=0xaaaacd40b0e0, outerrel=0xaaaacd400da8, innerrel=0xaaaacd401080, jointype=JOIN_HLL, sjinfo=0xaaaacd4018f0, restrictlist=0xaaaacd40b720) at joinpath.c:129
+129	{
+extra = {
+  restrictlist = 0xaaaacd40b0e0,
+  mergeclause_list = 0xaaaacd40b720,
+  inner_unique = 64,
+  sjinfo = 0x0,
+  semifactors = {
+    outer_match_frac = 9.2711697437972249e-310,
+    match_count = 9.2711697436063179e-310
+  },
+  param_source_rels = 0xaaaacd40b720
+}
+mergejoin_allowed = false
+consider_join_pushdown = false
+lc = 0xaaaacd334f30
+joinrelids = 0xffffd92cab40
+__func__ = "add_paths_to_joinrel"
+Continuing.
+
+Breakpoint 3, join_selectivity (root=0xaaaacd4004b8, operatorid=96, args=0xaaaacd40b558, inputcollid=0, jointype=JOIN_INNER, sjinfo=0xffffd92ca6d0) at plancat.c:1955
+1955		JoinType modified_jointype = jointype; // Create a modified copy
+Continuing.
+
+Breakpoint 4, eqjoinsel (fcinfo=0xffffd92ca408) at selfuncs.c:2231
+2231	{
+root = 0xffffd92ca430
+operator = 65535
+args = 0xffffd92ca430
+sjinfo = 0xffffd92ca400
+collation = 1535132416
+selec = 9.2711450134901349e-310
+selec_inner = 9.2711450866650119e-310
+vardata1 = {
+  var = 0xffffd92ca478,
+  rel = 0xffffd92ca320,
+  statsTuple = 0xffffd92ca47c,
+  freefunc = 0xffffd92ca478,
+  vartype = 3643581571,
+  atttype = 65535,
+  atttypmod = 0,
+  isunique = false,
+  acl_ok = false
+}
+vardata2 = {
+  var = 0xff0000000000,
+  rel = 0xffffd92ca410,
+  statsTuple = 0xa7d937095b804300,
+  freefunc = 0xffffd92ca340,
+  vartype = 2938253012,
+  atttype = 43690,
+  atttypmod = -852268704,
+  isunique = 170,
+  acl_ok = 170
+}
+nd1 = -nan(0xfff80ffffffe0)
+nd2 = 4.8813685809115159e-321
+isdefault1 = 217
+isdefault2 = 167
+opfuncoid = 2816030473
+sslot1 = {
+  staop = 3,
+  stacoll = 0,
+  valuetype = 3643581440,
+  values = 0xffffff80ffffffd8,
+  nvalues = -1356661484,
+  numbers = 0xaaaaaf80fb60,
+  nnumbers = -651385984,
+  values_arr = 0xaaaaaf222d50 <secure_write+68>,
+  numbers_arr = 0xffffd92ca380
+}
+sslot2 = {
+  staop = 2938252916,
+  stacoll = 43690,
+  valuetype = 3442914256,
+  values = 0xaaaacd362d60,
+  nvalues = -40,
+  numbers = 0x40000006a,
+  nnumbers = -651385888,
+  values_arr = 0xaaaaaf22d124 <internal_flush+124>,
+  numbers_arr = 0x653d206e00
+}
+stats1 = 0xaaaacd336960
+stats2 = 0xffffd92ca440
+have_mcvs1 = 162
+have_mcvs2 = 44
+get_mcv_stats = 217
+join_is_reversed = 192
+inner_rel = 0xc
+__func__ = "eqjoinsel"
+Continuing.
+
+Breakpoint 6, add_paths_to_joinrel (root=0xaaaacd4004b8, joinrel=0xaaaacd40b0e0, outerrel=0xaaaacd401080, innerrel=0xaaaacd400da8, jointype=JOIN_HLL, sjinfo=0xaaaacd4018f0, restrictlist=0xaaaacd40b720) at joinpath.c:129
+129	{
+extra = {
+  restrictlist = 0xaaaacd40b720,
+  mergeclause_list = 0xaaaacd40b7f8,
+  inner_unique = false,
+  sjinfo = 0xaaaacd4018f0,
+  semifactors = {
+    outer_match_frac = 9.2711697437972249e-310,
+    match_count = 9.2711697436063179e-310
+  },
+  param_source_rels = 0x0
+}
+mergejoin_allowed = true
+consider_join_pushdown = false
+lc = 0x0
+joinrelids = 0xaaaacd40b2e8
+__func__ = "add_paths_to_joinrel"
+Continuing.
+
+Breakpoint 7, ExecInitHashJoin (node=0xaaaacd40c068, estate=0xaaaacd419c10, eflags=32) at nodeHashjoin.c:874
+874		elog(NOTICE, "=== HashJoin node initial contents ===");
+__errno_location = <optimized out>
+__func__ = "ExecInitHashJoin"
+hjstate = 0x2af30c378
+outerNode = 0xaaaacd419be0
+hashNode = 0x40a70000000a
+outerDesc = 0x1cf0
+innerDesc = 0xaaaaaf1aecd4 <ExecCheckPermissions+68>
+ops = 0xffffd92cb000
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd419e40) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+No locals.
+Continuing.
+
+Breakpoint 8, ExecHashJoinImpl (pstate=0xaaaacd419e40, parallel=false) at nodeHashjoin.c:229
+229	{
+node = 0xffffd92cae60
+outerNode = 0xaaaacd36b443
+hashNode = 0x73af22d088
+joinqual = 0xaaaaaf22d08c <socket_flush+64>
+otherqual = 0xffffd92cae60
+econtext = 0xaaaacd36b443
+hashtable = 0x7d92cae40
+outerTupleSlot = 0xaaaacd3319f8
+hashvalue = 3442914256
+batchno = 43690
+parallel_state = 0xffffd92cae80
+__func__ = "ExecHashJoinImpl"
+Continuing.
+
+Breakpoint 12, initHyperLogLog (cState=0xaaaacd4248b8, bwidth=16 '\020') at hyperloglog.c:69
+69		if (bwidth < 4 || bwidth > 16)
+alpha = 9.2711697507951707e-310
+__func__ = "initHyperLogLog"
+Continuing.
+
+Breakpoint 12, initHyperLogLog (cState=0xaaaacd424900, bwidth=16 '\020') at hyperloglog.c:69
+69		if (bwidth < 4 || bwidth > 16)
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=1656029872) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+count = 217 '\331'
+index = 65535
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=1255784394) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+count = 217 '\331'
+index = 65535
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=3470302067) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=1207142442) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=3084735754) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=2986311078) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=2186363484) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=2115280964) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=1435389079) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=1437014298) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=566044932) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=486274310) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=276715242) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=2674145095) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=3214798381) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=2169173783) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=277868660) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=4280191190) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=410666188) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=822482695) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=3952333570) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=863296335) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=2620116498) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=1161654865) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=3249427511) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=159429952) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=1009765970) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=2770453242) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=424473475) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=2820261915) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=955636641) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=1454591459) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=1116400720) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=2725228924) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=4275004959) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=804296389) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=2962454146) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=3892702069) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=3546739375) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=526673469) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=2290356457) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=49870778) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=197874335) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=1158714896) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=821721086) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=3971219526) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=3508382601) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=3167025304) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=352298737) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=2538141900) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=797582246) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=1513081126) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=1336317083) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=1661741441) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=3106840912) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=3344513523) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=269525155) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=1447532721) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=3723905188) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=2681776797) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=2031537710) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=1359117649) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=649658810) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=312777008) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=1063911950) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=4119690618) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=1827837482) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=2318219718) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=3112533359) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=3861284002) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=4003389909) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=3802720928) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=3184592701) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=733872161) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=2681714411) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=2053456053) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=1594873758) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=1295993567) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=3789519387) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=3871808456) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Breakpoint 13, addHyperLogLog (cState=0xaaaacd4248b8, hash=3422967401) at hyperloglog.c:169
+169		index = hash >> (BITS_PER_BYTE * sizeof(uint32) - cState->registerWidth);
+Continuing.
+
+Breakpoint 11, ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing at 0xaaaaaf1e1a29.
+
+Program received signal SIGBUS, Bus error.
+0x0000aaaaaf1e1a29 in ExecProcNode (node=0xaaaacd41a118) at ../../../src/include/executor/executor.h:270
+270		if (node->chgParam != NULL) /* something changed? */
+Continuing.
+
+Program terminated with signal SIGBUS, Bus error.
+The program no longer exists.

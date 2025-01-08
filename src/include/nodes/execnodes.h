@@ -2064,6 +2064,17 @@ typedef struct MergeJoinState
 	TupleTableSlot *mj_NullInnerTupleSlot;
 	ExprContext *mj_OuterEContext;
 	ExprContext *mj_InnerEContext;
+	/* HyperLogLog state for outer relation cardinality estimation */
+	hyperLogLogState *outer_hll;
+	/* HyperLogLog state for inner relation cardinality estimation */
+	hyperLogLogState *inner_hll;
+	/* HyperLogLog state for result cardinality estimation */
+	hyperLogLogState *result_hll;
+	/* Flag indicating if HLL estimation is complete */
+	bool hll_done;
+	/* New sampling fields */
+	int sample_matches;
+	int sample_total;
 } MergeJoinState;
 
 /* ----------------

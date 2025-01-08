@@ -2394,3 +2394,353 @@
 2024-11-28 05:01:56.212 UTC [91663] DEBUG:  shmem_exit(-1): 0 before_shmem_exit callbacks to make
 2024-11-28 05:01:56.212 UTC [91663] DEBUG:  shmem_exit(-1): 0 on_shmem_exit callbacks to make
 2024-11-28 05:01:56.212 UTC [91663] DEBUG:  proc_exit(-1): 0 callbacks to make
+2024-12-03 06:30:39.689 UTC [57038] DEBUG:  postgres: PostmasterMain: initial environment dump:
+2024-12-03 06:30:39.689 UTC [57038] DEBUG:  -----------------------------------------
+2024-12-03 06:30:39.689 UTC [57038] DEBUG:  	LESSOPEN=| /usr/bin/lesspipe %s
+2024-12-03 06:30:39.689 UTC [57038] DEBUG:  	HOSTNAME=b8aeb9df6164
+2024-12-03 06:30:39.689 UTC [57038] DEBUG:  	SHLVL=1
+2024-12-03 06:30:39.689 UTC [57038] DEBUG:  	HOME=/home/csci550user
+2024-12-03 06:30:39.689 UTC [57038] DEBUG:  	OLDPWD=/home/csci550user/postgresql-16.4/src/backend/parser
+2024-12-03 06:30:39.689 UTC [57038] DEBUG:  	PG_GRANDPARENT_PID=23
+2024-12-03 06:30:39.689 UTC [57038] DEBUG:  	_=/home/csci550user/postgresql-16.4/bin/pg_ctl
+2024-12-03 06:30:39.689 UTC [57038] DEBUG:  	TERM=xterm
+2024-12-03 06:30:39.689 UTC [57038] DEBUG:  	PGSYSCONFDIR=/home/csci550user/postgresql-16.4/etc
+2024-12-03 06:30:39.689 UTC [57038] DEBUG:  	PATH=/home/csci550user/postgresql-16.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2024-12-03 06:30:39.689 UTC [57038] DEBUG:  	LANG=en_US.UTF-8
+2024-12-03 06:30:39.689 UTC [57038] DEBUG:  	LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+2024-12-03 06:30:39.689 UTC [57038] DEBUG:  	LESSCLOSE=/usr/bin/lesspipe %s %s
+2024-12-03 06:30:39.689 UTC [57038] DEBUG:  	PWD=/home/csci550user/postgresql-16.4
+2024-12-03 06:30:39.689 UTC [57038] DEBUG:  	PGDATA=/home/csci550user/databases
+2024-12-03 06:30:39.689 UTC [57038] DEBUG:  	LC_COLLATE=en_US.UTF-8
+2024-12-03 06:30:39.689 UTC [57038] DEBUG:  	LC_CTYPE=en_US.UTF-8
+2024-12-03 06:30:39.689 UTC [57038] DEBUG:  	LC_MESSAGES=en_US.UTF-8
+2024-12-03 06:30:39.689 UTC [57038] DEBUG:  	LC_MONETARY=C
+2024-12-03 06:30:39.689 UTC [57038] DEBUG:  	LC_NUMERIC=C
+2024-12-03 06:30:39.689 UTC [57038] DEBUG:  	LC_TIME=C
+2024-12-03 06:30:39.689 UTC [57038] DEBUG:  -----------------------------------------
+2024-12-03 06:30:39.690 UTC [57038] DEBUG:  using armv8 crc32 hardware = 1
+2024-12-03 06:30:39.690 UTC [57038] DEBUG:  registering background worker "logical replication launcher"
+2024-12-03 06:30:39.691 UTC [57038] DEBUG:  invoking IpcMemoryCreate(size=149495808)
+2024-12-03 06:30:39.691 UTC [57038] DEBUG:  mmap(150994944) with MAP_HUGETLB failed, huge pages disabled: Cannot allocate memory
+2024-12-03 06:30:39.696 UTC [57038] DEBUG:  dynamic shared memory system will support 674 segments
+2024-12-03 06:30:39.697 UTC [57038] DEBUG:  created dynamic shared memory control segment 1709451316 (26976 bytes)
+2024-12-03 06:30:39.697 UTC [57038] DEBUG:  max_safe_fds = 986, usable_fds = 1000, already_open = 4
+2024-12-03 06:30:39.698 UTC [57038] LOG:  redirecting log output to logging collector process
+2024-12-03 06:30:39.698 UTC [57038] HINT:  Future log output will appear in directory "log".
+2024-12-03 06:33:17.530 UTC [57039] DEBUG:  logger shutting down
+2024-12-03 06:33:17.530 UTC [57039] DEBUG:  shmem_exit(0): 0 before_shmem_exit callbacks to make
+2024-12-03 06:33:17.530 UTC [57039] DEBUG:  shmem_exit(0): 0 on_shmem_exit callbacks to make
+2024-12-03 06:33:17.530 UTC [57039] DEBUG:  proc_exit(0): 0 callbacks to make
+2024-12-03 06:33:17.530 UTC [57039] DEBUG:  exit(0)
+2024-12-03 06:33:17.530 UTC [57039] DEBUG:  shmem_exit(-1): 0 before_shmem_exit callbacks to make
+2024-12-03 06:33:17.530 UTC [57039] DEBUG:  shmem_exit(-1): 0 on_shmem_exit callbacks to make
+2024-12-03 06:33:17.530 UTC [57039] DEBUG:  proc_exit(-1): 0 callbacks to make
+2024-12-03 06:36:56.527 UTC [62311] DEBUG:  postgres: PostmasterMain: initial environment dump:
+2024-12-03 06:36:56.527 UTC [62311] DEBUG:  -----------------------------------------
+2024-12-03 06:36:56.527 UTC [62311] DEBUG:  	LESSOPEN=| /usr/bin/lesspipe %s
+2024-12-03 06:36:56.527 UTC [62311] DEBUG:  	HOSTNAME=b8aeb9df6164
+2024-12-03 06:36:56.528 UTC [62311] DEBUG:  	SHLVL=1
+2024-12-03 06:36:56.528 UTC [62311] DEBUG:  	HOME=/home/csci550user
+2024-12-03 06:36:56.528 UTC [62311] DEBUG:  	OLDPWD=/home/csci550user
+2024-12-03 06:36:56.528 UTC [62311] DEBUG:  	PG_GRANDPARENT_PID=23
+2024-12-03 06:36:56.528 UTC [62311] DEBUG:  	_=/home/csci550user/postgresql-16.4/bin/pg_ctl
+2024-12-03 06:36:56.528 UTC [62311] DEBUG:  	TERM=xterm
+2024-12-03 06:36:56.528 UTC [62311] DEBUG:  	PGSYSCONFDIR=/home/csci550user/postgresql-16.4/etc
+2024-12-03 06:36:56.528 UTC [62311] DEBUG:  	PATH=/home/csci550user/postgresql-16.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2024-12-03 06:36:56.528 UTC [62311] DEBUG:  	LANG=en_US.UTF-8
+2024-12-03 06:36:56.528 UTC [62311] DEBUG:  	LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+2024-12-03 06:36:56.528 UTC [62311] DEBUG:  	LESSCLOSE=/usr/bin/lesspipe %s %s
+2024-12-03 06:36:56.528 UTC [62311] DEBUG:  	PWD=/home/csci550user/postgresql-16.4
+2024-12-03 06:36:56.528 UTC [62311] DEBUG:  	PGDATA=/home/csci550user/databases
+2024-12-03 06:36:56.528 UTC [62311] DEBUG:  	LC_COLLATE=en_US.UTF-8
+2024-12-03 06:36:56.528 UTC [62311] DEBUG:  	LC_CTYPE=en_US.UTF-8
+2024-12-03 06:36:56.528 UTC [62311] DEBUG:  	LC_MESSAGES=en_US.UTF-8
+2024-12-03 06:36:56.528 UTC [62311] DEBUG:  	LC_MONETARY=C
+2024-12-03 06:36:56.528 UTC [62311] DEBUG:  	LC_NUMERIC=C
+2024-12-03 06:36:56.528 UTC [62311] DEBUG:  	LC_TIME=C
+2024-12-03 06:36:56.528 UTC [62311] DEBUG:  -----------------------------------------
+2024-12-03 06:36:56.530 UTC [62311] DEBUG:  using armv8 crc32 hardware = 1
+2024-12-03 06:36:56.530 UTC [62311] DEBUG:  registering background worker "logical replication launcher"
+2024-12-03 06:36:56.531 UTC [62311] DEBUG:  invoking IpcMemoryCreate(size=149495808)
+2024-12-03 06:36:56.532 UTC [62311] DEBUG:  mmap(150994944) with MAP_HUGETLB failed, huge pages disabled: Cannot allocate memory
+2024-12-03 06:36:56.541 UTC [62311] DEBUG:  dynamic shared memory system will support 674 segments
+2024-12-03 06:36:56.541 UTC [62311] DEBUG:  created dynamic shared memory control segment 1046591726 (26976 bytes)
+2024-12-03 06:36:56.541 UTC [62311] DEBUG:  max_safe_fds = 986, usable_fds = 1000, already_open = 4
+2024-12-03 06:36:56.542 UTC [62311] LOG:  redirecting log output to logging collector process
+2024-12-03 06:36:56.542 UTC [62311] HINT:  Future log output will appear in directory "log".
+2024-12-03 06:37:45.287 UTC [62312] DEBUG:  logger shutting down
+2024-12-03 06:37:45.287 UTC [62312] DEBUG:  shmem_exit(0): 0 before_shmem_exit callbacks to make
+2024-12-03 06:37:45.287 UTC [62312] DEBUG:  shmem_exit(0): 0 on_shmem_exit callbacks to make
+2024-12-03 06:37:45.287 UTC [62312] DEBUG:  proc_exit(0): 0 callbacks to make
+2024-12-03 06:37:45.287 UTC [62312] DEBUG:  exit(0)
+2024-12-03 06:37:45.287 UTC [62312] DEBUG:  shmem_exit(-1): 0 before_shmem_exit callbacks to make
+2024-12-03 06:37:45.287 UTC [62312] DEBUG:  shmem_exit(-1): 0 on_shmem_exit callbacks to make
+2024-12-03 06:37:45.287 UTC [62312] DEBUG:  proc_exit(-1): 0 callbacks to make
+2024-12-03 06:38:45.678 UTC [63273] DEBUG:  postgres: PostmasterMain: initial environment dump:
+2024-12-03 06:38:45.678 UTC [63273] DEBUG:  -----------------------------------------
+2024-12-03 06:38:45.678 UTC [63273] DEBUG:  	LESSOPEN=| /usr/bin/lesspipe %s
+2024-12-03 06:38:45.678 UTC [63273] DEBUG:  	HOSTNAME=b8aeb9df6164
+2024-12-03 06:38:45.678 UTC [63273] DEBUG:  	SHLVL=1
+2024-12-03 06:38:45.678 UTC [63273] DEBUG:  	HOME=/home/csci550user
+2024-12-03 06:38:45.678 UTC [63273] DEBUG:  	OLDPWD=/home/csci550user
+2024-12-03 06:38:45.678 UTC [63273] DEBUG:  	PG_GRANDPARENT_PID=23
+2024-12-03 06:38:45.678 UTC [63273] DEBUG:  	_=/home/csci550user/postgresql-16.4/bin/pg_ctl
+2024-12-03 06:38:45.678 UTC [63273] DEBUG:  	TERM=xterm
+2024-12-03 06:38:45.678 UTC [63273] DEBUG:  	PGSYSCONFDIR=/home/csci550user/postgresql-16.4/etc
+2024-12-03 06:38:45.678 UTC [63273] DEBUG:  	PATH=/home/csci550user/postgresql-16.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2024-12-03 06:38:45.678 UTC [63273] DEBUG:  	LANG=en_US.UTF-8
+2024-12-03 06:38:45.678 UTC [63273] DEBUG:  	LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+2024-12-03 06:38:45.678 UTC [63273] DEBUG:  	LESSCLOSE=/usr/bin/lesspipe %s %s
+2024-12-03 06:38:45.678 UTC [63273] DEBUG:  	PWD=/home/csci550user/postgresql-16.4
+2024-12-03 06:38:45.678 UTC [63273] DEBUG:  	PGDATA=/home/csci550user/databases
+2024-12-03 06:38:45.678 UTC [63273] DEBUG:  	LC_COLLATE=en_US.UTF-8
+2024-12-03 06:38:45.678 UTC [63273] DEBUG:  	LC_CTYPE=en_US.UTF-8
+2024-12-03 06:38:45.678 UTC [63273] DEBUG:  	LC_MESSAGES=en_US.UTF-8
+2024-12-03 06:38:45.678 UTC [63273] DEBUG:  	LC_MONETARY=C
+2024-12-03 06:38:45.678 UTC [63273] DEBUG:  	LC_NUMERIC=C
+2024-12-03 06:38:45.678 UTC [63273] DEBUG:  	LC_TIME=C
+2024-12-03 06:38:45.678 UTC [63273] DEBUG:  -----------------------------------------
+2024-12-03 06:38:45.681 UTC [63273] DEBUG:  using armv8 crc32 hardware = 1
+2024-12-03 06:38:45.681 UTC [63273] DEBUG:  registering background worker "logical replication launcher"
+2024-12-03 06:38:45.682 UTC [63273] DEBUG:  invoking IpcMemoryCreate(size=149495808)
+2024-12-03 06:38:45.682 UTC [63273] DEBUG:  mmap(150994944) with MAP_HUGETLB failed, huge pages disabled: Cannot allocate memory
+2024-12-03 06:38:45.704 UTC [63273] DEBUG:  dynamic shared memory system will support 674 segments
+2024-12-03 06:38:45.704 UTC [63273] DEBUG:  created dynamic shared memory control segment 1093018324 (26976 bytes)
+2024-12-03 06:38:45.704 UTC [63273] DEBUG:  max_safe_fds = 986, usable_fds = 1000, already_open = 4
+2024-12-03 06:38:45.705 UTC [63273] LOG:  redirecting log output to logging collector process
+2024-12-03 06:38:45.705 UTC [63273] HINT:  Future log output will appear in directory "log".
+2024-12-03 07:01:14.188 UTC [63274] DEBUG:  logger shutting down
+2024-12-03 07:01:14.188 UTC [63274] DEBUG:  shmem_exit(0): 0 before_shmem_exit callbacks to make
+2024-12-03 07:01:14.188 UTC [63274] DEBUG:  shmem_exit(0): 0 on_shmem_exit callbacks to make
+2024-12-03 07:01:14.188 UTC [63274] DEBUG:  proc_exit(0): 0 callbacks to make
+2024-12-03 07:01:14.188 UTC [63274] DEBUG:  exit(0)
+2024-12-03 07:01:14.188 UTC [63274] DEBUG:  shmem_exit(-1): 0 before_shmem_exit callbacks to make
+2024-12-03 07:01:14.188 UTC [63274] DEBUG:  shmem_exit(-1): 0 on_shmem_exit callbacks to make
+2024-12-03 07:01:14.188 UTC [63274] DEBUG:  proc_exit(-1): 0 callbacks to make
+2024-12-03 07:26:12.602 UTC [7565] DEBUG:  postgres: PostmasterMain: initial environment dump:
+2024-12-03 07:26:12.602 UTC [7565] DEBUG:  -----------------------------------------
+2024-12-03 07:26:12.602 UTC [7565] DEBUG:  	LESSOPEN=| /usr/bin/lesspipe %s
+2024-12-03 07:26:12.602 UTC [7565] DEBUG:  	HOSTNAME=b8aeb9df6164
+2024-12-03 07:26:12.602 UTC [7565] DEBUG:  	SHLVL=1
+2024-12-03 07:26:12.602 UTC [7565] DEBUG:  	HOME=/home/csci550user
+2024-12-03 07:26:12.602 UTC [7565] DEBUG:  	OLDPWD=/home/csci550user
+2024-12-03 07:26:12.602 UTC [7565] DEBUG:  	PG_GRANDPARENT_PID=23
+2024-12-03 07:26:12.602 UTC [7565] DEBUG:  	_=/home/csci550user/postgresql-16.4/bin/pg_ctl
+2024-12-03 07:26:12.602 UTC [7565] DEBUG:  	TERM=xterm
+2024-12-03 07:26:12.602 UTC [7565] DEBUG:  	PGSYSCONFDIR=/home/csci550user/postgresql-16.4/etc
+2024-12-03 07:26:12.602 UTC [7565] DEBUG:  	PATH=/home/csci550user/postgresql-16.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2024-12-03 07:26:12.602 UTC [7565] DEBUG:  	LANG=en_US.UTF-8
+2024-12-03 07:26:12.602 UTC [7565] DEBUG:  	LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+2024-12-03 07:26:12.602 UTC [7565] DEBUG:  	LESSCLOSE=/usr/bin/lesspipe %s %s
+2024-12-03 07:26:12.602 UTC [7565] DEBUG:  	PWD=/home/csci550user/postgresql-16.4
+2024-12-03 07:26:12.602 UTC [7565] DEBUG:  	PGDATA=/home/csci550user/databases
+2024-12-03 07:26:12.602 UTC [7565] DEBUG:  	LC_COLLATE=en_US.UTF-8
+2024-12-03 07:26:12.602 UTC [7565] DEBUG:  	LC_CTYPE=en_US.UTF-8
+2024-12-03 07:26:12.602 UTC [7565] DEBUG:  	LC_MESSAGES=en_US.UTF-8
+2024-12-03 07:26:12.602 UTC [7565] DEBUG:  	LC_MONETARY=C
+2024-12-03 07:26:12.602 UTC [7565] DEBUG:  	LC_NUMERIC=C
+2024-12-03 07:26:12.602 UTC [7565] DEBUG:  	LC_TIME=C
+2024-12-03 07:26:12.602 UTC [7565] DEBUG:  -----------------------------------------
+2024-12-03 07:26:12.606 UTC [7565] DEBUG:  using armv8 crc32 hardware = 1
+2024-12-03 07:26:12.606 UTC [7565] DEBUG:  registering background worker "logical replication launcher"
+2024-12-03 07:26:12.607 UTC [7565] DEBUG:  invoking IpcMemoryCreate(size=149495808)
+2024-12-03 07:26:12.607 UTC [7565] DEBUG:  mmap(150994944) with MAP_HUGETLB failed, huge pages disabled: Cannot allocate memory
+2024-12-03 07:26:12.617 UTC [7565] DEBUG:  dynamic shared memory system will support 674 segments
+2024-12-03 07:26:12.617 UTC [7565] DEBUG:  created dynamic shared memory control segment 1401982184 (26976 bytes)
+2024-12-03 07:26:12.618 UTC [7565] DEBUG:  max_safe_fds = 986, usable_fds = 1000, already_open = 4
+2024-12-03 07:26:12.618 UTC [7565] LOG:  redirecting log output to logging collector process
+2024-12-03 07:26:12.618 UTC [7565] HINT:  Future log output will appear in directory "log".
+2024-12-03 22:52:13.282 UTC [7566] DEBUG:  logger shutting down
+2024-12-03 22:52:13.284 UTC [7566] DEBUG:  shmem_exit(0): 0 before_shmem_exit callbacks to make
+2024-12-03 22:52:13.284 UTC [7566] DEBUG:  shmem_exit(0): 0 on_shmem_exit callbacks to make
+2024-12-03 22:52:13.284 UTC [7566] DEBUG:  proc_exit(0): 0 callbacks to make
+2024-12-03 22:52:13.284 UTC [7566] DEBUG:  exit(0)
+2024-12-03 22:52:13.284 UTC [7566] DEBUG:  shmem_exit(-1): 0 before_shmem_exit callbacks to make
+2024-12-03 22:52:13.284 UTC [7566] DEBUG:  shmem_exit(-1): 0 on_shmem_exit callbacks to make
+2024-12-03 22:52:13.284 UTC [7566] DEBUG:  proc_exit(-1): 0 callbacks to make
+2024-12-04 20:42:55.754 UTC [34903] DEBUG:  postgres: PostmasterMain: initial environment dump:
+2024-12-04 20:42:55.754 UTC [34903] DEBUG:  -----------------------------------------
+2024-12-04 20:42:55.754 UTC [34903] DEBUG:  	LESSOPEN=| /usr/bin/lesspipe %s
+2024-12-04 20:42:55.754 UTC [34903] DEBUG:  	HOSTNAME=b8aeb9df6164
+2024-12-04 20:42:55.754 UTC [34903] DEBUG:  	SHLVL=1
+2024-12-04 20:42:55.754 UTC [34903] DEBUG:  	HOME=/home/csci550user
+2024-12-04 20:42:55.754 UTC [34903] DEBUG:  	OLDPWD=/home/csci550user
+2024-12-04 20:42:55.754 UTC [34903] DEBUG:  	PG_GRANDPARENT_PID=23
+2024-12-04 20:42:55.754 UTC [34903] DEBUG:  	_=/home/csci550user/postgresql-16.4/bin/pg_ctl
+2024-12-04 20:42:55.754 UTC [34903] DEBUG:  	TERM=xterm
+2024-12-04 20:42:55.754 UTC [34903] DEBUG:  	PGSYSCONFDIR=/home/csci550user/postgresql-16.4/etc
+2024-12-04 20:42:55.754 UTC [34903] DEBUG:  	PATH=/home/csci550user/postgresql-16.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2024-12-04 20:42:55.754 UTC [34903] DEBUG:  	LANG=en_US.UTF-8
+2024-12-04 20:42:55.754 UTC [34903] DEBUG:  	LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+2024-12-04 20:42:55.754 UTC [34903] DEBUG:  	LESSCLOSE=/usr/bin/lesspipe %s %s
+2024-12-04 20:42:55.754 UTC [34903] DEBUG:  	PWD=/home/csci550user/postgresql-16.4
+2024-12-04 20:42:55.754 UTC [34903] DEBUG:  	PGDATA=/home/csci550user/databases
+2024-12-04 20:42:55.754 UTC [34903] DEBUG:  	LC_COLLATE=en_US.UTF-8
+2024-12-04 20:42:55.754 UTC [34903] DEBUG:  	LC_CTYPE=en_US.UTF-8
+2024-12-04 20:42:55.754 UTC [34903] DEBUG:  	LC_MESSAGES=en_US.UTF-8
+2024-12-04 20:42:55.754 UTC [34903] DEBUG:  	LC_MONETARY=C
+2024-12-04 20:42:55.754 UTC [34903] DEBUG:  	LC_NUMERIC=C
+2024-12-04 20:42:55.754 UTC [34903] DEBUG:  	LC_TIME=C
+2024-12-04 20:42:55.754 UTC [34903] DEBUG:  -----------------------------------------
+2024-12-04 20:42:55.755 UTC [34903] DEBUG:  using armv8 crc32 hardware = 1
+2024-12-04 20:42:55.755 UTC [34903] DEBUG:  registering background worker "logical replication launcher"
+2024-12-04 20:42:55.756 UTC [34903] DEBUG:  invoking IpcMemoryCreate(size=149495808)
+2024-12-04 20:42:55.757 UTC [34903] DEBUG:  mmap(150994944) with MAP_HUGETLB failed, huge pages disabled: Cannot allocate memory
+2024-12-04 20:42:55.766 UTC [34903] DEBUG:  dynamic shared memory system will support 674 segments
+2024-12-04 20:42:55.766 UTC [34903] DEBUG:  created dynamic shared memory control segment 699481824 (26976 bytes)
+2024-12-04 20:42:55.767 UTC [34903] DEBUG:  max_safe_fds = 986, usable_fds = 1000, already_open = 4
+2024-12-04 20:42:55.767 UTC [34903] LOG:  redirecting log output to logging collector process
+2024-12-04 20:42:55.767 UTC [34903] HINT:  Future log output will appear in directory "log".
+2024-12-04 21:35:00.501 UTC [34904] DEBUG:  logger shutting down
+2024-12-04 21:35:00.501 UTC [34904] DEBUG:  shmem_exit(0): 0 before_shmem_exit callbacks to make
+2024-12-04 21:35:00.501 UTC [34904] DEBUG:  shmem_exit(0): 0 on_shmem_exit callbacks to make
+2024-12-04 21:35:00.501 UTC [34904] DEBUG:  proc_exit(0): 0 callbacks to make
+2024-12-04 21:35:00.501 UTC [34904] DEBUG:  exit(0)
+2024-12-04 21:35:00.501 UTC [34904] DEBUG:  shmem_exit(-1): 0 before_shmem_exit callbacks to make
+2024-12-04 21:35:00.501 UTC [34904] DEBUG:  shmem_exit(-1): 0 on_shmem_exit callbacks to make
+2024-12-04 21:35:00.501 UTC [34904] DEBUG:  proc_exit(-1): 0 callbacks to make
+2024-12-04 21:36:29.732 UTC [69564] DEBUG:  postgres: PostmasterMain: initial environment dump:
+2024-12-04 21:36:29.732 UTC [69564] DEBUG:  -----------------------------------------
+2024-12-04 21:36:29.732 UTC [69564] DEBUG:  	LESSOPEN=| /usr/bin/lesspipe %s
+2024-12-04 21:36:29.732 UTC [69564] DEBUG:  	HOSTNAME=b8aeb9df6164
+2024-12-04 21:36:29.732 UTC [69564] DEBUG:  	SHLVL=1
+2024-12-04 21:36:29.732 UTC [69564] DEBUG:  	HOME=/home/csci550user
+2024-12-04 21:36:29.732 UTC [69564] DEBUG:  	OLDPWD=/home/csci550user
+2024-12-04 21:36:29.732 UTC [69564] DEBUG:  	PG_GRANDPARENT_PID=23
+2024-12-04 21:36:29.732 UTC [69564] DEBUG:  	_=/home/csci550user/postgresql-16.4/bin/pg_ctl
+2024-12-04 21:36:29.732 UTC [69564] DEBUG:  	TERM=xterm
+2024-12-04 21:36:29.732 UTC [69564] DEBUG:  	PGSYSCONFDIR=/home/csci550user/postgresql-16.4/etc
+2024-12-04 21:36:29.732 UTC [69564] DEBUG:  	PATH=/home/csci550user/postgresql-16.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2024-12-04 21:36:29.732 UTC [69564] DEBUG:  	LANG=en_US.UTF-8
+2024-12-04 21:36:29.732 UTC [69564] DEBUG:  	LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+2024-12-04 21:36:29.732 UTC [69564] DEBUG:  	LESSCLOSE=/usr/bin/lesspipe %s %s
+2024-12-04 21:36:29.732 UTC [69564] DEBUG:  	PWD=/home/csci550user/postgresql-16.4
+2024-12-04 21:36:29.732 UTC [69564] DEBUG:  	PGDATA=/home/csci550user/databases
+2024-12-04 21:36:29.732 UTC [69564] DEBUG:  	LC_COLLATE=en_US.UTF-8
+2024-12-04 21:36:29.732 UTC [69564] DEBUG:  	LC_CTYPE=en_US.UTF-8
+2024-12-04 21:36:29.732 UTC [69564] DEBUG:  	LC_MESSAGES=en_US.UTF-8
+2024-12-04 21:36:29.732 UTC [69564] DEBUG:  	LC_MONETARY=C
+2024-12-04 21:36:29.732 UTC [69564] DEBUG:  	LC_NUMERIC=C
+2024-12-04 21:36:29.732 UTC [69564] DEBUG:  	LC_TIME=C
+2024-12-04 21:36:29.732 UTC [69564] DEBUG:  -----------------------------------------
+2024-12-04 21:36:29.735 UTC [69564] DEBUG:  using armv8 crc32 hardware = 1
+2024-12-04 21:36:29.735 UTC [69564] DEBUG:  registering background worker "logical replication launcher"
+2024-12-04 21:36:29.735 UTC [69564] DEBUG:  invoking IpcMemoryCreate(size=149495808)
+2024-12-04 21:36:29.736 UTC [69564] DEBUG:  mmap(150994944) with MAP_HUGETLB failed, huge pages disabled: Cannot allocate memory
+2024-12-04 21:36:29.747 UTC [69564] DEBUG:  dynamic shared memory system will support 674 segments
+2024-12-04 21:36:29.747 UTC [69564] DEBUG:  created dynamic shared memory control segment 2315028130 (26976 bytes)
+2024-12-04 21:36:29.748 UTC [69564] DEBUG:  max_safe_fds = 986, usable_fds = 1000, already_open = 4
+2024-12-04 21:36:29.748 UTC [69564] LOG:  redirecting log output to logging collector process
+2024-12-04 21:36:29.748 UTC [69564] HINT:  Future log output will appear in directory "log".
+2024-12-04 22:14:24.803 UTC [69565] DEBUG:  logger shutting down
+2024-12-04 22:14:24.803 UTC [69565] DEBUG:  shmem_exit(0): 0 before_shmem_exit callbacks to make
+2024-12-04 22:14:24.803 UTC [69565] DEBUG:  shmem_exit(0): 0 on_shmem_exit callbacks to make
+2024-12-04 22:14:24.803 UTC [69565] DEBUG:  proc_exit(0): 0 callbacks to make
+2024-12-04 22:14:24.803 UTC [69565] DEBUG:  exit(0)
+2024-12-04 22:14:24.803 UTC [69565] DEBUG:  shmem_exit(-1): 0 before_shmem_exit callbacks to make
+2024-12-04 22:14:24.803 UTC [69565] DEBUG:  shmem_exit(-1): 0 on_shmem_exit callbacks to make
+2024-12-04 22:14:24.803 UTC [69565] DEBUG:  proc_exit(-1): 0 callbacks to make
+2024-12-04 22:14:30.138 UTC [95776] DEBUG:  postgres: PostmasterMain: initial environment dump:
+2024-12-04 22:14:30.138 UTC [95776] DEBUG:  -----------------------------------------
+2024-12-04 22:14:30.138 UTC [95776] DEBUG:  	LESSOPEN=| /usr/bin/lesspipe %s
+2024-12-04 22:14:30.138 UTC [95776] DEBUG:  	HOSTNAME=b8aeb9df6164
+2024-12-04 22:14:30.138 UTC [95776] DEBUG:  	SHLVL=1
+2024-12-04 22:14:30.138 UTC [95776] DEBUG:  	HOME=/home/csci550user
+2024-12-04 22:14:30.138 UTC [95776] DEBUG:  	OLDPWD=/home/csci550user
+2024-12-04 22:14:30.138 UTC [95776] DEBUG:  	PG_GRANDPARENT_PID=23
+2024-12-04 22:14:30.138 UTC [95776] DEBUG:  	_=/home/csci550user/postgresql-16.4/bin/pg_ctl
+2024-12-04 22:14:30.138 UTC [95776] DEBUG:  	TERM=xterm
+2024-12-04 22:14:30.138 UTC [95776] DEBUG:  	PGSYSCONFDIR=/home/csci550user/postgresql-16.4/etc
+2024-12-04 22:14:30.138 UTC [95776] DEBUG:  	PATH=/home/csci550user/postgresql-16.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2024-12-04 22:14:30.138 UTC [95776] DEBUG:  	LANG=en_US.UTF-8
+2024-12-04 22:14:30.138 UTC [95776] DEBUG:  	LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+2024-12-04 22:14:30.138 UTC [95776] DEBUG:  	LESSCLOSE=/usr/bin/lesspipe %s %s
+2024-12-04 22:14:30.138 UTC [95776] DEBUG:  	PWD=/home/csci550user/postgresql-16.4
+2024-12-04 22:14:30.138 UTC [95776] DEBUG:  	PGDATA=/home/csci550user/databases
+2024-12-04 22:14:30.138 UTC [95776] DEBUG:  	LC_COLLATE=en_US.UTF-8
+2024-12-04 22:14:30.138 UTC [95776] DEBUG:  	LC_CTYPE=en_US.UTF-8
+2024-12-04 22:14:30.138 UTC [95776] DEBUG:  	LC_MESSAGES=en_US.UTF-8
+2024-12-04 22:14:30.138 UTC [95776] DEBUG:  	LC_MONETARY=C
+2024-12-04 22:14:30.138 UTC [95776] DEBUG:  	LC_NUMERIC=C
+2024-12-04 22:14:30.138 UTC [95776] DEBUG:  	LC_TIME=C
+2024-12-04 22:14:30.138 UTC [95776] DEBUG:  -----------------------------------------
+2024-12-04 22:14:30.139 UTC [95776] DEBUG:  using armv8 crc32 hardware = 1
+2024-12-04 22:14:30.140 UTC [95776] DEBUG:  registering background worker "logical replication launcher"
+2024-12-04 22:14:30.140 UTC [95776] DEBUG:  invoking IpcMemoryCreate(size=149495808)
+2024-12-04 22:14:30.140 UTC [95776] DEBUG:  mmap(150994944) with MAP_HUGETLB failed, huge pages disabled: Cannot allocate memory
+2024-12-04 22:14:30.168 UTC [95776] DEBUG:  dynamic shared memory system will support 674 segments
+2024-12-04 22:14:30.168 UTC [95776] DEBUG:  created dynamic shared memory control segment 3011637396 (26976 bytes)
+2024-12-04 22:14:30.168 UTC [95776] DEBUG:  max_safe_fds = 986, usable_fds = 1000, already_open = 4
+2024-12-04 22:14:30.169 UTC [95776] LOG:  redirecting log output to logging collector process
+2024-12-04 22:14:30.169 UTC [95776] HINT:  Future log output will appear in directory "log".
+2024-12-10 19:49:42.479 UTC [51498] DEBUG:  postgres: PostmasterMain: initial environment dump:
+2024-12-10 19:49:42.489 UTC [51498] DEBUG:  -----------------------------------------
+2024-12-10 19:49:42.489 UTC [51498] DEBUG:  	LESSOPEN=| /usr/bin/lesspipe %s
+2024-12-10 19:49:42.489 UTC [51498] DEBUG:  	HOSTNAME=b8aeb9df6164
+2024-12-10 19:49:42.489 UTC [51498] DEBUG:  	SHLVL=1
+2024-12-10 19:49:42.489 UTC [51498] DEBUG:  	HOME=/home/csci550user
+2024-12-10 19:49:42.489 UTC [51498] DEBUG:  	OLDPWD=/home/csci550user
+2024-12-10 19:49:42.489 UTC [51498] DEBUG:  	PG_GRANDPARENT_PID=23
+2024-12-10 19:49:42.490 UTC [51498] DEBUG:  	_=/home/csci550user/postgresql-16.4/bin/pg_ctl
+2024-12-10 19:49:42.490 UTC [51498] DEBUG:  	TERM=xterm
+2024-12-10 19:49:42.490 UTC [51498] DEBUG:  	PGSYSCONFDIR=/home/csci550user/postgresql-16.4/etc
+2024-12-10 19:49:42.490 UTC [51498] DEBUG:  	PATH=/home/csci550user/postgresql-16.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2024-12-10 19:49:42.490 UTC [51498] DEBUG:  	LANG=en_US.UTF-8
+2024-12-10 19:49:42.490 UTC [51498] DEBUG:  	LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+2024-12-10 19:49:42.490 UTC [51498] DEBUG:  	LESSCLOSE=/usr/bin/lesspipe %s %s
+2024-12-10 19:49:42.490 UTC [51498] DEBUG:  	PWD=/home/csci550user/postgresql-16.4
+2024-12-10 19:49:42.490 UTC [51498] DEBUG:  	PGDATA=/home/csci550user/databases
+2024-12-10 19:49:42.490 UTC [51498] DEBUG:  	LC_COLLATE=en_US.UTF-8
+2024-12-10 19:49:42.490 UTC [51498] DEBUG:  	LC_CTYPE=en_US.UTF-8
+2024-12-10 19:49:42.490 UTC [51498] DEBUG:  	LC_MESSAGES=en_US.UTF-8
+2024-12-10 19:49:42.490 UTC [51498] DEBUG:  	LC_MONETARY=C
+2024-12-10 19:49:42.490 UTC [51498] DEBUG:  	LC_NUMERIC=C
+2024-12-10 19:49:42.490 UTC [51498] DEBUG:  	LC_TIME=C
+2024-12-10 19:49:42.490 UTC [51498] DEBUG:  -----------------------------------------
+2024-12-10 19:49:42.490 UTC [51498] FATAL:  lock file "postmaster.pid" already exists
+2024-12-10 19:49:42.490 UTC [51498] HINT:  Is another postmaster (PID 95776) running in data directory "/home/csci550user/databases"?
+2024-12-10 19:49:42.490 UTC [51498] DEBUG:  shmem_exit(1): 0 before_shmem_exit callbacks to make
+2024-12-10 19:49:42.490 UTC [51498] DEBUG:  shmem_exit(1): 0 on_shmem_exit callbacks to make
+2024-12-10 19:49:42.490 UTC [51498] DEBUG:  proc_exit(1): 0 callbacks to make
+2024-12-10 19:49:42.490 UTC [51498] DEBUG:  exit(1)
+2024-12-10 19:49:54.230 UTC [95777] DEBUG:  logger shutting down
+2024-12-10 19:49:54.230 UTC [95777] DEBUG:  shmem_exit(0): 0 before_shmem_exit callbacks to make
+2024-12-10 19:49:54.230 UTC [95777] DEBUG:  shmem_exit(0): 0 on_shmem_exit callbacks to make
+2024-12-10 19:49:54.230 UTC [95777] DEBUG:  proc_exit(0): 0 callbacks to make
+2024-12-10 19:49:54.230 UTC [95777] DEBUG:  exit(0)
+2024-12-10 19:49:54.230 UTC [95777] DEBUG:  shmem_exit(-1): 0 before_shmem_exit callbacks to make
+2024-12-10 19:49:54.230 UTC [95777] DEBUG:  shmem_exit(-1): 0 on_shmem_exit callbacks to make
+2024-12-10 19:49:54.230 UTC [95777] DEBUG:  proc_exit(-1): 0 callbacks to make
+2024-12-10 19:49:56.371 UTC [51639] DEBUG:  postgres: PostmasterMain: initial environment dump:
+2024-12-10 19:49:56.371 UTC [51639] DEBUG:  -----------------------------------------
+2024-12-10 19:49:56.371 UTC [51639] DEBUG:  	LESSOPEN=| /usr/bin/lesspipe %s
+2024-12-10 19:49:56.371 UTC [51639] DEBUG:  	HOSTNAME=b8aeb9df6164
+2024-12-10 19:49:56.371 UTC [51639] DEBUG:  	SHLVL=1
+2024-12-10 19:49:56.371 UTC [51639] DEBUG:  	HOME=/home/csci550user
+2024-12-10 19:49:56.371 UTC [51639] DEBUG:  	OLDPWD=/home/csci550user
+2024-12-10 19:49:56.371 UTC [51639] DEBUG:  	PG_GRANDPARENT_PID=23
+2024-12-10 19:49:56.371 UTC [51639] DEBUG:  	_=/home/csci550user/postgresql-16.4/bin/pg_ctl
+2024-12-10 19:49:56.371 UTC [51639] DEBUG:  	TERM=xterm
+2024-12-10 19:49:56.371 UTC [51639] DEBUG:  	PGSYSCONFDIR=/home/csci550user/postgresql-16.4/etc
+2024-12-10 19:49:56.371 UTC [51639] DEBUG:  	PATH=/home/csci550user/postgresql-16.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2024-12-10 19:49:56.371 UTC [51639] DEBUG:  	LANG=en_US.UTF-8
+2024-12-10 19:49:56.371 UTC [51639] DEBUG:  	LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+2024-12-10 19:49:56.371 UTC [51639] DEBUG:  	LESSCLOSE=/usr/bin/lesspipe %s %s
+2024-12-10 19:49:56.371 UTC [51639] DEBUG:  	PWD=/home/csci550user/postgresql-16.4
+2024-12-10 19:49:56.371 UTC [51639] DEBUG:  	PGDATA=/home/csci550user/databases
+2024-12-10 19:49:56.371 UTC [51639] DEBUG:  	LC_COLLATE=en_US.UTF-8
+2024-12-10 19:49:56.371 UTC [51639] DEBUG:  	LC_CTYPE=en_US.UTF-8
+2024-12-10 19:49:56.371 UTC [51639] DEBUG:  	LC_MESSAGES=en_US.UTF-8
+2024-12-10 19:49:56.371 UTC [51639] DEBUG:  	LC_MONETARY=C
+2024-12-10 19:49:56.371 UTC [51639] DEBUG:  	LC_NUMERIC=C
+2024-12-10 19:49:56.371 UTC [51639] DEBUG:  	LC_TIME=C
+2024-12-10 19:49:56.371 UTC [51639] DEBUG:  -----------------------------------------
+2024-12-10 19:49:56.377 UTC [51639] DEBUG:  using armv8 crc32 hardware = 1
+2024-12-10 19:49:56.377 UTC [51639] DEBUG:  registering background worker "logical replication launcher"
+2024-12-10 19:49:56.378 UTC [51639] DEBUG:  invoking IpcMemoryCreate(size=149495808)
+2024-12-10 19:49:56.379 UTC [51639] DEBUG:  mmap(150994944) with MAP_HUGETLB failed, huge pages disabled: Cannot allocate memory
+2024-12-10 19:49:56.739 UTC [51639] DEBUG:  dynamic shared memory system will support 674 segments
+2024-12-10 19:49:56.739 UTC [51639] DEBUG:  created dynamic shared memory control segment 506654676 (26976 bytes)
+2024-12-10 19:49:56.740 UTC [51639] DEBUG:  max_safe_fds = 986, usable_fds = 1000, already_open = 4
+2024-12-10 19:49:56.744 UTC [51639] LOG:  redirecting log output to logging collector process
+2024-12-10 19:49:56.744 UTC [51639] HINT:  Future log output will appear in directory "log".

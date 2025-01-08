@@ -284,12 +284,14 @@ ExecHashJoinImpl(PlanState *pstate, bool parallel)
 					ereport(ERROR, (errcode(ERRCODE_OUT_OF_MEMORY),
 									errmsg("failed to allocate outer HLL sketch")));
 				initHyperLogLog(node->outer_hll, HLL_PRECISION);
+				elog(DEBUG1, "HLL outer initialized: %p", node->outer_hll);
 
 				node->inner_hll = palloc0(sizeof(hyperLogLogState));
 				if (!node->inner_hll)
 					ereport(ERROR, (errcode(ERRCODE_OUT_OF_MEMORY),
 									errmsg("failed to allocate inner HLL sketch")));
 				initHyperLogLog(node->inner_hll, HLL_PRECISION);
+				elog(DEBUG1, "HLL inner initialized: %p", node->inner_hll);
 			}
 
 			// Process outer relation
@@ -307,13 +309,14 @@ ExecHashJoinImpl(PlanState *pstate, bool parallel)
 					{
 						uint32 hash = hash_any((unsigned char *)&value, sizeof(Datum));
 						addHyperLogLog(node->outer_hll, hash);
+						elog(DEBUG1, "Added to outer HLL, current estimate: %f",
+							 estimateHyperLogLog(node->outer_hll));
 					}
 				}
 			}
 
 			// Process inner relation
-			HashState *hashState = (HashState *)innerPlanState(node);
-			PlanState *innerPlan = outerPlanState(hashState);
+			PlanState *innerPlan = innerPlanState(node);
 			TupleTableSlot *innerTupleSlot;
 
 			while ((innerTupleSlot = ExecProcNode(innerPlan)) != NULL)
@@ -327,6 +330,8 @@ ExecHashJoinImpl(PlanState *pstate, bool parallel)
 					{
 						uint32 hash = hash_any((unsigned char *)&value, sizeof(Datum));
 						addHyperLogLog(node->inner_hll, hash);
+						elog(DEBUG1, "Added to inner HLL, current estimate: %f",
+							 estimateHyperLogLog(node->inner_hll));
 					}
 				}
 			}
@@ -372,8 +377,8 @@ ExecHashJoinImpl(PlanState *pstate, bool parallel)
 			node->inner_hll = NULL;
 
 			node->hll_done = true;
-			node->hj_JoinState = HJ_NEED_NEW_BATCH;
-			node->hj_HashTable = NULL;
+			// node->hj_JoinState = HJ_NEED_NEW_BATCH;
+			// node->hj_HashTable = NULL;
 
 			return node->js.ps.ps_ResultTupleSlot;
 		}

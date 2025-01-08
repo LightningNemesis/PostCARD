@@ -98,6 +98,12 @@
 #include "miscadmin.h"
 #include "utils/lsyscache.h"
 #include "utils/memutils.h"
+#include "access/hash.h"
+
+/* HLL parameters - keeping same as hash join for consistency */
+#define HLL_PRECISION 16	 // Precision bits (resulting in 2^16 registers)
+#define HLL_HASH_SEED 123	 // Seed for hash function
+#define HLL_SAMPLE_SIZE 1000 // Sample size for calibration
 
 /*
  * States of the ExecMergeJoin state machine
@@ -605,6 +611,144 @@ ExecMergeJoin(PlanState *pstate)
 	ExprContext *econtext;
 	bool doFillOuter;
 	bool doFillInner;
+
+	/* Add debug logging */
+	elog(NOTICE, "=== ExecMergeJoin start ===");
+	elog(NOTICE, "Join type: %d", node->js.jointype);
+
+	/* Add early check for HLL join */
+	if (node->js.jointype == JOIN_HLL && node->hll_done)
+	{
+		return NULL; /* No more results for HLL join */
+	}
+
+	/* Handle HLL join estimation */
+	if (node->js.jointype == JOIN_HLL && !node->hll_done)
+	{
+		PG_TRY();
+		{
+			/* Initialize HLL sketches if not already done */
+			if (!node->outer_hll)
+			{
+				node->outer_hll = palloc0(sizeof(hyperLogLogState));
+				if (!node->outer_hll)
+					ereport(ERROR,
+							(errcode(ERRCODE_OUT_OF_MEMORY),
+							 errmsg("failed to allocate outer HLL sketch")));
+				initHyperLogLog(node->outer_hll, HLL_PRECISION);
+
+				node->inner_hll = palloc0(sizeof(hyperLogLogState));
+				if (!node->inner_hll)
+					ereport(ERROR,
+							(errcode(ERRCODE_OUT_OF_MEMORY),
+							 errmsg("failed to allocate inner HLL sketch")));
+				initHyperLogLog(node->inner_hll, HLL_PRECISION);
+			}
+
+			/* Process outer relation */
+			PlanState *outerPlan = outerPlanState(node);
+			TupleTableSlot *outerTupleSlot;
+
+			while ((outerTupleSlot = ExecProcNode(outerPlan)) != NULL)
+			{
+				if (!TupIsNull(outerTupleSlot))
+				{
+					Datum value;
+					bool isNull;
+					value = slot_getattr(outerTupleSlot, 1, &isNull);
+					if (!isNull)
+					{
+						uint32 hash = hash_any((unsigned char *)&value, sizeof(Datum));
+						addHyperLogLog(node->outer_hll, hash);
+					}
+				}
+			}
+
+			/* Process inner relation */
+			PlanState *innerPlan = innerPlanState(node);
+			TupleTableSlot *innerTupleSlot;
+
+			while ((innerTupleSlot = ExecProcNode(innerPlan)) != NULL)
+			{
+				if (!TupIsNull(innerTupleSlot))
+				{
+					Datum value;
+					bool isNull;
+					value = slot_getattr(innerTupleSlot, 1, &isNull);
+					if (!isNull)
+					{
+						uint32 hash = hash_any((unsigned char *)&value, sizeof(Datum));
+						addHyperLogLog(node->inner_hll, hash);
+					}
+				}
+			}
+
+			/* Create temporary union HLL */
+			hyperLogLogState *union_hll = palloc0(sizeof(hyperLogLogState));
+			if (!union_hll)
+				ereport(ERROR,
+						(errcode(ERRCODE_OUT_OF_MEMORY),
+						 errmsg("failed to allocate union HLL sketch")));
+			initHyperLogLog(union_hll, HLL_PRECISION);
+
+			/* Calculate union */
+			mergeHyperLogLog(union_hll, node->outer_hll);
+			mergeHyperLogLog(union_hll, node->inner_hll);
+
+			/* Calculate estimates */
+			double outer_est = estimateHyperLogLog(node->outer_hll);
+			double inner_est = estimateHyperLogLog(node->inner_hll);
+			double union_est = estimateHyperLogLog(union_hll);
+
+			/* Calculate intersection using inclusion-exclusion principle */
+			double intersection_est = outer_est + inner_est - union_est;
+
+			/* Use intersection as estimate */
+			double estimate = intersection_est;
+
+			/* Debug logging */
+			elog(NOTICE, "MergeJoin HLL estimates - outer: %.2f, inner: %.2f, union: %.2f, intersection: %.2f",
+				 outer_est, inner_est, union_est, intersection_est);
+
+			/* Create result tuple */
+			ExecClearTuple(node->js.ps.ps_ResultTupleSlot);
+			node->js.ps.ps_ResultTupleSlot->tts_values[0] = Int64GetDatum((int64)estimate);
+			node->js.ps.ps_ResultTupleSlot->tts_isnull[0] = false;
+			node->js.ps.ps_ResultTupleSlot->tts_nvalid = 1;
+			ExecStoreVirtualTuple(node->js.ps.ps_ResultTupleSlot);
+
+			/* Cleanup */
+			pfree(node->outer_hll);
+			pfree(node->inner_hll);
+			pfree(union_hll);
+			node->outer_hll = NULL;
+			node->inner_hll = NULL;
+
+			node->hll_done = true;
+			node->mj_JoinState = EXEC_MJ_ENDOUTER;
+			node->mj_MatchedOuter = true; // Add this
+			node->mj_MatchedInner = true; // Add this
+
+			elog(NOTICE, "MergeJoin HLL - State transition to: %d", node->mj_JoinState);
+
+			return node->js.ps.ps_ResultTupleSlot;
+		}
+		PG_CATCH();
+		{
+			if (node->outer_hll)
+			{
+				pfree(node->outer_hll);
+				node->outer_hll = NULL;
+			}
+			if (node->inner_hll)
+			{
+				pfree(node->inner_hll);
+				node->inner_hll = NULL;
+			}
+			PG_RE_THROW();
+		}
+		PG_END_TRY();
+	}
 
 	CHECK_FOR_INTERRUPTS();
 
@@ -1542,6 +1686,39 @@ ExecInitMergeJoin(MergeJoin *node, EState *estate, int eflags)
 	/* set up null tuples for outer joins, if needed */
 	switch (node->join.jointype)
 	{
+	case JOIN_HLL:
+	{
+		/* Create tuple descriptor with one int64 column for result */
+		TupleDesc tupDesc = CreateTemplateTupleDesc(1);
+		TupleDescInitEntry(tupDesc, (AttrNumber)1,
+						   "estimated_cardinality",
+						   INT8OID, -1, 0);
+
+		/* Set up the result tuple slot */
+		mergestate->js.ps.ps_ResultTupleSlot = MakeSingleTupleTableSlot(tupDesc,
+																		&TTSOpsVirtual);
+		mergestate->js.ps.ps_ResultTupleDesc = tupDesc;
+
+		/* Mark tuple descriptor as belonging to query result */
+		tupDesc->tdtypeid = RECORDOID;
+		tupDesc->tdtypmod = -1;
+
+		/* Initialize HLL flags */
+		mergestate->mj_FillOuter = false;
+		mergestate->mj_FillInner = false;
+
+		/* Add debug logging similar to hash join */
+		elog(NOTICE, "=== MergeJoin node initial contents ===");
+		elog(NOTICE, "Join type: %d", node->join.jointype);
+		elog(NOTICE, "Merge clauses count: %d", list_length(node->mergeclauses));
+		elog(NOTICE, "Outer plan: %p", outerPlan(node));
+		elog(NOTICE, "Inner plan: %p", innerPlan(node));
+
+		/* Log tuple descriptor details */
+		elog(NOTICE, "HLL Tuple Descriptor initialized - natts: %d, typeid: %u",
+			 tupDesc->natts, tupDesc->tdtypeid);
+	}
+	break;
 	case JOIN_INNER:
 	case JOIN_SEMI:
 		mergestate->mj_FillOuter = false;
@@ -1613,6 +1790,14 @@ ExecInitMergeJoin(MergeJoin *node, EState *estate, int eflags)
 	mergestate->mj_MatchedInner = false;
 	mergestate->mj_OuterTupleSlot = NULL;
 	mergestate->mj_InnerTupleSlot = NULL;
+
+	/* Initialize HLL-specific fields */
+	mergestate->outer_hll = NULL;
+	mergestate->inner_hll = NULL;
+	mergestate->result_hll = NULL; /* Note: added result_hll to match HashJoinState */
+	mergestate->hll_done = false;
+	mergestate->sample_matches = 0;
+	mergestate->sample_total = 0;
 
 	/*
 	 * initialization successful

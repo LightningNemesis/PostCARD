@@ -13526,8 +13526,7 @@ func_alias_clause:
 join_type:	FULL opt_outer							{ $$ = JOIN_FULL; }
 			| LEFT opt_outer						{ $$ = JOIN_LEFT; }
 			| RIGHT opt_outer						{ $$ = JOIN_RIGHT; }
-			| INNER_P								{ $$ = JOIN_INNER; }	
-			/* | HLL_JOIN              				{ $$ = JOIN_INNER; } */
+			| INNER_P								{ $$ = JOIN_INNER; }				
 			| HLL_JOIN              				{ $$ = JOIN_HLL; }
 		;
 
