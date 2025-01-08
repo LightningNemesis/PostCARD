@@ -17,9 +17,26 @@
 #include "nodes/bitmapset.h"
 #include "nodes/pathnodes.h"
 
+/* New HLL path node type */
+typedef struct HLLPath
+{
+	JoinPath jpath;			/* Common join path fields */
+	Path *outerjoinpath;	/* Path for outer relation */
+	Path *innerjoinpath;	/* Path for inner relation */
+	List *joinrestrictinfo; /* Join restriction clauses */
+} HLLPath;
+
 /*
  * prototypes for pathnode.c
  */
+/* Function to create HLL join path */
+extern HLLPath *create_hlljoin_path(PlannerInfo *root,
+									RelOptInfo *joinrel,
+									JoinType jointype,
+									Path *outer_path,
+									Path *inner_path,
+									List *restrict_clauses,
+									Relids required_outer);
 extern int compare_path_costs(Path *path1, Path *path2,
 							  CostSelector criterion);
 extern int compare_fractional_path_costs(Path *path1, Path *path2,
